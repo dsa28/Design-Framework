@@ -23,7 +23,7 @@ class TAIfElse extends TAObject
 	TAIfElse operation; //This variable will store our generated object (TAIfElseNumeric or TAIfElseBoolean)
 	//It depends on the argument type
 	
-	TAFormula e1; //Because e1 is a formula regardless of the type of arguments we have, we can store it in TAIfElse
+	TAFormula condition; //Because e1 is a formula regardless of the type of arguments we have, we can store it in TAIfElse
 	
 	
 	//List function to recursively print the expression
@@ -54,14 +54,20 @@ class TAIfElse extends TAObject
 		
 	}
 	
-	TAIfElse<T extends TAIntValue>(TAFormula e1, T e2, T e3)
+	<T extends TAIntValue>TAIfElse(TAFormula e1, T e2, T e3)
 	{
 		
 	}
 	
-	TAIfElse <T extends TADoubleValue>(TAFormula e1, T e2, T e3)
+	<T extends TADoubleValue>TAIfElse(TAFormula e1, T e2, T e3)
 	{
 		
+	}
+
+
+	
+	String type() {
+		return "bool";
 	}
 	
 	

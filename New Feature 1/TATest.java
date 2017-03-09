@@ -29,21 +29,35 @@ public class TATest {
 		TAInt i1 = new TAInt ("i1");
 		TAInt i2 = new TAInt ("i2");
 		
-		ifelse = new TAIfElse(a1,i1,i2);
+		ifelse = new TAIfElse(a1,b1,b2);
 		
 		
 		//Test 3: Testing the use of formulas instead of primitives
-		//Testing the use of expressions instead of formulas of arguments
 		b2.set(false);
 		ifelse.evaluate();
 		ifelse.printstate(); //should print i2
 		
 		
-		//Testing for a1 true
+		//Test 4: Testing for a1 true
 		b2.set(true);
 		ifelse.evaluate();
 		ifelse.printstate(); //should print i1
 	
+		
+		//Test 5: Testing for expressions instead of formulas
+		ifelse = new TAIfElse(b1,i1,i2);
+		
+		b1.set(false);
+		ifelse.evaluate();
+		ifelse.printstate(); //should print i2
+		
+		
+		//Test 6: Mixing formulas and expressions
+		TANot not = new TANot(b1);
+		ifelse = new TAIfElse(not,i1,i2);
+		
+		ifelse.evaluate();
+		ifelse.printstate(); //should print i1
 	}
 
 }

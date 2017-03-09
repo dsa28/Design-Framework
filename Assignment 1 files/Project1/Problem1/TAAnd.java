@@ -1,5 +1,5 @@
 
-public class TAAnd<T extends TABoolValue> extends TAObject implements TABoolValue {
+public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolValue {
 
  /*
 	 * The AND operator is a binary operator 
