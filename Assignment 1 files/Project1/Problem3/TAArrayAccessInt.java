@@ -1,5 +1,10 @@
-class TAArrayAccessInt extends TAArrayAccess
+/*class TAArrayAccessInt extends TAArrayAccess
 {
+	TAArrayAccessInt(TAArray a, int i)
+	{
+		TAArrayAccess(a,i);
+	}
+	
 	void set(TAIntValue a)
 	{
 		val = a;
@@ -22,3 +27,4 @@ class TAArrayAccessInt extends TAArrayAccess
 	
 	TAIntValue val;
 }
+*/
