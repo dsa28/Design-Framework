@@ -1,5 +1,5 @@
 
-public class TABool extends TAObject implements TABoolValue{
+public class TABool extends TAFormula implements TABoolValue{
 
 	public boolean value()
 	{

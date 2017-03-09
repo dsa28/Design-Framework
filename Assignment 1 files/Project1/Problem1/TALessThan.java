@@ -1,5 +1,5 @@
 
-public class TALessThan implements TABoolValue{
+public class TALessThan extends TAFormula implements TABoolValue{
 	
 	String type()
 	{

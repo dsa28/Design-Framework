@@ -1,5 +1,5 @@
 
-public class TAEqual implements TABoolValue{
+public class TAEqual extends TAFormula implements TABoolValue{
 	
 	String type()
 	{

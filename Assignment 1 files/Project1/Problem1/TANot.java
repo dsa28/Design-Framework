@@ -1,5 +1,5 @@
 
-public class TANot<T extends TABoolValue> extends TAObject implements TABoolValue {
+public class TANot<T extends TABoolValue> extends TAFormula implements TABoolValue {
 	
 	String type()
 	{return "bool";}
