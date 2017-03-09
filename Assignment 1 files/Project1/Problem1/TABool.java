@@ -23,7 +23,7 @@ public class TABool extends TAFormula implements TABoolValue{
 	
 	void pritnState()
 	{
-		System.out.println(value);
+		System.out.println(name + ":" + value);
 	}
 	
 	

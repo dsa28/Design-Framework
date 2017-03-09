@@ -1,6 +1,12 @@
 
 public class TAInt extends TAObject implements TAIntValue {
 
+	void printstate()
+	{
+		System.out.println(name + ":" + value);
+	}
+	
+	
 	public int value()
 	{
 		return value;
