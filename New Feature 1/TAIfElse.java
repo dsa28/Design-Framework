@@ -56,7 +56,7 @@ class TAIfElse extends TAObject
 	
 	<T extends TAIntValue>TAIfElse(TAFormula e1, T e2, T e3)
 	{
-		
+		operation = new TAIfElseInt(e1,e2,e3);
 	}
 	
 	<T extends TADoubleValue>TAIfElse(TAFormula e1, T e2, T e3)
@@ -70,7 +70,7 @@ class TAIfElse extends TAObject
 	}
 	
 	String type() {
-		return "bool";
+		return "";
 	}
 	
 	

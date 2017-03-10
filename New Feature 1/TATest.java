@@ -34,6 +34,8 @@ public class TATest {
 		
 		ifelse = new TAIfElse(a1,b1,b2);
 		
+		i1.set(1);
+		i2.set(2);
 		
 		//Test 3: Testing the use of formulas instead of primitives
 		b2.set(false);
@@ -55,15 +57,17 @@ public class TATest {
 		
 		b1.set(false);
 		ifelse.evaluate();
-		ifelse.printstate(); //should print i2
+		ifelse.printstate(); //should print 2
 		
+		
+		System.out.println();
 		
 		//Test 6: Mixing formulas and expressions
 		TANot not = new TANot(b1);
 		ifelse = new TAIfElse(not,i1,i2);
 		
 		ifelse.evaluate();
-		ifelse.printstate(); //should print i1
+		ifelse.printstate(); //should print 1
 		
 	}
 
