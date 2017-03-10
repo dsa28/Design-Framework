@@ -1,5 +1,6 @@
 
-public class TAIfElseDouble<T extends TADoubleValue> extends TAIfElse {
+public class TAIfElseDouble<T extends TADoubleValue> extends TAIfElse implements TADoubleValue
+{
 	//Three arguments, first one is the condition to be evaluated
 	//The two other are the possible choices
 	
