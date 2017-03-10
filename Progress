@@ -1,0 +1,8 @@
+Design decision 1: We decided to use the code from assignment 1 and refactor it as necessay to fit the new features.
+We decided to do this mostly because the assignment 1 code was easily extendable to include many of the required new features.
+
+Design decision 2 (Refactoring): We added a class TAFormula from which all boolean classes inherit to simplify the e1?e2:e3 functionality.
+(This class seems to create an inconsistency with the original hierary; either we will need to do some more refactoring or remove this class and revert to the original hierarchy).
+
+Problems: At this point, there is a problem with nested operations. It is possible to fix it by declaring specific classes (TAAddInt instead of TAAnd for example).
+But, this would make the framework harder and less intuitive for the user. We will be trying to find a solution, and if nothing works, a compromise will have to be done.
