@@ -10,18 +10,21 @@ public class TATest {
 		TAIfElse ifelse = new TAIfElse(b1,b1,b2);
 		
 		ifelse.list(); //should print (b1?b1:b2)
+		System.out.println();
 		
 		//Test 1: if b1 is false
 		b1.set(false);
+		b2.set(true);
 		ifelse.evaluate();
-		ifelse.printstate(); //should print e2 
+		ifelse.printstate(); //should print true 
 	
 		System.out.println();
 		
 		//Test 2:  if b1 is true
 		b1.set(true);
+		b2.set(false);
 		ifelse.evaluate();
-		ifelse.printstate(); //should print e1
+		ifelse.printstate(); //should print true
 		
 		System.out.println();
 		
@@ -35,14 +38,17 @@ public class TATest {
 		//Test 3: Testing the use of formulas instead of primitives
 		b2.set(false);
 		ifelse.evaluate();
-		ifelse.printstate(); //should print i2
+		ifelse.printstate(); //should print false
 		
+		System.out.println();
 		
 		//Test 4: Testing for a1 true
 		b2.set(true);
 		ifelse.evaluate();
-		ifelse.printstate(); //should print i1
+		ifelse.printstate(); //should print true
 	
+		
+		System.out.println();
 		
 		//Test 5: Testing for expressions instead of formulas
 		ifelse = new TAIfElse(b1,i1,i2);
@@ -58,6 +64,7 @@ public class TATest {
 		
 		ifelse.evaluate();
 		ifelse.printstate(); //should print i1
+		
 	}
 
 }

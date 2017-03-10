@@ -23,13 +23,13 @@ class TAIfElse extends TAObject
 	TAIfElse operation; //This variable will store our generated object (TAIfElseNumeric or TAIfElseBoolean)
 	//It depends on the argument type
 	
-	TAFormula condition; //Because e1 is a formula regardless of the type of arguments we have, we can store it in TAIfElse
+
 	
 	
 	//List function to recursively print the expression
 	void list()
 	{
-		
+		operation.list();
 		
 	}
 	
@@ -37,13 +37,13 @@ class TAIfElse extends TAObject
 	//Recursively evaluate the expression 
 	void evaluate()
 	{
-		
+		operation.evaluate();
 	}
 	
 	//Print the value of the function (Depends on the value of e1)
 	void printstate()
 	{
-		
+		operation.printstate();
 	}
 	
 	
@@ -51,7 +51,7 @@ class TAIfElse extends TAObject
 	//Constructors for all possible allowed cases:
 	TAIfElse(TAFormula e1, TAFormula e2, TAFormula e3)
 	{
-		
+		operation = new TAIfElseBool(e1,e2,e3);
 	}
 	
 	<T extends TAIntValue>TAIfElse(TAFormula e1, T e2, T e3)
@@ -64,7 +64,10 @@ class TAIfElse extends TAObject
 		
 	}
 
-
+	protected TAIfElse()
+	{
+		//Constructor by default that should be called by inherited classes
+	}
 	
 	String type() {
 		return "bool";

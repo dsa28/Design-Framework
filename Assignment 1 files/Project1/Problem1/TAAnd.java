@@ -24,11 +24,7 @@ public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolVal
 	TAAnd(T a, T b) 
 	{
 			op1 = a;
-			op2 = b;
-		
-		
-		
-		
+			op2 = b;	
 	}
 	
 	

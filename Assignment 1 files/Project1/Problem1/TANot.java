@@ -15,7 +15,9 @@ public class TANot<T extends TABoolValue> extends TAFormula implements TABoolVal
 	{return value;}
 	
 	TANot(T a)
-	{op = a;}
+	{
+		op = a;
+	}
 	
 	public void list()
 	{

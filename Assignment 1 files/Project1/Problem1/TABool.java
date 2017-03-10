@@ -8,7 +8,7 @@ public class TABool extends TAFormula implements TABoolValue{
 	
 	
 	public void list()
-	{System.out.print(name);	}
+	{System.out.print(name);}
 	
 	void set(boolean bool)
 	{value=bool;}
@@ -23,7 +23,7 @@ public class TABool extends TAFormula implements TABoolValue{
 	
 	void pritnState()
 	{
-		System.out.println(name + ":" + value);
+		System.out.println(value);
 	}
 	
 	
