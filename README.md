@@ -15,8 +15,8 @@ New feature 1:
 -Contains the classes for the ForEvery feature.
 (TAForEvery and inherited classes TAForEveryInt,TAForEveryDouble and TAForEveryBool)
 
--Contains the classes for the Exists feature. (currently incomplete)
-(TAExists for now, but inherited classes TAExistsInt,TAExistsDouble and TAExistsBool should be created)
+-Contains the classes for the Exists feature. 
+(TAExists and inherited classes TAExistsInt,TAExistsDouble and TAExistsBool)
   
 -Class TATest2 which contains 4 test cases for ForEvery and Exists features.
 
