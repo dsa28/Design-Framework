@@ -1,6 +1,11 @@
 
 public class TATest {
 
+	/*
+	 * Class to test the use of ?: for both formlas and terms
+	 */
+	
+	
 	public static void main (String[] args) {
 
 		TABool b1 = new TABool("b1");
