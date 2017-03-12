@@ -21,10 +21,10 @@ public class TASet {
 	  
 	     
 	     //Adding objects to the domain
-	     void addObjectToPool (TAObject object)
+	     /*void addObjectToPool (TAObject object)
 	     {
 	         objPool.add(object);
-	     }
+	     }*/
 	     
 	     
 	     //To be able to iterate through a set, we need to be able to
@@ -72,8 +72,13 @@ public class TASet {
 	     TASet(String name)
 	     {
 	         domainSetName = name;
+	         objPool = new ArrayList();
 	     }
 	     
+	     protected TASet()
+	     {
+	    	 
+	     }
 	   
 	      
 	 

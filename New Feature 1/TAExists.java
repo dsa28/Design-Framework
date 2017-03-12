@@ -1,5 +1,5 @@
 
-public class TAExists extends TABool {
+public class TAExists extends TAFormula implements TABoolValue {
 	
 	/*
 	 * Class TAExists which represents the existential quantifier
@@ -12,54 +12,102 @@ public class TAExists extends TABool {
 	 * List()
 	 * Evaluate()
 	 */
-	    String name ="TAExists";
-	    TASet domain;
-	    TAFormula expression;
+	
+	
+	    String name;
 	    
 	    
+	    TASet domain; //The domain where the formula will be evaluated
+	    TAFormula expression; //The formula itself
+	    TAVariable x; //The variable that will be affected
 	    
-	    TAExists( TASet D)
-	    {
-	    	super("");
-	        domain =  D;
-	    }
+	    //To do: Find a solution for different types of variables
+	    //Maybe different subclasses depending on type? (TAForEveryBool, TAForEveryInt, TAForEveryDouble)
 	    
-	    TAExists(String x, TASet D)
-	    {
-	    	super(x);
-	        name = x;
-	        domain = D;
-	    }
+	    boolean value; //Result of the operation
 	    
-	    void setExpression(TAFormula e)
+	  
+	    
+	  
+	    void setExpression(TAFormula e,TAObject x)
 	    {
 	        expression = e;
+	        this.x.set(x);
 	    }
 	    
 	    
-	    boolean evaluate()
+	    
+	    public void list()
 	    {
-	        ArrayList domain = domain.getDomainSet();
+	    	
+	    }
+	    
+	     public void evaluate()
+	    {
+	        
 	        int domainSize = domain.size();
-	        //domain has no elements hence the ForEvery function should normally return false because no x in D makes e(x) true.
+	        
+	        //domain has no elements, hence it is false
 	        if (domainSize == 0)
-	        return false;
+	        {
+	        	value = false;
+	        }
 	        else
 	        {
-	            for (int i = 0; i < domainSize; i++)
+	            for (domain.start(); domain.next(); )
 	            {
-	                if ( expression.set(domain[i]) == true)
+	            	x.set(domain.getObject()); //Set the value of the variable to the value of an element in the set
+	            	expression.evaluate(); //Evaluate the expression
+	            	
+	                if (!expression.value()) //One element is true; that's it- the result is true
 	                {
-	                    return true;
+	                    value = true;
+	                    return; //We are done
 	                }
 	            }
 	            
-	            return false;
+	            //All values are true!
+	            value = false;
+	        
 	        }
 	    }
 	    
-	    
-	    
+	     String type()
+	     {
+	    	 return "exists";
+	     }
+	     
+	     
+	     public boolean value()
+	     {
+	    	 return value;
+	     }
+		 
+	     
+	     TAExists( TASet D)
+		    {
+		        domain = D;
+		    }
+		    
+	     TAExists(String x, TASet D)
+		    {
+		    	
+		        name = x;
+		        domain = D;
+		    }
+		    
+	     TAExists(TASet D, TAFormula formula, TAObject x)
+		    {
+		    
+		    	domain = D;
+		    	expression = formula;
+		    	this.x.set(x);
+		    	
+		    }
+
+
+
+			
 	    
 	    
 	    

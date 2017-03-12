@@ -12,7 +12,7 @@ public class TATest2 {
 		
 		TABool x = new TABool("x"); //Variable
 		
-		TASet D = new TASet("D"); //Domain 
+		TASetBool D = new TASetBool("D"); //Domain 
 		
 		b2.set(false);
 		b1.set(true);
@@ -26,11 +26,29 @@ public class TATest2 {
 		TAAnd a1 = new TAAnd (x,b1);
 		
 		//Test 1: testing the list and evaluate property
+		TAForEvery a = new TAForEvery(D,x,x);
+		
+		a.evaluate();//should return false
+		a.printState();
+		System.out.println();
+		
+		//Test 2
+		b2.set(true);
+		
+		a.evaluate(); //Should return true
+		a.printState();
+		System.out.println();
+		
+		//Test 3
 		TAForEvery q1 = new TAForEvery(D,a1,x); //Want to evaluate (x and b1) for x in D
 		
 		q1.list();//Should print (For every x in D: (& x b1))
+		
+		System.out.println();
+		
+		b2.set(false);
 		q1.evaluate(); 
-		q1.pritnState();//Should print false
+		q1.printState();//Should print false
 		
 		System.out.println();
 		
@@ -38,7 +56,7 @@ public class TATest2 {
 		b2.set(true);
 		
 		q1.evaluate();
-		q1.pritnState(); //Should print true
+		q1.printState(); //Should print true
 		
 		
 		
