@@ -12,10 +12,12 @@ New feature 1:
 
 -Class TATest which contains 6 test cases for the e1?e2:e3 features.
 
--Contains the classes for the ForEvery feature. (currently incomplete)
-(TAForEvery for now, but inherited classes TAForEveryInt,TAForEveryDouble and TAForEveryBool should be created)
+-Contains the classes for the ForEvery feature.
+(TAForEvery and inherited classes TAForEveryInt,TAForEveryDouble and TAForEveryBool)
 
 -Contains the classes for the Exists feature. (currently incomplete)
 (TAExists for now, but inherited classes TAExistsInt,TAExistsDouble and TAExistsBool should be created)
   
--Class TATest2 which contains 2 test cases for ForEvery and Exists features.
+-Class TATest2 which contains 4 test cases for ForEvery and Exists features.
+
+-Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
