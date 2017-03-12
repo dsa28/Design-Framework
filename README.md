@@ -21,3 +21,7 @@ New feature 1:
 -Class TATest2 which contains 4 test cases for ForEvery and Exists features.
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
+
+New Feaute 3:
+-Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
+Note: The classes made are frameworks, they require alot of tweaking to respect the requirements.
