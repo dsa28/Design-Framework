@@ -4,7 +4,7 @@ public class TAForEveryBool<T extends TABoolValue> extends TAForEvery {
 
     String name;
     
-    TABool x; //The variable to be changed
+    TABool x; //The variable to be changed; the variable should be a primitive and not an expression
     TASetBool domain; //The domain where the formula will be evaluated
     TABoolValue expression; //The formula itself
     
@@ -51,11 +51,10 @@ public class TAForEveryBool<T extends TABoolValue> extends TAForEvery {
            do
            {
         	 
-            	x.set(domain.getBoolObject().value()); //Set the value of the variable to the value of an element in the set
+            	x.set(domain.getObject().value()); //Set the value of the variable to the value of an element in the set
             	expression.evaluate(); //Evaluate the expression
             	
-            	
-                
+            
             	if (!expression.value()) //One element is false; that's it- the result is false
                 {
             	
@@ -77,8 +76,7 @@ public class TAForEveryBool<T extends TABoolValue> extends TAForEvery {
     
      void printState()
      {
-    	System.out.println(value);
-    	// value.printstate();
+    	System.out.print(value);
      }
      
 	    TAForEveryBool( TASetBool D)

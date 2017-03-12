@@ -56,7 +56,7 @@ public class TASetBool<T extends TABoolValue>  {
      }
      
      
-     T getBoolObject()
+     T getObject()
      {
     	 return objPool.get(fence);
      }
