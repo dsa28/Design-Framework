@@ -22,6 +22,6 @@ New feature 1:
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
 
-New Feaute 3:
+New Feature 3:
 -Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
 Note: The classes made are frameworks, they require alot of tweaking to respect the requirements.
