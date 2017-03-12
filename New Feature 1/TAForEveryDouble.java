@@ -1,11 +1,10 @@
 
-public class TAForEveryBool extends TAForEvery {
-
+public class TAForEveryDouble extends TAForEvery{
 
     String name;
     
-    TABool x; //The variable to be changed; the variable should be a primitive and not an expression
-    TASetBool domain; //The domain where the formula will be evaluated
+    TADouble x; //The variable to be changed; the variable should be a primitive and not an expression
+    TASetDouble domain; //The domain where the formula will be evaluated
     TABoolValue expression; //The formula itself
     
    
@@ -14,7 +13,7 @@ public class TAForEveryBool extends TAForEvery {
   
     
   
-    void setExpression(TABoolValue e,TABool x)
+    void setExpression(TABoolValue e,TADouble x)
     {
        expression = e;
        this.x= x;
@@ -79,18 +78,18 @@ public class TAForEveryBool extends TAForEvery {
     	System.out.print(value);
      }
      
-	    TAForEveryBool( TASetBool D)
+	    TAForEveryDouble( TASetDouble D)
 	    {
 	        domain = D;
 	    }
 	    
-	    TAForEveryBool(String x, TASetBool D)
+	    TAForEveryDouble(String x, TASetDouble D)
 	    {
 	        name = x;
 	        domain = D;
 	    }
 	    
-	     TAForEveryBool(TASetBool D, TABoolValue formula, TABool x)
+	     TAForEveryDouble(TASetDouble D, TABoolValue formula, TADouble x)
 	    {
 	    
 	    	domain = D;
@@ -98,4 +97,5 @@ public class TAForEveryBool extends TAForEvery {
 	    	this.x = x;
 	    	
 	    }
+
 }

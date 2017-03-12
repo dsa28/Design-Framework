@@ -47,12 +47,22 @@ public class TAForEvery extends TAObject implements TABoolValue {
 	
 	
 	//Constructors to determine the operand types
-	<T extends TABoolValue> TAForEvery (TASetBool D, T expression, TABool x)
+	 TAForEvery (TASetBool D, TABoolValue expression, TABool x)
 	{
 		operation = new TAForEveryBool(D,expression,x);
 	}
 
-	
+	 TAForEvery (TASetInt D, TABoolValue expression, TAInt x)
+	 {
+			operation = new TAForEveryInt(D,expression,x);
+	 }
+
+	 TAForEvery (TASetDouble D, TABoolValue expression, TADouble x)
+	 {
+			operation = new TAForEveryDouble(D,expression,x);
+	}
+
+	 
 	
 
 	protected TAForEvery()
