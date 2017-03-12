@@ -15,3 +15,7 @@ To evaluate the quantifier, we will replace the value of the target variable by 
 Note: Like most operators that can take in different types of values (for instance TAEquals), different versions of TAForEvery and TAExists will have to be implemented.
 (One version for each primitive type for now- maybe a version for pairs and arrays if we find it necessary later)
 
+
+Design decision 4: Different types of TASet were created; one for each primitive data type. This helped in implementing the different TAForEvery and TAExists classes
+(TAForEveryInt TAForEveryDouble TAForEveryBool and TAExistsInt, TAExistsDouble, TAExistsBool)
+
