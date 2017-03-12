@@ -6,3 +6,12 @@ Design decision 2 (Refactoring): We added a class TAFormula from which all boole
 
 Problems: At this point, there is a problem with nested operations. It is possible to fix it by declaring specific classes (TAAddInt instead of TAAnd for example).
 But, this would make the framework harder and less intuitive for the user. We will be trying to find a solution, and if nothing works, a compromise will have to be done.
+
+
+Design decision 3: To support the new features ForEvery and Exists, we needed a concept of domains and variables. To do so, we implemented a class TASet to represent domains.
+A quantifier would take in a domain (TASet), an expression (done by nesting several formula elements together) and a reference to the target variable.
+To evaluate the quantifier, we will replace the value of the target variable by the values of the domain elements (TASet elements) until we find the value.
+
+Note: Like most operators that can take in different types of values (for instance TAEquals), different versions of TAForEvery and TAExists will have to be implemented.
+(One version for each primitive type for now- maybe a version for pairs and arrays if we find it necessary later)
+
