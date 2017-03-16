@@ -19,7 +19,12 @@ public class TAAssign extends TAStatement{
 	//Methods
 	public void list()
 	{
-		System.out.print(t.name + "=" + e1.name);
+		System.out.print( name + " ( ");
+		e1.list();
+		System.out.print( " = ");
+		t.list();
+		System.out.print( " ) ");
+		
 	};
 	
 	public void evaluate()
