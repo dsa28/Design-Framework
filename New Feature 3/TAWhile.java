@@ -4,10 +4,12 @@ public class TAWhile {
 	//Members
 	TAStatement t;
 	TAFormula e;
+	String name ="";
 	
 	//Constructor
-	TAWhile (TAStatement t, TAFormula e)
+	TAWhile (String name, TAStatement t, TAFormula e)
 	{
+		this.name = name;
 		this.t= t;
 		this.e = e;
 	}
@@ -31,7 +33,11 @@ public class TAWhile {
 	
 	public void list()
 	{
-		System.out.print("While" + e.name + "evaluate" + t.name + "else done.");
+		System.out.print( name + ": While ( ");
+		e.list();
+		System.out.print( " ) evaluate ");
+		t.list();
+		System.out.print( " else do nothing. ");
 	}
 	
 	
