@@ -15,7 +15,7 @@ public class TAEmptyStatement extends TAStatement{
 	
 	public void list()
 	{
-		System.out.print(name);
+		System.out.print("Phi " + name);
 	}
 	
 }
