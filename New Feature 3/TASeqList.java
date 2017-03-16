@@ -24,7 +24,12 @@ public class TASeqList extends TAStatement {
 	
 	public void list()
 	{
-		System.out.print( s1.name + " ; " + l.name);
+		System.out.print( name + " ( ");
+		s1.list();
+		System.out.print( " ; ");
+		l.list();
+		System.out.print( " ) ");
+		
 	}
 	
 	
