@@ -18,7 +18,8 @@ New feature 1:
 -Contains the classes for the Exists feature. 
 (TAExists and inherited classes TAExistsInt,TAExistsDouble and TAExistsBool)
   
--Class TATest2 which contains 4 test cases for ForEvery and Exists features.
+-Class TATest2 which contains 13 test cases for ForEvery and Exists features.
+(Including testing for int and bool and nested quantifiers)
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
 
