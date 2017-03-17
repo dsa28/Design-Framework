@@ -1,11 +1,11 @@
-class TAIfElseInt<T extends TAIntValue> extends TAIfElse implements TAIntValue
+class TAIfElseInt extends TAIfElse implements TAIntValue
 {
 		
 	//Three arguments, first one is the condition to be evaluated
 	//The two other are the possible choices
-	TAFormula e1;
-	T e2;
-	T e3;
+	TABoolValue e1;
+	TAIntValue e2;
+	TAIntValue e3;
 	
 	int value; //The value to which the if condition evaluates to
 
@@ -49,7 +49,7 @@ class TAIfElseInt<T extends TAIntValue> extends TAIfElse implements TAIntValue
 	}
 	
 	
-	TAIfElseInt(TAFormula e1, T e2, T e3) {
+	TAIfElseInt(TABoolValue e1, TAIntValue e2, TAIntValue e3) {
 		
 		this.e1 = e1;
 		this.e2 = e2;

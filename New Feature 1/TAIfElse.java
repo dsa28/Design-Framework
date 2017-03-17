@@ -49,17 +49,17 @@ class TAIfElse extends TAObject
 	
 	
 	//Constructors for all possible allowed cases:
-	TAIfElse(TAFormula e1, TAFormula e2, TAFormula e3)
+	TAIfElse(TABoolValue e1, TABoolValue e2, TABoolValue e3)
 	{
 		operation = new TAIfElseBool(e1,e2,e3);
 	}
 	
-	<T extends TAIntValue>TAIfElse(TAFormula e1, T e2, T e3)
+	TAIfElse(TABoolValue e1, TAIntValue e2, TAIntValue e3)
 	{
 		operation = new TAIfElseInt(e1,e2,e3);
 	}
 	
-	<T extends TADoubleValue>TAIfElse(TAFormula e1, T e2, T e3)
+	TAIfElse(TABoolValue e1, TADoubleValue e2, TADoubleValue e3)
 	{
 		
 	}

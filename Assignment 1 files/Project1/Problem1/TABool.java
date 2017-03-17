@@ -1,20 +1,36 @@
 
-public class TABool extends TAFormula implements TABoolValue{
+public class TABool extends TAObject implements TABoolValue{
 
+	/*
+	 *Class TABool represents boolean primitives
+	 *A TABool is forced to have a name
+	 *If no value is given it takes "false" by default
+	 */
+	
+		
+	
+	boolean value;
+	
+	
+	String type()
+	{
+		return "bool";
+	}
+	
 	public boolean value()
 	{
 		return value;
 	}
 	
-	
 	public void list()
-	{System.out.print(name);}
+	{
+		System.out.print(name);
+	}
+	
 	
 	void set(boolean bool)
-	{value=bool;}
-	
-	String type() {
-		return "bool";
+	{
+		value=bool;
 	}
 	
 	
@@ -39,10 +55,7 @@ public class TABool extends TAFormula implements TABoolValue{
 		name = s;
 	}
 	
-	
-	
-	
-	 boolean value;
+
 	 
 
 }

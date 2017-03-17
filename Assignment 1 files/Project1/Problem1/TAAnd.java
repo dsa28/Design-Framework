@@ -1,13 +1,21 @@
 
-public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolValue {
+public class TAAnd extends TAObject implements TABoolValue {
 
  /*
 	 * The AND operator is a binary operator 
 	 * which takes as input two boolean values
 	 * and outputs a boolean value
 	 */
+	
+
+	TABoolValue op1,op2;
+	boolean value;
+
+	
 	public String type()
-	{return "boolean";}
+	{
+		return "boolean";
+	}
 	
 	public void evaluate()
 	{
@@ -21,7 +29,7 @@ public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolVal
 		return value;
 	}
 	
-	TAAnd(T a, T b) 
+	TAAnd(TABoolValue a, TABoolValue b) 
 	{
 			op1 = a;
 			op2 = b;	
@@ -32,7 +40,9 @@ public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolVal
 	public void list()
 	{
 		if (name!= null)
+		{
 			System.out.println(name);
+		}
 		else
 		{
 			System.out.print("(& ");
@@ -40,14 +50,11 @@ public class TAAnd<T extends TABoolValue> extends TAFormula implements TABoolVal
 			System.out.print(" ");
 			op2.list();
 			System.out.print(")");
-			}
+		}
 				
 	}
 	
 	
-	T op1,op2;
-	boolean value;
-
 
 	
 

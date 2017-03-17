@@ -1,12 +1,12 @@
 
-public class TAIfElseDouble<T extends TADoubleValue> extends TAIfElse implements TADoubleValue
+public class TAIfElseDouble extends TAIfElse implements TADoubleValue
 {
 	//Three arguments, first one is the condition to be evaluated
 	//The two other are the possible choices
 	
-		TAFormula e1;
-		T e2;
-		T e3;
+		TABoolValue e1;
+		TADoubleValue e2;
+		TADoubleValue e3;
 		
 		double value; //The value to which the if condition evaluates to
 
@@ -50,7 +50,7 @@ public class TAIfElseDouble<T extends TADoubleValue> extends TAIfElse implements
 		}
 		
 		
-		TAIfElseDouble(TAFormula e1, T e2, T e3) {
+		TAIfElseDouble(TABoolValue e1, TADoubleValue e2, TADoubleValue e3) {
 			
 			this.e1 = e1;
 			this.e2 = e2;

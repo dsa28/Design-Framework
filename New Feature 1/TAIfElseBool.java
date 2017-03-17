@@ -1,16 +1,16 @@
-class TAIfElseBool extends TAIfElse
+class TAIfElseBool extends TAIfElse implements TABoolValue
 {
 	//Three arguments, first one is the condition to be evaluated
 	//The two other are the possible choices
-	TAFormula e1;
-	TAFormula e2;
-	TAFormula e3;
+	TABoolValue e1;
+	TABoolValue e2;
+	TABoolValue e3;
 	
 	boolean value; //The value to which the if condition evaluates to
 
 	
 	//List functionality
-	void list()
+	public void list()
 	{
 		System.out.print("(");
 		e1.list();
@@ -22,7 +22,7 @@ class TAIfElseBool extends TAIfElse
 	}
 	
 	
-	void evaluate()
+	public void evaluate()
 	{
 		e1.evaluate();
 		if (e1.value())
@@ -37,7 +37,7 @@ class TAIfElseBool extends TAIfElse
 	}
 	
 	
-	boolean value()
+	public boolean value()
 	{
 		return value;
 	}
@@ -48,7 +48,8 @@ class TAIfElseBool extends TAIfElse
 	}
 	
 	
-	TAIfElseBool(TAFormula e1, TAFormula e2, TAFormula e3) {
+	TAIfElseBool(TABoolValue e1, TABoolValue e2, TABoolValue e3) 
+	{
 		
 		this.e1 = e1;
 		this.e2 = e2;
