@@ -1,15 +1,22 @@
-public class TAEqualDouble<T extends TADoubleValue> extends TAEqual implements TABoolValue {
-
+public class TAEqualDouble extends TAEqual implements TABoolValue {
+	
+	TADoubleValue op1, op2;
+	boolean value;
+	
 	 public void evaluate()
-	 {op1.evaluate();
-	 op2.evaluate();
-	value = op1.value()==op2.value();}
+	 {
+		 op1.evaluate();
+		 op2.evaluate();
+		 value = op1.value()==op2.value();
+	}
 	 
 	 
 	public void list()
 	{
 		if (name!= null)
+		{
 			System.out.println(name);
+		}
 		else
 		{
 			System.out.print("(= ");
@@ -17,7 +24,7 @@ public class TAEqualDouble<T extends TADoubleValue> extends TAEqual implements T
 			System.out.print(" ");
 			op2.list();
 			System.out.print(")");
-			}
+		}
 				
 	}
 	
@@ -35,37 +42,27 @@ public class TAEqualDouble<T extends TADoubleValue> extends TAEqual implements T
 	
 	 
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
 
 	
 	
-	
-	
-	
-
-	
-	 TAEqualDouble(T a, T b)
+	 TAEqualDouble(TADoubleValue a, TADoubleValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
 	}
 	 
-	 TAEqualDouble (T a, T b, String s)
+	 TAEqualDouble (TADoubleValue a, TADoubleValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
 	 }
 	
 	 
-	
-	 
-	 
-	T op1, op2;
-	boolean value;
-	
-	
-	
+		
 	
 }

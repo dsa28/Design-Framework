@@ -1,15 +1,23 @@
-public class TAEqualBool<T extends TABoolValue> extends TAEqual implements TABoolValue {
+public class TAEqualBool extends TAEqual implements TABoolValue {
 
+	TABoolValue op1, op2;
+	boolean value;
+	
+	
 	 public void evaluate()
-	 {op1.evaluate();
-	 op2.evaluate();
-	value = op1.value()==op2.value();}
+	 {
+		 op1.evaluate();
+		 op2.evaluate();
+		 value = (op1.value()==op2.value());
+	}
 	 
 	 
 	public void list()
 	{
 		if (name!= null)
+		{
 			System.out.println(name);
+		}
 		else
 		{
 			System.out.print("(= ");
@@ -35,36 +43,27 @@ public class TAEqualBool<T extends TABoolValue> extends TAEqual implements TABoo
 	
 	 
 	public boolean value()
-	{return value;}
-	
-
-	
-	
-	
+	{
+		return value;
+	}
 	
 	
 
 	
-	 TAEqualBool(T a, T b)
+	 TAEqualBool(TABoolValue a, TABoolValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
 	}
 	 
-	 TAEqualBool (T a, T b, String s)
+	 TAEqualBool (TABoolValue a, TABoolValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
 	 }
 	
 	 
-	
-	 
-	 
-	T op1, op2;
-	boolean value;
-	
 	
 	
 	
