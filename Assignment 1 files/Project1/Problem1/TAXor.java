@@ -1,5 +1,5 @@
 
-public class TAXor extends TAFormula implements TABoolValue {
+public class TAXor extends TAObject implements TABoolValue {
 	
 	TABoolValue op1, op2;
 	boolean value;

@@ -1,5 +1,5 @@
 
-public class TANot extends TAFormula implements TABoolValue {
+public class TANot extends TAObject implements TABoolValue {
 	
 	TABoolValue op;
 	boolean value;

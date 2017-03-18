@@ -1,5 +1,5 @@
 
-public class TAImplies extends TAFormula implements TABoolValue{
+public class TAImplies extends TAObject implements TABoolValue{
 	
 	
 	TABoolValue op1, op2;
