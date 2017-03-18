@@ -28,12 +28,11 @@ public class TACeilingDouble extends TACeiling implements TAIntValue{
 	{
 		if (name != null)
 		{
-			System.out.print(name);
+			ListStrategy.list(name);
 		}
 		else
-		{System.out.print("(ceiling" + " " );
-		op.list();
-		System.out.print(")");
+		{
+			ListStrategy.list("ceiling", op);
 		}
 	}
 	

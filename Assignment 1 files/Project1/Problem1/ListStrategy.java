@@ -22,11 +22,19 @@ public class ListStrategy {
 	
 	static void list(String operator, TAValue op1, TAValue op2 )
 	{
-		//Function with two operands
+		//Operator with two operands
 		System.out.print("(" + operator + " ");
 		op1.list();
 		System.out.print(" ");
 		op2.list();
+		System.out.print(")");
+	}
+	
+	static void list(String operator, TAValue op)
+	{
+		//Unary operator
+		System.out.print("(" + operator +  " " );
+		op.list();
 		System.out.print(")");
 	}
 	

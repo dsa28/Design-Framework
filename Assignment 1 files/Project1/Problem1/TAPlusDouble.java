@@ -1,5 +1,9 @@
-public class TAPlusDouble<T extends TADoubleValue> extends TAPlus implements TADoubleValue {
+public class TAPlusDouble extends TAPlus implements TADoubleValue {
 
+ 
+	TADoubleValue op1, op2;
+	double value;
+	
 	
 	public void evaluate()
 	 {
@@ -12,15 +16,13 @@ public class TAPlusDouble<T extends TADoubleValue> extends TAPlus implements TAD
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(+ ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("+", op1,op2);
+		}
 				
 	}
 	
@@ -40,39 +42,22 @@ public class TAPlusDouble<T extends TADoubleValue> extends TAPlus implements TAD
 	{
 		return value;
 	}
+
+
 	
-	
-	void operands()
-	{
-		System.out.println(op1.value() + " " + op2.value());
-	}
-	
-	
-	
-	
-	
-	
-	 TAPlusDouble(T a, T b)
+	 TAPlusDouble(TADoubleValue a, TADoubleValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
 	}
 	 
-	 TAPlusDouble (T a, T b, String s)
+	 TAPlusDouble (TADoubleValue a, TADoubleValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
 	 }
 	
-	 
-	
-	 
-	 
-	T op1, op2;
-	double value;
-	
-	
-	
+
 	
 }

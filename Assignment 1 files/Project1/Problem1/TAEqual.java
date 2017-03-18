@@ -1,5 +1,5 @@
 
-public class TAEqual implements TABoolValue{
+public class TAEqual extends TAObject implements TABoolValue{
 	
 	
 	TAEqual operation;

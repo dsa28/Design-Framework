@@ -1,10 +1,16 @@
 
-public class TAXor<T extends TABoolValue> extends TAFormula implements TABoolValue {
+public class TAXor extends TAFormula implements TABoolValue {
 	
+	TABoolValue op1, op2;
+	boolean value;
+
 	String type()
-	{return "bool";}
+	{
+		return "bool";
+	}
 	
-	public void evaluate() {
+	public void evaluate()
+	{
 		op1.evaluate();
 		op2.evaluate();
 		value = (op1.value()||op2.value()) && !(op1.value()&&op2.value());
@@ -12,9 +18,11 @@ public class TAXor<T extends TABoolValue> extends TAFormula implements TABoolVal
 	}
 	
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
-	TAXor(T a, T b) 
+	TAXor(TABoolValue a, TABoolValue b) 
 	{
 		
 			op1 = a;
@@ -27,23 +35,14 @@ public class TAXor<T extends TABoolValue> extends TAFormula implements TABoolVal
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(= ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
-				
+			ListStrategy.list("xor", op1, op2);
+		}	
 	}
-	
-	
-	T op1, op2;
-	boolean value;
-
-
 	
 	
 	

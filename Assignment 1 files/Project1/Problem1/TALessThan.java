@@ -1,5 +1,7 @@
 
-public class TALessThan extends TAFormula implements TABoolValue{
+public class TALessThan extends TAObject implements TABoolValue{
+	
+	TALessThan operation;
 	
 	String type()
 	{
@@ -12,7 +14,9 @@ public class TALessThan extends TAFormula implements TABoolValue{
 	}
 	
 	public void evaluate()
-	{operation.evaluate();}
+	{
+		operation.evaluate();
+	}
 	
 	public void list()
 	{
@@ -25,20 +29,32 @@ public class TALessThan extends TAFormula implements TABoolValue{
 	
 	
 	void printState()
-	{System.out.println(operation.value());}
+	{
+		System.out.println(operation.value());
+	}
 	
-	<E extends TAIntValue> TALessThan (E a, E b) 
-	{operation = new TALessThanInt(a,b);}
-	<E extends TADoubleValue> TALessThan (E a, E b)
-	{operation = new TALessThanDouble(a,b);}
+	TALessThan (TAIntValue a, TAIntValue b) 
+	{
+		operation = new TALessThanInt(a,b);
+	}
+	
+	TALessThan (TADoubleValue a, TADoubleValue b)
+	{
+		operation = new TALessThanDouble(a,b);
+	}
 	
 	
 	
 	
-	<E extends TAIntValue> TALessThan (E a, E b, String s)
-	{operation = new TALessThanInt(a,b,s);}
-	<E extends TADoubleValue> TALessThan (E a, E b, String s)
-	{operation = new TALessThanDouble(a,b,s);}
+	 TALessThan (TAIntValue a, TAIntValue b, String s)
+	{
+		 operation = new TALessThanInt(a,b,s);
+	}
+	 
+	 TALessThan (TADoubleValue a, TADoubleValue b, String s)
+	{
+		 operation = new TALessThanDouble(a,b,s);
+	}
 	
 	
 	
@@ -46,7 +62,7 @@ public class TALessThan extends TAFormula implements TABoolValue{
 
 	
 	
-	TALessThan operation;
-	String name;
+	
+	
 	
 }

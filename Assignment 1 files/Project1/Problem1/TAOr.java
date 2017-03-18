@@ -1,8 +1,12 @@
 
-public class TAOr<T extends TABoolValue> extends TAFormula implements TABoolValue {
+public class TAOr extends TAFormula implements TABoolValue {
 
+	TABoolValue op1, op2;
+	boolean value;
+	
 	String type()
-	{return "bool";
+	{
+		return "bool";
 	}
 	
 	public void evaluate() {
@@ -18,7 +22,7 @@ public class TAOr<T extends TABoolValue> extends TAFormula implements TABoolValu
 		return value;
 	}
 	
-	TAOr(T a, T b) 
+	TAOr(TABoolValue a, TABoolValue b) 
 	{
 		
 			
@@ -31,23 +35,15 @@ public class TAOr<T extends TABoolValue> extends TAFormula implements TABoolValu
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(or ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("or", op1, op2);
+		}
 				
 	}
-	
-	
-	T op1, op2;
-	boolean value;
-
-	
 	
 
 }

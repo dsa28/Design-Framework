@@ -1,8 +1,14 @@
 
-public class TANot<T extends TABoolValue> extends TAFormula implements TABoolValue {
+public class TANot extends TAFormula implements TABoolValue {
+	
+	TABoolValue op;
+	boolean value;
+
 	
 	String type()
-	{return "bool";}
+	{
+		return "bool";
+	}
 	
 	
 	public void evaluate() {
@@ -12,9 +18,11 @@ public class TANot<T extends TABoolValue> extends TAFormula implements TABoolVal
 	}
 	
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
-	TANot(T a)
+	TANot(TABoolValue a)
 	{
 		op = a;
 	}
@@ -22,20 +30,15 @@ public class TANot<T extends TABoolValue> extends TAFormula implements TABoolVal
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(not ");
-			op.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("not", op);
+		}
 				
 	}
-	
-	T op;
-	boolean value;
-
-	
 	
 	
 }
