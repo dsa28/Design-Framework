@@ -20,4 +20,14 @@ public class ListStrategy {
 		System.out.print(name);
 	}
 	
+	static void list(String operator, TAValue op1, TAValue op2 )
+	{
+		//Function with two operands
+		System.out.print("(" + operator + " ");
+		op1.list();
+		System.out.print(" ");
+		op2.list();
+		System.out.print(")");
+	}
+	
 }

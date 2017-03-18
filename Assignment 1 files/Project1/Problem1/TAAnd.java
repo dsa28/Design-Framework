@@ -41,15 +41,11 @@ public class TAAnd extends TAObject implements TABoolValue {
 	{
 		if (name!= null)
 		{
-			System.out.println(name);
+			ListStrategy.list(name);
 		}
 		else
 		{
-			System.out.print("(& ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
+			ListStrategy.list("&", op1, op2);
 		}
 				
 	}

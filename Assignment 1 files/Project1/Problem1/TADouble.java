@@ -12,7 +12,7 @@ public class TADouble extends TAObject implements TADoubleValue {
 	
 	public void list()
 	{
-		System.out.print(name);
+		ListStrategy.list(name);
 	}
 	
 	public void evaluate()
