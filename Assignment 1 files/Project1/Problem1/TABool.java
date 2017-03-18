@@ -24,7 +24,7 @@ public class TABool extends TAObject implements TABoolValue{
 	
 	public void list()
 	{
-		System.out.print(name);
+		ListStrategy.list(name);
 	}
 	
 	
