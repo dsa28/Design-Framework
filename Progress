@@ -19,3 +19,8 @@ Note: Like most operators that can take in different types of values (for instan
 Design decision 4: Different types of TASet were created; one for each primitive data type. This helped in implementing the different TAForEvery and TAExists classes
 (TAForEveryInt TAForEveryDouble TAForEveryBool and TAExistsInt, TAExistsDouble, TAExistsBool)
 
+Design decision 5: The class TAFormula seemed to be useless (TABoolValue takes care of its job), we removed it.
+
+Design decision 6: We found many duplicated code in alot of classes, among which the list function. We will try solving it using startegy pattern.
+For now, we will be using a static class TAListStrategy which includes all needed methods. If necessary, we will use singleton pattern and inheritance later on.
+
