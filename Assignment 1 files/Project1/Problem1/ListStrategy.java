@@ -9,10 +9,12 @@ public class ListStrategy {
 	 *-Primitive types or function with name- prints the name
 	 *-Unary operator
 	 *-Binary operator
+	 *-Functions like (e1?e2:e3) or (for every a1 in a2: a3) (3 operands separated by strings)
 	 *
 	 *Finally, because all these functions are similar, we can either make the class static or use the singleton method
 	 *For now we will try making it static
 	 */
+	
 	
 	static void list(String name)
 	{
@@ -38,4 +40,14 @@ public class ListStrategy {
 		System.out.print(")");
 	}
 	
+	static void list(String operator1, TAValue op1, String operator2, TAValue op2, String operator3, TAValue op3)
+	{
+		System.out.print("(" + operator1);
+    	op1.list();
+    	System.out.print(operator2);
+    	op2.list();
+    	System.out.print(operator3);
+    	op3.list();
+    	System.out.print(")");
+	}
 }

@@ -12,13 +12,7 @@ class TAIfElseBool extends TAIfElse implements TABoolValue
 	//List functionality
 	public void list()
 	{
-		System.out.print("(");
-		e1.list();
-		System.out.print("?");
-		e2.list();
-		System.out.print(":");
-		e3.list();
-		System.out.print(")");
+		ListStrategy.list("", e1, "?", e2, ":", e3);
 	}
 	
 	

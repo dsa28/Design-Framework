@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TASetBool<T extends TABoolValue>  {
+public class TASetBool<T extends TABoolValue> implements TAValue {
 
 /*
  * A set that only contains booleans or operations that return booleans
@@ -70,6 +70,11 @@ public class TASetBool<T extends TABoolValue>  {
          domainSetName = name;
          objPool = new ArrayList<T>();
      }
+
+	
+	public void evaluate() {
+		
+	}
      
    
       

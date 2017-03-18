@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TASetInt {
+public class TASetInt implements TAValue {
 	/*
 	 * A set that only contains integers or operations that return integers
 	 */
@@ -69,6 +69,12 @@ public class TASetInt {
 	         domainSetName = name;
 	         objPool = new ArrayList<TAIntValue>();
 	     }
+
+		
+		public void evaluate() {
+			
+			
+		}
 	     
 	   
 	      

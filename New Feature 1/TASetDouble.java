@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TASetDouble {
+public class TASetDouble implements TAValue {
 	/*
 	 * A set that only contains booleans or operations that return booleans
 	 */
@@ -69,5 +69,10 @@ public class TASetDouble {
 	         domainSetName = name;
 	         objPool = new ArrayList<TADoubleValue>();
 	     }
+
+	
+		public void evaluate() {
+			
+		}
 	     
 }

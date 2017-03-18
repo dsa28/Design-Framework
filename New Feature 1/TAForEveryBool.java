@@ -24,13 +24,7 @@ public class TAForEveryBool extends TAForEvery {
     
     public void list()
     {
-    	System.out.print("(for every ");
-    	x.list();
-    	System.out.print(" in ");
-    	domain.list();
-    	System.out.print(": ");
-    	expression.list();
-    	System.out.print(")");
+    	ListStrategy.list("for every ", x, " in ", domain, ": ", expression);
     }
     
     
