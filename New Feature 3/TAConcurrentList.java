@@ -3,21 +3,34 @@ public class TAConcurrentList extends TAStatement {
 
 	//This should be limited to statements (can be an empty statement)
 	TAStatement l;
-	//This should be limited to atomic statements
-	TAStatement s1;
+	//s1 should be an atomic statement
+	TAAtomicStatement s1;
 	
-	TAConcurrentList(String seqName, TAStatement l, TAStatement s1)
+	String name;
+	
+	TAConcurrentList (TAAtomicStatement s1, TAStatement l)
 	{
-		name = seqName;
 		this.l = l;
 		this.s1 = s1;
-		
+	}
+	TAConcurrentList(String seqName, TAAtomicStatement s1, TAStatement l)
+	{
+		this(s1,l);
+		name = seqName;	
 	}
 	
 	public void evaluate()
 	{
-		//Create temp TAStatement to keep a copy of l, respecting the following statement:
+	
 		//"That is all right hand side expressions in the assignment statements in s1 and l must be evaluated before updating the corresponding target terms."
+		//ie. evaluate the right hand expression of either s or l, say s
+		//Store the result in a temporary variable
+		//Evaluate the right hand expression of the other statement, say l
+		//Assign the results
+		
+		//(The order in which s and l are executed does not matter unless a variable value is changed;
+		//-- when there is an assignment)
+		
 		//TODO: THIS SHOULD BE DIFFERENT!
 		TAStatement temp = l;
 		s1.evaluate();
@@ -29,11 +42,7 @@ public class TAConcurrentList extends TAStatement {
 	
 	public void list()
 	{
-		System.out.print( name + " ( ");
-		s1.list();
-		System.out.print( " ; ");
-		l.list();
-		System.out.print( " ) ");
+		ListStrategy.list(s1, "|", l);
 	}
 	
 	

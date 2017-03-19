@@ -5,6 +5,7 @@ public class TASeqList extends TAStatement {
 	TAStatement l;
 	//This should be limited to atomics statements
 	TAStatement s1;
+	String name;
 	
 	TASeqList(String seqName, TAStatement l, TAStatement s1)
 	{
@@ -24,11 +25,7 @@ public class TASeqList extends TAStatement {
 	
 	public void list()
 	{
-		System.out.print( name + " ( ");
-		s1.list();
-		System.out.print( " ; ");
-		l.list();
-		System.out.print( " ) ");
+		ListStrategy.list(s1,";",l);
 		
 	}
 	

@@ -1,38 +1,51 @@
 
-public class TAAssign extends TAStatement{
+public class TAAssign extends TAAtomicStatement{
 
 	//Members
-	TAFormula e1;
+	String name;
+	TABoolValue e1;
 	TABool t;
 	
 	
 	//Constructor
 	//Boolean Constructor
-	TAAssign( String name, TABool target, TAFormula expression ){
-		
+	TAAssign( String name, TABool target,TABoolValue expression )
+	{
+		this(target,expression);
 		this.name = name;
-		t = target;
-		e1 = expression;
 		
 	}
+	
+	TAAssign (TABool target, TABoolValue expression)
+	{
+		t = target;
+		e1 = expression;
+	}
+	
 	
 	//Methods
 	public void list()
 	{
-		System.out.print( name + " ( ");
-		e1.list();
-		System.out.print( " = ");
-		t.list();
-		System.out.print( " ) ");
+		ListStrategy.list( "=",t, e1);
 		
-	};
+	}
 	
 	public void evaluate()
 	{
 		e1.evaluate();
 		t.set(e1.value());
 		
-	};
+	}
+	
+	public TAAssign copy()
+	{
+		//When copying an assignment statement, we need to create a new variable 
+		//in which we will store the result
+		//This will be useful in concurrent list statements
+		TABool clone = new TABool("temp");
+		return new TAAssign(clone,t);
+		
+	}
 	
 	
 	

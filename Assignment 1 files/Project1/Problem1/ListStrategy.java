@@ -10,18 +10,21 @@ public class ListStrategy {
 	 *-Unary operator
 	 *-Binary operator
 	 *-Functions like (e1?e2:e3) or (for every a1 in a2: a3) (3 operands separated by strings)
+	 *-Statements
 	 *
 	 *Finally, because all these functions are similar, we can either make the class static or use the singleton method
 	 *For now we will try making it static
 	 */
 	
 	
+	//List name
 	static void list(String name)
 	{
 		//If an object has a name, we simply print its name
 		System.out.print(name);
 	}
 	
+	//List binary operators
 	static void list(String operator, TAValue op1, TAValue op2 )
 	{
 		//Operator with two operands
@@ -32,6 +35,7 @@ public class ListStrategy {
 		System.out.print(")");
 	}
 	
+	//list unary operators
 	static void list(String operator, TAValue op)
 	{
 		//Unary operator
@@ -40,6 +44,7 @@ public class ListStrategy {
 		System.out.print(")");
 	}
 	
+	//Function to print for all, for every, if else
 	static void list(String operator1, TAValue op1, String operator2, TAValue op2, String operator3, TAValue op3)
 	{
 		System.out.print("(" + operator1);
@@ -48,6 +53,17 @@ public class ListStrategy {
     	op2.list();
     	System.out.print(operator3);
     	op3.list();
+    	System.out.print(")");
+	}
+	
+	//Function to print statements
+	static void list(TAStatement op1, String operator, TAStatement op2)
+	{
+		System.out.print("(" );
+    	op1.list();
+    	System.out.print(operator);
+    	op2.list();
+   
     	System.out.print(")");
 	}
 }

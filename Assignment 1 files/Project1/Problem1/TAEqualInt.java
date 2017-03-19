@@ -20,7 +20,7 @@ public class TAEqualInt extends TAEqual implements TABoolValue {
 		}
 		else
 		{
-			ListStrategy.list("=", op1, op2);
+			ListStrategy.list("==", op1, op2);
 		}
 				
 	}

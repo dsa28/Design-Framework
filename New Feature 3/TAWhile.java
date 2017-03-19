@@ -1,13 +1,13 @@
 
-public class TAWhile {
+public class TAWhile extends TAAtomicStatement{
 
 	//Members
 	TAStatement t;
-	TAFormula e;
+	TABoolValue e;
 	String name ="";
 	
 	//Constructor
-	TAWhile (String name, TAStatement t, TAFormula e)
+	TAWhile (String name, TAStatement t, TABoolValue e)
 	{
 		this.name = name;
 		this.t= t;
@@ -33,6 +33,7 @@ public class TAWhile {
 	
 	public void list()
 	{
+	//TODO rewrite this
 		System.out.print( name + ": While ( ");
 		e.list();
 		System.out.print( " ) evaluate ");

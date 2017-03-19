@@ -1,9 +1,16 @@
 
 public class TAEmptyStatement extends TAStatement{
 
+	String name;
+	
 	TAEmptyStatement ( String name)
 	{
 		this.name = name;
+	}
+	
+	TAEmptyStatement()
+	{
+		
 	}
 	
 	//Methods
@@ -15,7 +22,8 @@ public class TAEmptyStatement extends TAStatement{
 	
 	public void list()
 	{
-		System.out.print("Phi " + name);
+		//empty statements are represented by two quotations
+		ListStrategy.list("\"\"");
 	}
 	
 }
