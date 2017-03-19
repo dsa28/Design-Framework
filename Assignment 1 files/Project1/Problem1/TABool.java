@@ -37,9 +37,9 @@ public class TABool extends TAObject implements TABoolValue{
 	public void evaluate()
 	{}
 	
-	void pritnState()
+	void printState()
 	{
-		System.out.println(value);
+		System.out.print(value);
 	}
 	
 	
