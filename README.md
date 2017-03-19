@@ -25,4 +25,7 @@ New feature 1:
 
 New Feature 3:
 -Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
+
+-Class TATest3 which contains 3 test cases to test statements
+
 Note: The classes made are frameworks, they require alot of tweaking to respect the requirements.
