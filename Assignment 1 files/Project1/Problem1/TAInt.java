@@ -6,7 +6,7 @@ public class TAInt extends TAObject implements TAIntValue {
 	
 	void printstate()
 	{
-		System.out.println(value);
+		System.out.print(value);
 	}
 	
 	

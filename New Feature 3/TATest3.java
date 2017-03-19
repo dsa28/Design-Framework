@@ -7,6 +7,13 @@ public class TATest3 {
 		TABool b2 = new TABool("b2");
 		TABool b3 = new TABool("b3");
 		
+		TAInt x = new TAInt("x");
+		TAInt one = new TAInt("1");
+		TAInt two = new TAInt("2");
+		
+		one.set(1);
+		two.set(2);
+		
 		b1.set(true);
 		
 		
@@ -52,6 +59,28 @@ public class TATest3 {
 		System.out.println();
 		condition.evaluate();
 		b2.printState(); //Should print false
+		System.out.println();
+		
+		//Test 4 and 5: Condition statement and assignment for integers
+		TAAssign a1 = new TAAssign(x,new TAPlusInt(x,one));
+		TAAssign a2 = new TAAssign(x,new TAPlusInt(x,two));
+		x.set(0);
+		
+		condition = new TACondition(b2,a1,a2);
+		
+		//Test 4
+		condition.list(); //Should print (if (b2) then (x = (+ x 1)) else (x = (+ x 2)))
+		
+		System.out.println();
+		condition.evaluate();
+		x.printstate(); //Should print 2
+		System.out.println();
+		
+		//Test 5
+		b2.set(true);
+		condition.evaluate();
+		x.printstate(); //Should print 3
+		System.out.println();
 		
 		
 	}

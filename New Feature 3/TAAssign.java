@@ -1,52 +1,76 @@
 
-public class TAAssign extends TAAtomicStatement{
+public class TAAssign extends TAAtomicStatement {
 
+	/*
+	 * Because assignments can be done on all types of variables
+	 * (TABool, TAInt, TADouble), we need to make a different version for each class
+	 * 
+	 */
 	//Members
 	String name;
-	TABoolValue e1;
-	TABool t;
+	TAAssign operation;
 	
+	protected TAAssign()
+	{
+		
+	}
 	
 	//Constructor
 	//Boolean Constructor
 	TAAssign( String name, TABool target,TABoolValue expression )
 	{
-		this(target,expression);
+		operation = new TAAssignBool(name,target,expression);
 		this.name = name;
 		
 	}
 	
 	TAAssign (TABool target, TABoolValue expression)
 	{
-		t = target;
-		e1 = expression;
+		operation = new TAAssignBool(target,expression);
 	}
 	
 	
+	//Integer Constructor
+	TAAssign( String name, TAInt target,TAIntValue expression )
+	{
+		operation = new TAAssignInt(name,target,expression);
+		this.name = name;
+
+	}
+
+	TAAssign (TAInt target, TAIntValue expression)
+	{
+		operation = new TAAssignInt(target,expression);
+	}
+
+	//Double Constructor
+	TAAssign( String name, TADouble target,TADoubleValue expression )
+	{
+		operation = new TAAssignDouble(name,target,expression);
+		this.name = name;
+
+	}
+
+	TAAssign (TADouble target, TADoubleValue expression)
+	{
+		operation = new TAAssignDouble(target,expression);
+	}
+		
+
 	//Methods
 	public void list()
 	{
-		ListStrategy.list( "=",t, e1);
+		operation.list();
 		
 	}
 	
 	public void evaluate()
 	{
-		e1.evaluate();
-		t.set(e1.value());
-		
-	}
-	
-	public TAAssign copy()
-	{
-		//When copying an assignment statement, we need to create a new variable 
-		//in which we will store the result
-		//This will be useful in concurrent list statements
-		TABool clone = new TABool("temp");
-		return new TAAssign(clone,t);
+		operation.evaluate();
 		
 	}
 	
 	
 	
+
 }
