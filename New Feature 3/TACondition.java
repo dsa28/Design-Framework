@@ -12,14 +12,19 @@ public class TACondition extends TAAtomicStatement {
 	//Boolean Constructor
 	TACondition( String name, TAStatement s1, TAStatement s2, TABoolValue expression )
 	{
-
+		this (expression,s1,s2);
 		this.name = name;
+		
+	}
+	
+	TACondition (TABoolValue expression,TAStatement s1, TAStatement s2)
+	{
 		this.s1 = s1;
 		this.s2 = s2;
 		e1 = expression;
-
 	}
-
+	
+	
 	//Methods
 	public void list()
 	{
@@ -30,7 +35,7 @@ public class TACondition extends TAAtomicStatement {
 		System.out.print( " } else { ");
 		s2.list();
 		System.out.print( " }");
-	};
+	}
 
 	
 	public void evaluate()
@@ -45,7 +50,7 @@ public class TACondition extends TAAtomicStatement {
 			s2.evaluate();
 		}
 
-	};
+	}
 
 
 
