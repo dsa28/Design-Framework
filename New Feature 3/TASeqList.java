@@ -27,7 +27,12 @@ public class TASeqList extends TAStatement {
 		s1.evaluate();
 		l.evaluate();
 		
-		
+	}
+	
+	public void evaluate(TAStatement a)
+	{
+		s1.evaluate(a);
+		l.evaluate(a);
 	}
 	
 	public void list()

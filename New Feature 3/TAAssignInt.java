@@ -31,10 +31,13 @@ public class TAAssignInt extends TAAssign{
 		
 	}
 	
-	public void evaluate()
+	public void evaluate(TAStatement a)
 	{
+		
 		e1.evaluate();
-		t.set(e1.value());
+		int temp = e1.value();
+		a.evaluate();
+		t.set(temp);
 		
 	}
 	

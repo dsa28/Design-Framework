@@ -10,18 +10,16 @@ public abstract class TAStatement implements TAValue {
 	public void list() {}
 	
 	public void evaluate() {
-		//To evaluate a statement,
-		//First we will evaluate the right part
-		//Then, according to the returned result, we will evaluate left
-		
-		//TAObject temp = evaluateRight();
-		//evaluateLeft(temp);
+		evaluate(new TAEmptyStatement()); //evaluate with an empty statement in between
+		//When there is no concurrent statement
 	}
 	
-	//Evaluate left and right part separately
-	//This could help in concurrent lists
-	//abstract TAObject evaluateRight();
-	//abstract TAObject evaluateLeft(TAObject temp); 
+	//Neat trick: 
+	//When evaluating a statement,
+	//we can place a statement "inside" it
+	//And evaluate it concurrently
+	//To get a concurrent list
+	abstract public void evaluate(TAStatement s);
 	
 	String type()
 	{

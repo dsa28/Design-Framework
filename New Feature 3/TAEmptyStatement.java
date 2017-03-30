@@ -15,9 +15,13 @@ public class TAEmptyStatement extends TAStatement{
 	
 	//Methods
 	
-	public void evaluate()
+	public void evaluate(TAStatement a)
 	{
 		//Does nothing
+		if (a.getClass() != this.getClass()) //not an empty statement
+		{
+			a.evaluate();
+		}
 	}
 	
 	public void list()

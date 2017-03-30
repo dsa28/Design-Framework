@@ -32,19 +32,22 @@ public class TACondition extends TAAtomicStatement {
 	}
 
 	
-	public void evaluate()
+	public void evaluate(TAStatement a)
 	{
 		
 		e1.evaluate();
 		
+		//When concurrently evaluating the if statement,
+		//decide which statement to apply
+		//and evaluate it concurrently with a
 		
 		if (e1.value())
 		{
-			s1.evaluate();
+			s1.evaluate(a);
 		}
 		else
 		{
-			s2.evaluate();
+			s2.evaluate(a);
 		}
 
 	}

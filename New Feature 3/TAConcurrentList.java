@@ -19,23 +19,13 @@ public class TAConcurrentList extends TAStatement {
 		name = seqName;	
 	}
 	
-	public void evaluate()
+	public void evaluate(TAStatement a)
 	{
 	
-		//"That is all right hand side expressions in the assignment statements in s1 and l must be evaluated before updating the corresponding target terms."
-		//ie. evaluate the right hand expression of either s or l, say s
-		//Store the result in a temporary variable
-		//Evaluate the right hand expression of the other statement, say l
-		//Assign the results
-		
-		//(The order in which s and l are executed does not matter unless a variable value is changed;
-		//-- when there is an assignment)
-		
-		//TODO: THIS SHOULD BE DIFFERENT!
-		TAStatement temp = l;
-		s1.evaluate();
-		temp.evaluate();
-		l = temp;
+		//To concurrently evaluate two statements,
+		//We will "sandwish" one statement in between the 
+		//evaluation of the right and left side of the other statement
+		s1.evaluate(l);
 		
 		
 	}

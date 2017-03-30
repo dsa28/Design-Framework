@@ -23,13 +23,13 @@ public class TAWhile extends TAAtomicStatement{
 	
 	
 	//Methods
-	public void evaluate ()
+	public void evaluate (TAStatement a)
 	{
 		e.evaluate();
 		while (e.value())
 		{
 			//It evaluates our target statement t
-			t.evaluate();
+			t.evaluate(a);
 			
 			e.evaluate(); //reevaluates e
 		//System.out.println("loop");

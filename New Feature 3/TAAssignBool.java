@@ -30,10 +30,12 @@ public class TAAssignBool extends TAAssign{
 		
 	}
 	
-	public void evaluate()
+	public void evaluate(TAStatement a)
 	{
-		e1.evaluate();
-		t.set(e1.value());
+		e1.evaluate(); //right side
+		boolean temp = e1.value();
+		a.evaluate(); //other equation
+		t.set(temp); //assign 
 		
 	}
 	

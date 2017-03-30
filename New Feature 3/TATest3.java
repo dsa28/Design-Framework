@@ -102,7 +102,7 @@ public class TATest3 {
 		TAOr or = new TAOr (less, b1); //(or (< i 5) b1)
 		TAAnd and = new TAAnd(less,b1);
 		
-		condition = new TACondition(equal, assign2, s) ;//(if (= i 3)
+		condition = new TACondition(equal, assign2, s) ;
 		
 		TASeqList list = new TASeqList(assign,condition);
 		
@@ -131,7 +131,7 @@ public class TATest3 {
 		
 		b1.set(true);
 		i.set(0);
-		//Test 7
+		//Test 9
 		loop = new TAWhile(or,list);
 		loop.list(); //Should print (while (or (< i 5) b1) ((+ i 1);(if (= i 3) (b1 = false))
 		loop.evaluate();
@@ -144,7 +144,7 @@ public class TATest3 {
 		
 		b1.set(true);
 		i.set(0);
-		//Test 8
+		//Test 10
 		loop = new TAWhile(and,list);
 		loop.list(); //Should print (while (& (< i 5) b1) ((+ i 1);(if (= i 3) (b1 = false))
 		loop.evaluate();
@@ -154,6 +154,43 @@ public class TATest3 {
 		b1.printState(); //should print false
 		System.out.println();
 		
+		//Test 11:
+		//Testing concurrent statements
+		i.set(2);
+		b1.set(true);
+		
+		TAConcurrentList concurrent = new TAConcurrentList(assign,condition);
+		concurrent.list();
+		concurrent.evaluate();
+		System.out.println();
+		b1.printState(); //Should print true 
+		System.out.println();
+		i.printstate(); //should print 3
+		System.out.println();
+		
+		//Test 12: Comparing to sequential list
+		i.set(2);
+		b1.set(true);
+		
+		list.list();
+		list.evaluate();
+		System.out.println();
+		b1.printState(); //should print false
+		System.out.println();
+		i.printstate(); //should print 3
+		System.out.println();
+
+		//Test 13: inverting the order of the statements
+		i.set(2);
+		b1.set(true);
+		concurrent = new TAConcurrentList(condition,assign);
+		concurrent.list();
+		concurrent.evaluate();
+		System.out.println();
+		b1.printState(); //Should print true 
+		System.out.println();
+		i.printstate(); //should print 3
+		System.out.println();
 	}
 
 }
