@@ -11,6 +11,8 @@ public class TAComponent {
 	
 	ArrayList<TAState> states;
 	ArrayList<TAPort> ports;
+	ArrayList<TATransition> transitions;
+	ArrayList<TATransitionLabel> labels;
 	
 	TAState initial;
 	TAState current;
@@ -25,6 +27,8 @@ public class TAComponent {
 	}
 	
 	
+	//Construction
+	
 	void addPort (TAPort port)
 	{
 		ports.add(port);
@@ -35,5 +39,14 @@ public class TAComponent {
 		states.add(state);
 	}
 	
+	void addTransition(TATransition transition)
+	{
+		transitions.add(transition);
+	}
+	
+	void addLabel(TATransitionLabel label)
+	{
+		labels.add(label);
+	}
 	
 }
