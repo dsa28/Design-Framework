@@ -23,11 +23,13 @@ New feature 1:
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
 
+---Limitation: We can't use ForEvery for nested operations- a solution would be to use subtypes of ForEvery such as ForEveryInt, ForEveryDouble or ForEveryBool. Same for Exists
+
 New Feature 3:
 -Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
 
 -Class TATest3 which contains 13 test cases to test statements
 (assignments, conditions, empty statements, sequential list, loops, concurrent lists and combinations)
-==Limitation: Does not support nested concurrent lists
 
-Note: The classes made are frameworks, they require alot of tweaking to respect the requirements.
+---Limitation: Does not support nested concurrent lists
+
