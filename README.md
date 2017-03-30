@@ -33,3 +33,5 @@ New Feature 3:
 
 ---Limitation: Does not support nested concurrent lists
 
+New Feature 4:
+-Classes TAComponent, TAPort, TAState, TATransition, TATransitionLabel
