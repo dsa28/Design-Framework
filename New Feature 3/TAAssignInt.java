@@ -27,7 +27,7 @@ public class TAAssignInt extends TAAssign{
 	//Methods
 	public void list()
 	{
-		ListStrategy.list( "=",t, e1);
+		ListStrategy.list( t, " = ", e1);
 		
 	}
 	

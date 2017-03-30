@@ -67,9 +67,12 @@ public class TAAssign extends TAAtomicStatement {
 	public void evaluate()
 	{
 		operation.evaluate();
-		
 	}
+
 	
+
+	
+
 	
 	
 

@@ -57,7 +57,7 @@ public class ListStrategy {
 	}
 	
 	//Function to print statements
-	static void list(TAStatement op1, String operator, TAStatement op2)
+	static void list(TAValue op1, String operator, TAValue op2)
 	{
 		System.out.print("(" );
     	op1.list();

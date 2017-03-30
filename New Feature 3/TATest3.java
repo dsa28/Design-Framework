@@ -82,6 +82,77 @@ public class TATest3 {
 		x.printstate(); //Should print 3
 		System.out.println();
 		
+		TAInt i = new TAInt("i");
+		TALessThan less = new TALessThan(i,new TAInt("5",5));
+		TAPlusInt plus = new TAPlusInt(i,new TAInt("1",1)); 
+		assign = new TAAssign(i,plus);
+		
+		TAWhile loop = new TAWhile(less,assign);
+		
+		//Test 6: testing while loops
+		loop.list(); //Should print (while (< i 5) (+ i 1))
+		loop.evaluate();
+		System.out.println();
+		i.printstate(); //should print 5
+		System.out.println();
+		
+		TAEqual equal = new TAEqual(i,new TAInt("3", 3));
+		TAAssign assign2 = new TAAssign(b1,new TABool("false",false));
+		
+		TAOr or = new TAOr (less, b1); //(or (< i 5) b1)
+		TAAnd and = new TAAnd(less,b1);
+		
+		condition = new TACondition(equal, assign2, s) ;//(if (= i 3)
+		
+		TASeqList list = new TASeqList(assign,condition);
+		
+		//Test 7 and 8: testing sequential statements
+		i.set(0);
+		b1.set(true);
+		list.list(); //((i = (+ i 1));(if (== i 3) them (b1 = false) else ""))
+		System.out.println();
+		list.evaluate();
+		b1.printState(); //should print true
+		System.out.println();
+		i.printstate();
+		System.out.println(); //should print 1
+		
+		i.set(2);
+		b1.set(true);
+		list.evaluate();
+		b1.printState(); //should print false
+		System.out.println();
+		i.printstate();
+		System.out.println(); //should print 3
+		
+		
+		//Test 9 and 10: using conditions in while loops
+		//Plus testing sequence list 
+		
+		b1.set(true);
+		i.set(0);
+		//Test 7
+		loop = new TAWhile(or,list);
+		loop.list(); //Should print (while (or (< i 5) b1) ((+ i 1);(if (= i 3) (b1 = false))
+		loop.evaluate();
+		System.out.println();
+		i.printstate(); //should print 5
+		System.out.println();
+		b1.printState(); //should print false
+		System.out.println();
+		
+		
+		b1.set(true);
+		i.set(0);
+		//Test 8
+		loop = new TAWhile(and,list);
+		loop.list(); //Should print (while (& (< i 5) b1) ((+ i 1);(if (= i 3) (b1 = false))
+		loop.evaluate();
+		System.out.println();
+		i.printstate(); //should print 3
+		System.out.println();
+		b1.printState(); //should print false
+		System.out.println();
 		
 	}
 

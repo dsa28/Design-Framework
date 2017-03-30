@@ -28,20 +28,17 @@ public class TACondition extends TAAtomicStatement {
 	//Methods
 	public void list()
 	{
-		System.out.print( name + ": if ( ");
-		e1.list();
-		System.out.print( " ) then { ");
-		s1.list();
-		System.out.print( " } else { ");
-		s2.list();
-		System.out.print( " }");
+		ListStrategy.list("if ",e1," then ",s1," else ",s2);
 	}
 
 	
 	public void evaluate()
 	{
+		
 		e1.evaluate();
-		if (e1.value() == true)
+		
+		
+		if (e1.value())
 		{
 			s1.evaluate();
 		}

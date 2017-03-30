@@ -4,41 +4,44 @@ public class TAWhile extends TAAtomicStatement{
 	//Members
 	TAStatement t;
 	TABoolValue e;
-	String name ="";
-	
+	String name;
+
 	//Constructor
-	TAWhile (String name, TAStatement t, TABoolValue e)
+	TAWhile (String name, TABoolValue e, TAStatement t)
 	{
+		this (e,t);
 		this.name = name;
+		
+	}
+	
+	TAWhile (TABoolValue e, TAStatement t)
+	{
+		
 		this.t= t;
 		this.e = e;
 	}
+	
 	
 	//Methods
 	public void evaluate ()
 	{
 		e.evaluate();
-		if (e.value() == true)
+		while (e.value())
 		{
 			//It evaluates our target statement t
 			t.evaluate();
-			//Then recalls evaluate() of TAWhile using recursion
-			this.evaluate();
+			
+			e.evaluate(); //reevaluates e
+		//System.out.println("loop");
+		
+			//keeps going until the value of e is false
 		}
-		else
-		{
-			//End of function, goes upwards in case of recursion
-		}
+		
 	}
 	
 	public void list()
 	{
-	//TODO rewrite this
-		System.out.print( name + ": While ( ");
-		e.list();
-		System.out.print( " ) evaluate ");
-		t.list();
-		System.out.print( " else do nothing. ");
+		ListStrategy.list("while ", e, t);
 	}
 	
 	
