@@ -25,5 +25,15 @@ public class TAComponent {
 	}
 	
 	
+	void addPort (TAPort port)
+	{
+		ports.add(port);
+	}
+	
+	void addState (TAState state)
+	{
+		states.add(state);
+	}
+	
 	
 }
