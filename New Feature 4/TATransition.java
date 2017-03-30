@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class TATransition {
 
@@ -12,13 +13,21 @@ public class TATransition {
 	//Next State
 	TAState stateTo;
 	
+	ArrayList<TATransitionLabel> labels; //we are assuming transitions have many labels
 	
+	ArrayList<TAPort> ports; //To check if a port is ready we need to check if
+	//at least one of its transitions are ready
+	//can do so by using observer pattern
 	
 	TATransition (TAState from, TAState to)
 	{
 		stateFrom = from;
 		stateTo = to;
+		
+		labels = new ArrayList<TATransitionLabel>();
+		ports = new ArrayList<TAPort>();
 	}
+	
 	
 	
 }

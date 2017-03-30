@@ -24,6 +24,10 @@ public class TAComponent {
 		initial = q0; //designated initial state
 		current = initial; //at t0, the state is the initial state
 		
+		states = new ArrayList<TAState>();
+		ports = new ArrayList<TAPort>();
+		transitions = new ArrayList<TATransition>();
+		labels = new ArrayList<TATransitionLabel>();
 	}
 	
 	
@@ -49,4 +53,10 @@ public class TAComponent {
 		labels.add(label);
 	}
 	
+	
+	//Print the state of the component
+	void printState()
+	{
+		current.list();
+	}
 }

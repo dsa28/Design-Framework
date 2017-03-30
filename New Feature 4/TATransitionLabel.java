@@ -9,8 +9,11 @@ public class TATransitionLabel {
 	TABoolValue guard;
 	TAStatement action;
 	
-	ArrayList<TATransition> transition; //might need it to implement observer pattern
-	//when the transition label guard changes, so do transitions
-	
+	TATransitionLabel(TAPort port, TABoolValue guard, TAStatement action)
+	{
+		this.port = port;
+		this.guard = guard;
+		this.action = action;
+	}
 	
 }
