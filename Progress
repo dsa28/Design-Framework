@@ -24,3 +24,4 @@ Design decision 5: The class TAFormula seemed to be useless (TABoolValue takes c
 Design decision 6: We found many duplicated code in alot of classes, among which the list function. We will try solving it using startegy pattern.
 For now, we will be using a static class TAListStrategy which includes all needed methods. If necessary, we will use singleton pattern and inheritance later on.
 
+Design decision 7: Some refactoring. All statements now have an evalaute method that takes in a TAStatement as argument. This is used when evaluating TAConcurrentList.
