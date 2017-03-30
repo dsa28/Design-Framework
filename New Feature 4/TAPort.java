@@ -14,5 +14,30 @@ public class TAPort {
 	}
 	
 	
+	boolean isReady()
+	{
+		return ready; //check if a port is ready
+	}
+
+	//TODO make sure of what class should use this method
+	void updateState(boolean g)
+	{
+		//Function that will be called from TATransition using observer pattern
+		//When a g changes value it will let the port know
+		if (g)
+		{
+			ready = true;
+			transitions++;
+		}
+		else //A g that was once true is now false
+		{
+			transitions--;
+			if (transitions <= 0)
+			{
+				transitions = 0;
+				ready = false;
+			}
+		}
+	}
 	
 }
