@@ -1,7 +1,7 @@
 
 public class TAPort {
 
-	String name = "";
+	String name;
 	
 	TAPort (String name)
 	{
