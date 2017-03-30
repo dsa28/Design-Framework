@@ -26,9 +26,8 @@ New feature 1:
 New Feature 3:
 -Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
 
--Class TATest3 which contains 10 test cases to test statements
-(assignments, conditions, empty statements, sequential list, loops and combinations)
-
--TAConcurrentList is not functional- it needs some refactoring to be able to work correctly
+-Class TATest3 which contains 13 test cases to test statements
+(assignments, conditions, empty statements, sequential list, loops, concurrent lists and combinations)
+==Limitation: Does not support nested concurrent lists
 
 Note: The classes made are frameworks, they require alot of tweaking to respect the requirements.
