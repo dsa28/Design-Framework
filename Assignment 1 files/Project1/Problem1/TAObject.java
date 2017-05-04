@@ -19,7 +19,7 @@ public abstract class TAObject implements TAValue{
 	{
 		//Function to add the function to the operands 
 		//for observer pattern
-		System.out.println(this.getClass());
+		
 		a.addFunction(this);
 		b.addFunction(this);
 	}
