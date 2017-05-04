@@ -18,6 +18,11 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 		
 	}
 	
+	public void evaluate()
+	{
+		operation.evaluate();
+		
+	}
 	
 	
 	
@@ -27,7 +32,9 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 	}
 	 
 	 TAFloor (TADoubleValue a)
-	{operation = new TAFloorDouble(a);}
+	{
+		 operation = new TAFloorDouble(a);
+	}
 	
 	
 	
@@ -40,7 +47,8 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 	TAFloor (TADoubleValue a, String s)
 	{
 		operation = new TAFloorDouble(a,s);
-		}
+	
+	}
 	
 	
 	

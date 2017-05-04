@@ -19,6 +19,7 @@ public class TAEqual extends TAObject implements TABoolValue{
 	public void evaluate()
 	{
 		operation.evaluate();
+		
 	}
 	
 	public void list()
@@ -36,6 +37,7 @@ public class TAEqual extends TAObject implements TABoolValue{
 	TAEqual (TAIntValue a, TAIntValue b) 
 	{
 		operation = new TAEqualInt(a,b);
+		
 	}
 	
 	TAEqual (TADoubleValue a, TADoubleValue b)

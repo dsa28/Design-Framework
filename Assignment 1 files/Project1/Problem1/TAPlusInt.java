@@ -7,8 +7,6 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	
 	public void evaluate()
 	 {
-		
-	
 		value = op1.value()+op2.value();
 		updateAll();
 	 }

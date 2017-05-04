@@ -50,7 +50,7 @@ public class TestClass {
 		System.out.println();
 		
 		z.set(23);
-		min.printState();
+		min.printState(); //-23
 		
 		System.out.println();
 		System.out.println();
@@ -106,6 +106,24 @@ public class TestClass {
 		
 		System.out.println(or2.value()); //true
 		System.out.println(and5.value()); //false
+		
+		TAGreaterThan gt = new TAGreaterThan(x,y); 
+		TAAnd and6 = new TAAnd(gt,or2);
+		System.out.println(and6.value()); //true
+		
+		y.set(7);
+
+		p2.printState(); //10
+		System.out.println();
+		
+		p4.printState(); //should be 17
+		System.out.println();
+		
+		
+		System.out.println();
+		
+		System.out.println(gt.value()); //false
+		System.out.println(and6.value()); //false
 		
 	}
 

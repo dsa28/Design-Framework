@@ -5,4 +5,5 @@ public interface TAValue {
 	 void evaluate();
 	
 	public void addFunction(TAObject function);
+	
 }

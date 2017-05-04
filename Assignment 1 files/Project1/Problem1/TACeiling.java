@@ -28,7 +28,6 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 		
 	}
 	
-	
 
 	 TACeiling (TAIntValue a) 
 	{
@@ -39,6 +38,7 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 	TACeiling (TADoubleValue a)
 	{
 		operation = new TACeilingDouble(a);
+		
 	}
 	
 	

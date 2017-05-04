@@ -5,8 +5,10 @@ public class TAGreaterThanInt extends TAGreaterThan implements TABoolValue {
 		
 	 public void evaluate()
 	 {
+		 
 		 value = op1.value()>op2.value();
-		 updateAll();}
+		 updateAll();
+	}
 	 
 	 
 	public void list()
@@ -49,7 +51,7 @@ public class TAGreaterThanInt extends TAGreaterThan implements TABoolValue {
 		op2 = b;
 		
 		addOperands(a,b);
-		
+	
 	}
 	 
 	 TAGreaterThanInt (TAIntValue a, TAIntValue b, String s)
