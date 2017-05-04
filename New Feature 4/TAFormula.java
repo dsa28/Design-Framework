@@ -31,5 +31,14 @@ public class TAFormula implements TABoolValue {
 		return equation.value();
 	}
 	
+	public void addVariable(TAVariable var)
+	{
+		variables.add(var);
+	}
+	
+	public void setEquation(TABoolValue bool)
+	{
+		equation = bool;
+	}
 	
 }
