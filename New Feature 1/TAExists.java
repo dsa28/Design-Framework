@@ -1,5 +1,5 @@
 
-public class TAExists implements TABoolValue {
+public class TAExists extends TAObject implements TABoolValue  {
 	
 	/*
 	 * Class TAExists which represents the existential quantifier
@@ -71,6 +71,8 @@ public class TAExists implements TABoolValue {
 	{
 		
 	}
+
+
 			
 	    
 	    

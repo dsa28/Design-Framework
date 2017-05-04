@@ -9,12 +9,12 @@ public class TAVariable extends TAObject{
 	
 	TAObject value;
 	
-	void evaluate()
+	public void evaluate()
 	{
 		value.evaluate();
 	}
 	
-	void list()
+	public void list()
 	{
 		
 	}

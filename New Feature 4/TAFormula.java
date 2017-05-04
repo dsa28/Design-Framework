@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TAFormula implements TABoolValue {
+public class TAFormula extends TAObject implements TABoolValue {
 
 	/*
 	 * A TAFormula is basically a TABoolValue with assigned variables
@@ -39,6 +39,12 @@ public class TAFormula implements TABoolValue {
 	public void setEquation(TABoolValue bool)
 	{
 		equation = bool;
+	}
+
+	@Override
+	String type() {
+		// TODO Auto-generated method stub
+		return "bool";
 	}
 	
 }

@@ -1,18 +1,7 @@
 
 public class TAMultiply extends TANumericFunction {
 	
-	private TAMultiply operation;
-	
-	void list()
-	{
-		operation.list();
-	}
-	
-	
-	void printState()
-	{
-		operation.printState();
-	}
+
 
 	String type()
 	{
@@ -21,32 +10,35 @@ public class TAMultiply extends TANumericFunction {
 	}
 	
 	
-	public void evaluate()
-    {
-		operation.evaluate();
-	}
-		 
-	void operands()
+ 
+	/*void operands()
 	{
 		operation.operands();
 	}
-	
+	*/
 	
 	protected TAMultiply()
 	{
 		opvalue = "*";
 	}
 	
+	public void addOperands(TAValue a, TAValue b)
+	{
+		a.addFunction(operation);
+		b.addFunction(operation);
+	}
 	
 
 	TAMultiply(TAIntValue a, TAIntValue b)
 	{
 		operation = new TAMultiplyInt(a,b);
+		addOperands(a,b);
 	}
 	 
 	TAMultiply(TADoubleValue a, TADoubleValue b)
 	{
 		 operation = new TAMultiplyDouble(a,b);
+		 addOperands(a,b);
 	}
 	 
 	 

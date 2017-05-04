@@ -2,38 +2,13 @@
 public class TAPlus extends TANumericFunction {
 
 
-	private TAPlus operation;
-	
-	
-	public void evaluate()
-	{
-		operation.evaluate();
-	}
-	 
-	public void list()
-	{
-		operation.list();
-	}
-	
-	
-	void printState()
-	{
-		operation.printState();
-	}
-	
-
-	String type()
-	{
-		return operation.type();
-		
-	}
 	
 	
 		 
-	void operands()
+/*	void operands()
 	{
 		operation.operands();
-	}
+	}*/
 
 	protected TAPlus()
 	{
@@ -41,27 +16,38 @@ public class TAPlus extends TANumericFunction {
 	}
 	
 	
+	public void addOperands(TAValue a, TAValue b)
+	{
+		a.addFunction(operation);
+		b.addFunction(operation);
+	}
+	
 	
 	 TAPlus(TAIntValue a, TAIntValue b)
 	{
 		operation = new TAPlusInt(a,b);
+		addOperands(a,b);
 	}
 	 
 	 TAPlus (TADoubleValue a, TADoubleValue b)
 	 {
 		 operation = new TAPlusDouble(a,b);
+		 addOperands(a,b);
 	 }
 	 
 	 
 
 	 TAPlus(TAIntValue a, TAIntValue b, String s)
 	 {
-		 operation = new TAPlusInt(a,b,s);
+		this(a,b);
+		name = s;
+		
 	}
 	
 	 TAPlus (TADoubleValue a, TADoubleValue b, String s)
 	 {
-		 operation = new TAPlusDouble(a,b,s);
+		this(a,b);
+		name = s;
 	}
 	 
 	 

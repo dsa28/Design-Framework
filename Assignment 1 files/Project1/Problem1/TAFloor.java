@@ -1,5 +1,5 @@
 
-public class TAFloor implements TAIntValue{
+public class TAFloor extends TAObject implements TAIntValue{
 	
 	String type()
 	{

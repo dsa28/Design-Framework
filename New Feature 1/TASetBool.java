@@ -75,6 +75,12 @@ public class TASetBool<T extends TABoolValue> implements TAValue {
 	public void evaluate() {
 		
 	}
+
+	@Override
+	public void addFunction(TAObject function) {
+		// TODO Auto-generated method stub
+		
+	}
      
    
       

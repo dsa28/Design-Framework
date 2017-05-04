@@ -74,5 +74,11 @@ public class TASetDouble implements TAValue {
 		public void evaluate() {
 			
 		}
+
+		@Override
+		public void addFunction(TAObject function) {
+			// TODO Auto-generated method stub
+			
+		}
 	     
 }

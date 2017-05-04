@@ -1,6 +1,8 @@
 
 public interface TAValue {
 
-	void list();
-	void evaluate();
+	 void list();
+	 void evaluate();
+	
+	public void addFunction(TAObject function);
 }
