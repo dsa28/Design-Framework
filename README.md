@@ -23,6 +23,8 @@ New feature 1:
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
 
+-Class TestClass was used to test basic operations and make sure refactoring did not affect them.
+
 ---Limitation: We can't use ForEvery for nested operations- a solution would be to use subtypes of ForEvery such as ForEveryInt, ForEveryDouble or ForEveryBool. Same for Exists
 
 New Feature 3:
