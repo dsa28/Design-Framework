@@ -29,8 +29,10 @@ public abstract class TAObject implements TAValue{
 	
 	public void updateAll()
 	{
+	
 		for (int i=0;i<functions.size();i++)
 		{
+			
 			functions.get(i).evaluate();
 		}
 	}

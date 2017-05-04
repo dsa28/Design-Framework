@@ -9,18 +9,20 @@ public abstract class TANumericFunction extends TAObject {
 
 	public void addOperands(TAValue a, TAValue b)
 	{
-		a.addFunction(operation);
-		b.addFunction(operation);
+		a.addFunction(this);
+		b.addFunction(this);
 	}
 	
 	public void list()
 	{
+		
 		operation.list();
 	}
 	
 	public void evaluate()
 	{
 		operation.evaluate();
+		
 	}
 	
 	 void printState()

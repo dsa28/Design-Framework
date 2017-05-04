@@ -50,6 +50,8 @@ public class TADivideInt extends TADivide implements TAIntValue {
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
+		
 	}
 	
 	

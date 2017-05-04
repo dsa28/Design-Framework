@@ -44,14 +44,14 @@ public class TAMultiplyInt extends TAMultiply implements TAIntValue {
 	}
 	
 	
-
-
 	
 	 TAMultiplyInt(TAIntValue a, TAIntValue b)
 	{
+		
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
 	}
 	 
 	 TAMultiplyInt (TAIntValue a, TAIntValue b, String s)

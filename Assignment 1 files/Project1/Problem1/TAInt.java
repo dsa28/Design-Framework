@@ -19,6 +19,7 @@ public class TAInt extends TAObject implements TAIntValue {
 	void set (int i)
 	{
 		value = i;
+		updateAll();
 	}
 	
 	public void list()

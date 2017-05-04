@@ -22,23 +22,18 @@ public class TAMultiply extends TANumericFunction {
 		opvalue = "*";
 	}
 	
-	public void addOperands(TAValue a, TAValue b)
-	{
-		a.addFunction(operation);
-		b.addFunction(operation);
-	}
 	
 
 	TAMultiply(TAIntValue a, TAIntValue b)
 	{
 		operation = new TAMultiplyInt(a,b);
-		addOperands(a,b);
+		
 	}
 	 
 	TAMultiply(TADoubleValue a, TADoubleValue b)
 	{
 		 operation = new TAMultiplyDouble(a,b);
-		 addOperands(a,b);
+		
 	}
 	 
 	 

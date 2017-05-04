@@ -22,6 +22,7 @@ public class TADouble extends TAObject implements TADoubleValue {
 	void set(double d)
 	{
 		value = d;
+		updateAll();
 	}
 	
 	

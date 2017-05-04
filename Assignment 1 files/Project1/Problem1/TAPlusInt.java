@@ -7,14 +7,17 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	
 	public void evaluate()
 	 {
-		op1.evaluate();
-		op2.evaluate();
+		
+		//op1.evaluate();
+		//op2.evaluate();
 		value = op1.value()+op2.value();
+		updateAll();
 	 }
 	
 	
 	public void list()
 	{
+		
 		if (name!= null)
 		{
 			ListStrategy.list(name);
@@ -44,14 +47,20 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	}
 	
 	
-	
+	private TAPlusInt()
+	{
+		
+	}
 	
 
 	 TAPlusInt(TAIntValue a, TAIntValue b)
 	{
+		
+		
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
 	}
 	 
 	 TAPlusInt (TAIntValue a, TAIntValue b, String s)
