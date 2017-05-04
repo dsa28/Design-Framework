@@ -25,3 +25,7 @@ Design decision 6: We found many duplicated code in alot of classes, among which
 For now, we will be using a static class TAListStrategy which includes all needed methods. If necessary, we will use singleton pattern and inheritance later on.
 
 Design decision 7: Some refactoring. All statements now have an evalaute method that takes in a TAStatement as argument. This is used when evaluating TAConcurrentList.
+
+Design decision 8: In components, each states has a list of transitions. This list consists of all transitions going from that state to another state.
+This simplifies finding a valid transition as we no longer need to look at the state it is going from; it will necessary be the current state.
+In addition, we no longer need to look at all possible transitions- only the ones going from our current state, which reduces calculations.
