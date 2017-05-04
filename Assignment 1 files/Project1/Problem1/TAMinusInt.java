@@ -8,17 +8,17 @@ public class TAMinusInt extends TAMinus implements TAIntValue {
 	
 	public void evaluate()
 	 {
-		op1.evaluate();
+		//op1.evaluate();
 		 if (!single)
 		 {
-			 op2.evaluate();
+			// op2.evaluate();
 			 value = op1.value()-op2.value();
 		}
 		 else
 		 {
 			 value = -op1.value();
 		 }
-		 
+		 updateAll();
 	 }
 	 
 	

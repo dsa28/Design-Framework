@@ -15,10 +15,21 @@ public abstract class TAObject implements TAValue{
 	
 	String name;
 	
+	public void addOperands(TAValue a, TAValue b)
+	{
+		//Function to add the function to the operands 
+		//for observer pattern
+		a.addFunction(this);
+		b.addFunction(this);
+	}
 	
 	public void addFunction(TAObject function)
 	{
+		evaluate(); //in case there was already a value before adding the function
+		//need to update it
+		
 		functions.add(function);
+		updateAll();
 		
 	}
 	

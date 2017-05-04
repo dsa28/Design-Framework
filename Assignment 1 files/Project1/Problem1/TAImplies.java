@@ -32,15 +32,16 @@ public class TAImplies extends TAObject implements TABoolValue{
 		{
 			value = true;
 		}
+		updateAll();
 	}
 	
 	
 	TAImplies(TABoolValue a, TABoolValue b) 
 	{
-		
 			op1 = a;
 			op2 = b;
 	
+			addOperands(a,b);
 		
 	}
 	

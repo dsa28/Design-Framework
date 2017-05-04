@@ -46,17 +46,18 @@ public class TABool extends TAObject implements TABoolValue{
 	}
 	
 	
-	TABool(String s,boolean a)
-	{
-		name = s;
-		value = a;
-	}
-	
 	TABool (String s)
 	{
 		value = false;
 		name = s;
 	}
+	
+	TABool(String s,boolean a)
+	{
+		this(s);
+		value = a;
+	}
+	
 	
 
 	 

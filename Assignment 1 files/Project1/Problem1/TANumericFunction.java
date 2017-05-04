@@ -7,11 +7,7 @@ public abstract class TANumericFunction extends TAObject {
 	 */
 	
 
-	public void addOperands(TAValue a, TAValue b)
-	{
-		a.addFunction(this);
-		b.addFunction(this);
-	}
+	
 	
 	public void list()
 	{

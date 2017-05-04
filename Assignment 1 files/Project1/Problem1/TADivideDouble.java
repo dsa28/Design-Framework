@@ -6,9 +6,10 @@ public class TADivideDouble extends TADivide implements TADoubleValue {
 	
 	public void evaluate()
 	{
-		op1.evaluate();
-		op2.evaluate();
+		//op1.evaluate();
+		//op2.evaluate();
 		value = op1.value()/op2.value();
+		updateAll();
 	}
 	 
 	 
