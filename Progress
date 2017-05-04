@@ -43,3 +43,8 @@ Design decision 11: In order to implement design decision 10, some refactoring n
 This can be done by adding a list of functions in TAObject as well as a methods to add or remove a function from it. (Obeserver pattern)
 
 Design decision 12 (Refactoring): In order to do the refactoring described in design decision 11, some functions from TAPlus, TAMinus, TAMultiply or TADivide were moved into TANumericFunction
+
+Design decision 13 (Refactoring): After doing the previously discussed refactoring and implementing observer pattern on classes, there was a problem with wrapper classes with same return type.
+Two solutions: 1- remove wrapper classes completely and only work with the children classes
+2- keep wrapper classes as abstract classes/ factory class
+3- if a class has only one return type, it shouldnt have subclasses- only one class
