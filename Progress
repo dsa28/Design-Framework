@@ -29,3 +29,6 @@ Design decision 7: Some refactoring. All statements now have an evalaute method 
 Design decision 8: In components, each states has a list of transitions. This list consists of all transitions going from that state to another state.
 This simplifies finding a valid transition as we no longer need to look at the state it is going from; it will necessary be the current state.
 In addition, we no longer need to look at all possible transitions- only the ones going from our current state, which reduces calculations.
+
+Design decision 9: To keep track of variables used in the guard formula, we created a class TAFormula which is similar to TABoolValue, but has a list of TAVariables.
+In other words, TAFormula is a generalization of the design used with ForEvery and Exists for all boolean expressions.
