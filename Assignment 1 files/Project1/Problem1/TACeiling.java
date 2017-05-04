@@ -1,5 +1,5 @@
 
-public class TACeiling extends TAObject implements TAIntValue{
+public class TACeiling extends TANumericFunction implements TAIntValue{
 	
 	/*
 	 * Class TACeiling acts as a wrapper class for either a TACeilingDouble or
@@ -16,28 +16,20 @@ public class TACeiling extends TAObject implements TAIntValue{
 		return "int";
 	}
 	
-	public int value()
-	{
+
+	
+	public int value() {
 		return operation.value();
-	}
-	
-	public void evaluate()
-	{
-		operation.evaluate();
-	}
-	
-	public void list()
-	{
-		operation.list();
 	}
 	
 	
 	protected TACeiling()
-	{}
+	{
+		
+	}
 	
 	
-	
-	
+
 	 TACeiling (TAIntValue a) 
 	{
 		 operation = new TACeilingInt(a);
@@ -63,7 +55,10 @@ public class TACeiling extends TAObject implements TAIntValue{
 		 operation = new TACeilingDouble(a);
 		 name = s;
 	}
-	
+
+
+
+
 	
 }
 

@@ -28,7 +28,9 @@ public class TAEqual extends TAObject implements TABoolValue{
 	
 	
 	protected TAEqual()
-	{}
+	{
+		
+	}
 	
 	
 	TAEqual (TAIntValue a, TAIntValue b) 

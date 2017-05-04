@@ -27,7 +27,9 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 	
 	
 	protected TAGreaterThan()
-	{}
+	{
+		
+	}
 	
 	
 	

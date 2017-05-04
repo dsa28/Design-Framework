@@ -1,9 +1,12 @@
-public class TAGreaterThanInt<T extends TAIntValue> extends TAGreaterThan implements TABoolValue {
+public class TAGreaterThanInt extends TAGreaterThan implements TABoolValue {
 
+	 TAIntValue op1, op2;
+	 boolean value;
+		
 	 public void evaluate()
-	 {op1.evaluate();
-	 op2.evaluate();
-	value = op1.value()>op2.value();}
+	 {
+		 value = op1.value()>op2.value();
+		 updateAll();}
 	 
 	 
 	public void list()
@@ -33,24 +36,23 @@ public class TAGreaterThanInt<T extends TAIntValue> extends TAGreaterThan implem
 	
 	 
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
 
-	
-	
-	
-	
-	
 
 	
-	 TAGreaterThanInt(T a, T b)
+	 TAGreaterThanInt(TAIntValue a, TAIntValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
+		
 	}
 	 
-	 TAGreaterThanInt (T a, T b, String s)
+	 TAGreaterThanInt (TAIntValue a, TAIntValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
@@ -59,9 +61,7 @@ public class TAGreaterThanInt<T extends TAIntValue> extends TAGreaterThan implem
 	 
 	
 	 
-	 
-	T op1, op2;
-	boolean value;
+	
 	
 	
 	

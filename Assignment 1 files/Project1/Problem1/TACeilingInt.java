@@ -12,8 +12,9 @@ public class TACeilingInt extends TACeiling implements TAIntValue{
 	
 	public void evaluate()
 	{
-		op.evaluate();
+		//op.evaluate();
 		value = op.value(); //the ceiling of an integer is the integer itself
+		updateAll();
 	}
 	
 	public int value()
@@ -39,6 +40,7 @@ public class TACeilingInt extends TACeiling implements TAIntValue{
 	TACeilingInt (TAIntValue a) 
 	{
 		op = a;
+		a.addFunction(this);
 	}
 	
 	

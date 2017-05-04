@@ -19,8 +19,10 @@ public class TACeilingDouble extends TACeiling implements TAIntValue{
 	
 	public void evaluate()
 	
-	{op.evaluate(); //need to update the value of the operand
-	value = (int)Math.ceil(op.value());
+	{
+		//op.evaluate(); //need to update the value of the operand
+		value = (int)Math.ceil(op.value());
+		updateAll();
 	}
 	
 	
@@ -41,6 +43,7 @@ public class TACeilingDouble extends TACeiling implements TAIntValue{
 	TACeilingDouble (TADoubleValue a) 
 	{
 		op = a;
+		a.addFunction(this);
 	}
 	
 	

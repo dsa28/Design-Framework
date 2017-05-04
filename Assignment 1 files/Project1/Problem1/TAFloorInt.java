@@ -4,10 +4,7 @@ public class TAFloorInt extends TAFloor implements TAIntValue{
 	int value;
 	
 	
-	String type()
-	{
-		return "int";
-	}
+	
 	
 	public int value()
 	{
@@ -16,8 +13,9 @@ public class TAFloorInt extends TAFloor implements TAIntValue{
 	
 	public void evaluate()
 	{
-		op.evaluate();
+		//op.evaluate();
 		value = op.value(); //The floor of an integer is an integer
+		updateAll();
 	}
 	
 	
@@ -38,12 +36,13 @@ public class TAFloorInt extends TAFloor implements TAIntValue{
 	TAFloorInt (TAIntValue a) 
 	{
 		op = a;
+		a.addFunction(this);
 	}
 	
 	
 	TAFloorInt (TAIntValue a, String s)
 	{
-		op = a;
+		this(a);
 		name = s;
 	}
 	

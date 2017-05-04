@@ -3,11 +3,6 @@ public class TAFloorDouble extends TAFloor implements TAIntValue{
 	TADoubleValue op;
 	int value;
 	
-	String type()
-	{
-		return "int";
-	}
-	
 	public int value()
 	{
 		return value;
@@ -15,8 +10,9 @@ public class TAFloorDouble extends TAFloor implements TAIntValue{
 	
 	public void evaluate()
 	{
-		op.evaluate(); //need to update the value of the operand
+		//op.evaluate(); //need to update the value of the operand
 		value = (int)Math.floor(op.value());
+		updateAll();
 	}
 	
 	
@@ -37,12 +33,13 @@ public class TAFloorDouble extends TAFloor implements TAIntValue{
 	TAFloorDouble (TADoubleValue a) 
 	{
 		op = a;
+		a.addFunction(this);
 	}
 	
 	
 	TAFloorDouble (TADoubleValue a, String s)
 	{
-		op = a;
+		this(a);
 		name = s;
 	}
 	
