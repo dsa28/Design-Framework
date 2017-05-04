@@ -32,3 +32,12 @@ In addition, we no longer need to look at all possible transitions- only the one
 
 Design decision 9: To keep track of variables used in the guard formula, we created a class TAFormula which is similar to TABoolValue, but has a list of TAVariables.
 In other words, TAFormula is a generalization of the design used with ForEvery and Exists for all boolean expressions.
+
+Design decision 10: Because checking if every guard is satisfied for a certain state could be very computationally expensive if we try all possible choices, we will try automating it using observer pattern.
+Plan: If a variable value gets updated, it notifies the formulae that contain it and updates their value.
+Then, if a certain formula happens to be a guard formula for a transition label, it will update the transition label state.
+Finally, the transition label will update the "from" state's list of ready transitions as well as the port it is associated to.
+Now, when we want to determine ready ports or available transitions, we just check the list of available transitions.
+
+Design decision 11: In order to implement design decision 10, some refactoring needs to be done in the TAObject classes. They need to keep track of the formulas that contain them.
+This can be done by adding a list of functions in TAObject as well as a methods to add or remove a function from it. (Obeserverpattern)
