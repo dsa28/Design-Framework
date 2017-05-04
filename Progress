@@ -41,3 +41,5 @@ Now, when we want to determine ready ports or available transitions, we just che
 
 Design decision 11: In order to implement design decision 10, some refactoring needs to be done in the TAObject classes. They need to keep track of the formulas that contain them.
 This can be done by adding a list of functions in TAObject as well as a methods to add or remove a function from it. (Obeserver pattern)
+
+Design decision 12 (Refactoring): In order to do the refactoring described in design decision 11, some functions from TAPlus, TAMinus, TAMultiply or TADivide were moved into TANumericFunction
