@@ -17,6 +17,7 @@ public class TAComponent {
 	TAState initial;
 	TAState current;
 	
+	
 	TAComponent(String s,TAState q0)
 	{
 		name = s;

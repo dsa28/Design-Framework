@@ -19,6 +19,11 @@ public class TATransition {
 	//at least one of its transitions are ready
 	//can do so by using observer pattern
 	
+	void addLabel(TATransitionLabel label)
+	{
+		labels.add(label); //add a transition label to the transition
+	}
+	
 	TATransition (TAState from, TAState to)
 	{
 		stateFrom = from;
