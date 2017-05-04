@@ -2,13 +2,6 @@
 public class TAPlus extends TANumericFunction {
 
 
-	
-	
-		 
-/*	void operands()
-	{
-		operation.operands();
-	}*/
 
 	protected TAPlus()
 	{

@@ -3,19 +3,6 @@ public class TAMultiply extends TANumericFunction {
 	
 
 
-	String type()
-	{
-		return operation.type();
-		
-	}
-	
-	
- 
-	/*void operands()
-	{
-		operation.operands();
-	}
-	*/
 	
 	protected TAMultiply()
 	{

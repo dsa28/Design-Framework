@@ -5,13 +5,6 @@ public class TAMinus extends TANumericFunction {
 	
 	
 	
-	/*void operands()
-	{
-		operation.operands();
-	}*/
-	
-	
-	
 	protected TAMinus()
 	{
 		opvalue = "-";
