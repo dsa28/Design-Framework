@@ -1,23 +1,28 @@
-public class TAEqualInt<T extends TAIntValue> extends TAEqual implements TABoolValue {
+public class TAEqualInt extends TAEqual implements TABoolValue {
 
+	TAIntValue op1, op2;
+	boolean value;
+	
+	
 	 public void evaluate()
-	 {op1.evaluate();
-	 op2.evaluate();
-	value = op1.value()==op2.value();}
+	 {
+		 //op1.evaluate();
+		 //op2.evaluate();
+		 value = (op1.value()==op2.value());
+		 updateAll();
+	}
 	 
 	 
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(= ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("==", op1, op2);
+		}
 				
 	}
 	
@@ -35,37 +40,22 @@ public class TAEqualInt<T extends TAIntValue> extends TAEqual implements TABoolV
 	
 	 
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
 
-	
-	
-	
-	
-	
 
 	
-	 TAEqualInt(T a, T b)
+	 TAEqualInt(TAIntValue a, TAIntValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
+		
 	}
-	 
-	 TAEqualInt (T a, T b, String s)
-	 {
-		 this(a,b);
-		 name = s;
-	 }
 	
 	 
-	
-	 
-	 
-	T op1, op2;
-	boolean value;
-	
-	
-	
 	
 }

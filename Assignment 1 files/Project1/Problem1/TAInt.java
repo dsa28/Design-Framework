@@ -1,6 +1,15 @@
 
 public class TAInt extends TAObject implements TAIntValue {
 
+	int value;
+	
+	
+	void printstate()
+	{
+		System.out.print(value);
+	}
+	
+	
 	public int value()
 	{
 		return value;
@@ -8,10 +17,15 @@ public class TAInt extends TAObject implements TAIntValue {
 	
 	
 	void set (int i)
-	{value = i;	}
+	{
+		value = i;
+		updateAll();
+	}
 	
 	public void list()
-	{System.out.print(name);}
+	{
+		ListStrategy.list(name);
+	}
 	
 	public void evaluate()
 	{}
@@ -38,8 +52,6 @@ public class TAInt extends TAObject implements TAIntValue {
 	}
 	
 
-	
-	int value;
 
 	
 	

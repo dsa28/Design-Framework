@@ -1,42 +1,50 @@
-public class TAFloorDouble<T extends TADoubleValue> extends TAFloor implements TAIntValue{
+public class TAFloorDouble extends TAFloor implements TAIntValue{
 	
-	String type()
-	{
-		return "int";
-	}
+	TADoubleValue op;
+	int value;
 	
 	public int value()
-	{return value;}
+	{
+		return value;
+	}
 	
 	public void evaluate()
-	{op.evaluate(); //need to update the value of the operand
-	value = (int)Math.floor(op.value()); }
+	{
+		//op.evaluate(); //need to update the value of the operand
+		value = (int)Math.floor(op.value());
+		updateAll();
+	}
 	
 	
 	public void list()
 	{
 		if (name != null)
-			System.out.print(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
-			{System.out.print("(floor" + " " );
-			op.list();
-			System.out.print(")");
-			}
+		{
+			ListStrategy.list("floor", op);
+		}
 	}
 	
 	
 	
-	TAFloorDouble (T a) 
-	{op = a;}
+	TAFloorDouble (TADoubleValue a) 
+	{
+		op = a;
+		a.addFunction(this);
+	}
 	
 	
-	TAFloorDouble (T a, String s)
-	{op = a;
-	name = s;}
+	TAFloorDouble (TADoubleValue a, String s)
+	{
+		this(a);
+		name = s;
+	}
 	
 	
-	T op;
-	int value;
+	
 	
 	
 }

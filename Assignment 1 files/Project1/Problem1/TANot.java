@@ -1,39 +1,46 @@
 
-public class TANot<T extends TABoolValue> extends TAObject implements TABoolValue {
+public class TANot extends TAObject implements TABoolValue {
+	
+	TABoolValue op;
+	boolean value;
+
 	
 	String type()
-	{return "bool";}
+	{
+		return "bool";
+	}
 	
 	
 	public void evaluate() {
-		op.evaluate();
+		//op.evaluate();
 		value = !(op.value());
+		updateAll();
 		
 	}
 	
 	public boolean value()
-	{return value;}
+	{
+		return value;
+	}
 	
-	TANot(T a)
-	{op = a;}
+	TANot(TABoolValue a)
+	{
+		op = a;
+		a.addFunction(this);
+	}
 	
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(not ");
-			op.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("not", op);
+		}
 				
 	}
-	
-	T op;
-	boolean value;
-
-	
 	
 	
 }

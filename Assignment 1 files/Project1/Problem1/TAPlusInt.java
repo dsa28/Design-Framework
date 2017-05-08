@@ -1,26 +1,28 @@
-public class TAPlusInt<T extends TAIntValue> extends TAPlus implements TAIntValue {
+public class TAPlusInt extends TAPlus implements TAIntValue {
 
+	 
+	TAIntValue op1, op2;
+	int value;
+
+	
 	public void evaluate()
 	 {
-		op1.evaluate();
-		op2.evaluate();
 		value = op1.value()+op2.value();
+		updateAll();
 	 }
 	
 	
 	public void list()
 	{
+		
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(+ ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
-				
+			ListStrategy.list("+", op1, op2);
+		}
 	}
 	
 	
@@ -42,34 +44,29 @@ public class TAPlusInt<T extends TAIntValue> extends TAPlus implements TAIntValu
 	}
 	
 	
-	void operands()
+	private TAPlusInt()
 	{
-		System.out.println(op1.value() + " " + op2.value());
+		
 	}
 	
-	
 
-	 TAPlusInt(T a, T b)
+	 TAPlusInt(TAIntValue a, TAIntValue b)
 	{
+		
+		
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
 	}
 	 
-	 TAPlusInt (T a, T b, String s)
+	 TAPlusInt (TAIntValue a, TAIntValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
 	 }
 	
 	 
-	
-	 
-	 
-	T op1, op2;
-	int value;
-	
-	
-	
+
 	
 }

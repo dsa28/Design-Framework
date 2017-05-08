@@ -1,5 +1,10 @@
 
-public class TAEqual implements TABoolValue{
+public class TAEqual extends TAObject implements TABoolValue{
+	
+	
+	TAEqual operation;
+	String name;
+	
 	
 	String type()
 	{
@@ -12,7 +17,10 @@ public class TAEqual implements TABoolValue{
 	}
 	
 	public void evaluate()
-	{operation.evaluate();}
+	{
+		operation.evaluate();
+		
+	}
 	
 	public void list()
 	{
@@ -21,34 +29,49 @@ public class TAEqual implements TABoolValue{
 	
 	
 	protected TAEqual()
-	{}
+	{
+		
+	}
+	
+	
+	TAEqual (TAIntValue a, TAIntValue b) 
+	{
+		operation = new TAEqualInt(a,b);
+		
+	}
+	
+	TAEqual (TADoubleValue a, TADoubleValue b)
+	{
+		operation = new TAEqualDouble(a,b);
+	}
+	
+	TAEqual(TABoolValue a, TABoolValue b)
+	{
+		operation = new TAEqualBool(a,b);
+		
+	}
 	
 	
 	
+	TAEqual (TAIntValue a, TAIntValue b, String s)
+	{
+		operation = new TAEqualInt(a,b);
+		name = s;
+		
+	}
 	
-	<E extends TAIntValue> TAEqual (E a, E b) 
-	{operation = new TAEqualInt(a,b);}
-	<E extends TADoubleValue> TAEqual (E a, E b)
-	{operation = new TAEqualDouble(a,b);}
-	<E extends TABoolValue> TAEqual(E a, E b)
-	{operation = new TAEqualBool(a,b);}
+	TAEqual (TADoubleValue a, TADoubleValue b, String s)
+	{
+		operation = new TAEqualDouble(a,b);
+		name = s;
+	}
 	
-	
-	
-	<E extends TAIntValue> TAEqual (E a, E b, String s)
-	{operation = new TAEqualInt(a,b,s);}
-	<E extends TADoubleValue> TAEqual (E a, E b, String s)
-	{operation = new TAEqualDouble(a,b,s);}
-	<E extends TABoolValue> TAEqual (E a, E b, String s)
-	{operation = new TAEqualBool(a,b,s);}
-	
-	
-	
-	
-
+	TAEqual (TABoolValue a, TABoolValue b, String s)
+	{
+		operation = new TAEqualBool(a,b);
+		name = s;
+	}
 	
 	
-	TAEqual operation;
-	String name;
 	
 }

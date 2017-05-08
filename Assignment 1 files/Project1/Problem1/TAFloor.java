@@ -1,5 +1,5 @@
 
-public class TAFloor implements TAIntValue{
+public class TAFloor extends TANumericFunction implements TAIntValue{
 	
 	String type()
 	{
@@ -11,31 +11,44 @@ public class TAFloor implements TAIntValue{
 		return operation.value();
 	}
 	
-	public void evaluate()
-	{operation.evaluate();}
-	
-	public void list()
-	{operation.list();}
 	
 	
 	protected TAFloor()
-	{}
+	{
+		
+	}
+	
+	public void evaluate()
+	{
+		operation.evaluate();
+		
+	}
+	
+	
+	
+	 TAFloor (TAIntValue a) 
+	{
+		 operation = new TAFloorInt(a);
+	}
+	 
+	 TAFloor (TADoubleValue a)
+	{
+		 operation = new TAFloorDouble(a);
+	}
 	
 	
 	
 	
-	<E extends TAIntValue> TAFloor (E a) 
-	{operation = new TAFloorInt(a);}
-	<E extends TADoubleValue> TAFloor (E a)
-	{operation = new TAFloorDouble(a);}
+	 TAFloor (TAIntValue a, String s)
+	{
+		 operation = new TAFloorInt(a,s);
+	}
+	 
+	TAFloor (TADoubleValue a, String s)
+	{
+		operation = new TAFloorDouble(a,s);
 	
-	
-	
-	
-	<E extends TAIntValue> TAFloor (E a, String s)
-	{operation = new TAFloorInt(a,s);}
-	<E extends TADoubleValue> TAFloor (E a, String s)
-	{operation = new TAFloorDouble(a,s);}
+	}
 	
 	
 	

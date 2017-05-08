@@ -1,29 +1,14 @@
 
 public class TADivide extends TANumericFunction{
-
-	public void list()
-	{operation.list();}
 	
-	
-	void printState()
-	{
-		operation.printState();
-	}
-	
-	String type()
-	{
-		return operation.type();
-		
-	}
-	
-	
-	public void evaluate()
-		 {operation.evaluate();}
+	/*
+	 * Class TADivide acts as wrapper class for TADivideInt or TADivideDouble
+	 * depending on the input values
+	 */
 	
 	
 	
 	
-
 	
 	protected TADivide()
 	{
@@ -35,12 +20,12 @@ public class TADivide extends TANumericFunction{
 	
 	
 	//two arguemnts
-	 <E extends TAIntValue> TADivide(E a, E b)
+	 TADivide(TAIntValue a,TAIntValue b)
 	{
 		operation = new TADivideInt(a,b);
 	}
 	 
-	 <E extends TADoubleValue> TADivide(E a, E b)
+	 TADivide(TADoubleValue a, TADoubleValue b)
 	 {
 		 operation = new TADivideDouble(a,b);
 	 }
@@ -49,21 +34,19 @@ public class TADivide extends TANumericFunction{
 	 
 	 
 	 //two arguments and a name
-	 <E extends TAIntValue> TADivide(E a, E b, String s)
+	 TADivide(TAIntValue a,TAIntValue b, String s)
 	 {
-		 operation = new TADivideInt(a,b,s);
+		 operation = new TADivideInt(a,b);
+		 name = s;
 	}
 	
-	 <E extends TADoubleValue> TADivide (E a, E b, String s)
+	 TADivide (TADoubleValue a,TADoubleValue b, String s)
 	 {
-		 operation = new TADivideDouble(a,b,s);
+		 operation = new TADivideDouble(a,b);
+		 name = s;
 	}
 	 
 	 
-	 
-	
-	private TADivide operation;
-	
 	
 	
 	

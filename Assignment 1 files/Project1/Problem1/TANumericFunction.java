@@ -6,18 +6,32 @@ public abstract class TANumericFunction extends TAObject {
 	 * and make modifying classes easier and faster
 	 */
 	
-	/*void list()
-	{
-		if (name != null)
-			System.out.println(name);
-		else
-		{
-			System.out.println("(" + opvalue + " " );
-			
-		}
-	}*/
+
 	
+	
+	public void list()
+	{
+		
+		operation.list();
+	}
+	
+	public void evaluate()
+	{
+		operation.evaluate();
+		
+	}
+	
+	 void printState()
+	{
+		operation.printState();
+	}
+	
+	 String type()
+	 {
+		 return operation.type();
+	 }
 	
 	
 	String opvalue;
+	protected TANumericFunction operation;
 }

@@ -2,7 +2,7 @@
 public class TADouble extends TAObject implements TADoubleValue {
 	
 	
-	
+	double value;  
 	
 	public double value() {
 		
@@ -11,14 +11,19 @@ public class TADouble extends TAObject implements TADoubleValue {
 	
 	
 	public void list()
-	{System.out.print(name);}
+	{
+		ListStrategy.list(name);
+	}
 	
 	public void evaluate()
 	{}
 	
 	
 	void set(double d)
-	{value = d;}
+	{
+		value = d;
+		updateAll();
+	}
 	
 	
 
@@ -43,8 +48,6 @@ public class TADouble extends TAObject implements TADoubleValue {
 	}
 	
 	
-	
-	double value;
 
 
 

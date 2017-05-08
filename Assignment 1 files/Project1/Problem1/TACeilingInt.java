@@ -1,4 +1,9 @@
-public class TACeilingInt<T extends TAIntValue> extends TACeiling implements TAIntValue{
+public class TACeilingInt extends TACeiling implements TAIntValue{
+	
+	TAIntValue op; //The operand
+	int value; //The result
+	
+	
 	
 	String type()
 	{
@@ -6,40 +11,40 @@ public class TACeilingInt<T extends TAIntValue> extends TACeiling implements TAI
 	}
 	
 	public void evaluate()
-	{op.evaluate();
-	value = op.value(); //the ceiling of an integer is the integer itself
+	{
+		//op.evaluate();
+		value = op.value(); //the ceiling of an integer is the integer itself
+		updateAll();
 	}
 	
 	public int value()
-	{return value;}
+	{
+		return value;
+	}
 	
 	
 	public void list()
 	{
 		if (name != null)
-			System.out.print(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
-			{System.out.print("(ceiling" + " " );
-			op.list();
-			System.out.print(")");
-			}
+		{
+			ListStrategy.list("ceiling", op);
+		}
 	}
 	
 	
 	
-	TACeilingInt (T a) 
-	{op = a;}
+	TACeilingInt (TAIntValue a) 
+	{
+		op = a;
+		a.addFunction(this);
+	}
 	
-	
-	TACeilingInt (T a, String s)
-	{op = a;
-	name = s;}
 	
 
-	
-	T op;
-	int value;
-	
 	
 }
 

@@ -1,5 +1,10 @@
 
-public class TAImplies<T extends TABoolValue> extends TAObject implements TABoolValue{
+public class TAImplies extends TAObject implements TABoolValue{
+	
+	
+	TABoolValue op1, op2;
+	boolean value;
+	
 	
 	public boolean value()
 	{
@@ -13,36 +18,34 @@ public class TAImplies<T extends TABoolValue> extends TAObject implements TABool
 	
 	public void list()
 	{
-		System.out.print("(");
-		op1.list();
-		System.out.print(" ");
-		op2.list();
-		System.out.print(")");
+		ListStrategy.list("implies", op1, op2);
 	}
 	
 	
 	public void evaluate()
 	{
 		if (op1.value() && !op2.value())
+		{
 			value = false;
+		}
 		else
+		{
 			value = true;
+		}
+		updateAll();
 	}
 	
 	
-	TAImplies(T a, T b) 
+	TAImplies(TABoolValue a, TABoolValue b) 
 	{
-		
 			op1 = a;
 			op2 = b;
-		
-		//value = new TABool();
+	
+			addOperands(a,b);
 		
 	}
 	
 	
-	T op1, op2;
-	boolean value;
 	
 	
 }

@@ -1,36 +1,45 @@
 
-public class TAMinusInt<T extends TAIntValue> extends TAMinus implements TAIntValue {
+public class TAMinusInt extends TAMinus implements TAIntValue {
 
+	 
+	TAIntValue op1, op2;
+	int value;
+	
 	
 	public void evaluate()
 	 {
-		op1.evaluate();
+		//op1.evaluate();
 		 if (!single)
-		 {op2.evaluate();
-		 value = op1.value()-op2.value();}
+		 {
+			// op2.evaluate();
+			 value = op1.value()-op2.value();
+		}
 		 else
-		 value = -op1.value();
+		 {
+			 value = -op1.value();
+		 }
+		 updateAll();
 	 }
 	 
 	
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(- ");
-			op1.list();
-			if (!single)
+			
+			if (single)
 			{
-				System.out.print(" ");
-				op2.list();
-				System.out.print(")");
+				ListStrategy.list("-", op1);
 			}
-			
-			
+			else
+			{
+				ListStrategy.list("-", op1, op2);
+			}
 		}
-		
 	}
 	
 	
@@ -47,46 +56,45 @@ public class TAMinusInt<T extends TAIntValue> extends TAMinus implements TAIntVa
 	
 	 
 	public int value()
-	{return value;}
+	{
+		return value;
+	}
+
 	
-	
-	
-	
-	
-	
-	TAMinusInt(T a)
+	TAMinusInt(TAIntValue a)
 	{
 		op1 = a;
 		single = true;
+		
+		a.addFunction(this);
 	}
 	
-	TAMinusInt (T a, String s)
+	TAMinusInt (TAIntValue a, String s)
 	{
 		this(a);
 		name = s;
 		
+		
 	}
 	
-	 TAMinusInt(T a, T b)
+	 TAMinusInt(TAIntValue a, TAIntValue b)
 	{
 		op1 = a;
 		op2 = b;
 		single = false;
 		
+		addOperands(a,b);
+		
 	}
 	 
-	 TAMinusInt (T a, T b, String s)
+	 TAMinusInt (TAIntValue a, TAIntValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
+		 
+		 
 	 }
 	
-	 
-	
-	 
-	 
-	T op1, op2;
-	int value;
 	
 	
 	

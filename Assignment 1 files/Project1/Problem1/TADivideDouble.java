@@ -1,30 +1,36 @@
-public class TADivideDouble<T extends TADoubleValue> extends TADivide implements TADoubleValue {
+public class TADivideDouble extends TADivide implements TADoubleValue {
 
+	TADoubleValue op1, op2;
+	double value;
 	
-	 public void evaluate()
-	 {op1.evaluate();
-	 op2.evaluate();
-	value = op1.value()/op2.value();}
+	
+	public void evaluate()
+	{
+		//op1.evaluate();
+		//op2.evaluate();
+		value = op1.value()/op2.value();
+		updateAll();
+	}
 	 
 	 
 	public void list()
 	{
 		if (name!= null)
-			System.out.println(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
 		{
-			System.out.print("(/ ");
-			op1.list();
-			System.out.print(" ");
-			op2.list();
-			System.out.print(")");
-			}
+			ListStrategy.list("/", op1, op2);
+		}
 				
 	}
 	
 	
 	void printState()
-	{System.out.print(value);}
+	{
+		System.out.print(value);
+	}
 	
 	
 	String type()
@@ -43,26 +49,16 @@ public class TADivideDouble<T extends TADoubleValue> extends TADivide implements
 	
 	
 	
-	 TADivideDouble(T a, T b)
+	 TADivideDouble(TADoubleValue a, TADoubleValue b)
 	{
 		op1 = a;
 		op2 = b;
 		
+		addOperands(a,b);
 	}
 	 
-	 TADivideDouble (T a, T b, String s)
-	 {
-		 this(a,b);
-		 name = s;
-	 }
 	
 	 
-	
-	 
-	 
-	T op1, op2;
-	double value;
-	
 	
 	
 	

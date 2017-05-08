@@ -1,37 +1,9 @@
 
 public class TAMinus extends TANumericFunction {
 
-	public void list()
-	{
-		operation.list();
-	}
+	boolean single; //Indicates whether we are using minus as a binary or unary operator
 	
 	
-	void printState()
-	{
-		operation.printState();
-	}
-	
-	
-	String type()
-	{
-		return operation.type();
-		
-	}
-	
-	
-	public void evaluate()
-	 {operation.evaluate();}
-		 
-	void operands()
-	{
-		operation.operands();
-	}
-	
-	
-	
-	
-
 	
 	protected TAMinus()
 	{
@@ -42,67 +14,68 @@ public class TAMinus extends TANumericFunction {
 	
 	
 	//One argument
-	<E extends TAIntValue> TAMinus(E a)
+	TAMinus(TAIntValue a)
 	{
 		operation = new TAMinusInt(a);
+		
 	}
 	
-	<E extends TADoubleValue> TAMinus(E a)
+	TAMinus(TADoubleValue a)
 	{
 		operation = new TAMinusDouble(a);
+		
 	}
 	
 	
 	
 	
 	//One argument and a name
-	<E extends TAIntValue> TAMinus(E a, String s)
+	 TAMinus(TAIntValue a, String s)
 	{
 		operation = new TAMinusInt(a,s);
+		
 	}
 	
-	<E extends TADoubleValue> TAMinus(E a, String s)
+	 TAMinus(TADoubleValue a, String s)
 	{
 		operation = new TAMinusDouble(a,s);
+		
 	}
 	
 	
 	
 	
 	//two arguemnts
-	 <E extends TAIntValue> TAMinus(E a, E b)
+	 TAMinus(TAIntValue a,TAIntValue b)
 	{
 		operation = new TAMinusInt(a,b);
+		
 	}
 	 
-	 <E extends TADoubleValue> TAMinus (E a, E b)
+	 TAMinus (TADoubleValue a, TADoubleValue b)
 	 {
 		 operation = new TAMinusDouble(a,b);
+	
 	 }
 	 
 	 
 	 
 	 
 	 //two arguments and a name
-	 <E extends TAIntValue> TAMinus (E a, E b, String s)
+	TAMinus (TAIntValue a, TAIntValue b, String s)
 	 {
 		 operation = new TAMinusInt(a,b,s);
+	
 	}
 	
-	 <E extends TADoubleValue> TAMinus (E a, E b, String s)
-	 {
+	TAMinus (TADoubleValue a,TADoubleValue b, String s)
+	{
 		 operation = new TAMinusDouble(a,b,s);
+		 
 	}
 	 
 	 
-	 
-	 
 	
-	boolean single;
-	private TAMinus operation;
-	
-
-
 	
 	
 }

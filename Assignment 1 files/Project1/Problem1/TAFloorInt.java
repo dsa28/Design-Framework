@@ -1,40 +1,53 @@
-public class TAFloorInt<T extends TAIntValue> extends TAFloor implements TAIntValue{
+public class TAFloorInt extends TAFloor implements TAIntValue{
 	
-	String type()
-	{return "int";}
+	TAIntValue op;
+	int value;
+	
+	
+	
 	
 	public int value()
-	{return value;}
+	{
+		return value;
+	}
 	
 	public void evaluate()
-	{op.evaluate();
-	value = op.value();}
+	{
+		//op.evaluate();
+		value = op.value(); //The floor of an integer is an integer
+		updateAll();
+	}
 	
 	
 	public void list()
 	{
 		if (name != null)
-			System.out.print(name);
+		{
+			ListStrategy.list(name);
+		}
 		else
-			{System.out.print("(floor" + " " );
-			op.list();
-			System.out.print(")");
-			}
+		{
+			ListStrategy.list("floor");
+		}
 	}
 	
 	
 	
-	TAFloorInt (T a) 
-	{op = a;}
+	TAFloorInt (TAIntValue a) 
+	{
+		op = a;
+		a.addFunction(this);
+	}
 	
 	
-	TAFloorInt (T a, String s)
-	{op = a;
-	name = s;}
+	TAFloorInt (TAIntValue a, String s)
+	{
+		this(a);
+		name = s;
+	}
 	
 	
-	T op;
-	int value;
+	
 	
 	
 }

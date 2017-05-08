@@ -1,0 +1,50 @@
+Design decision 1: We decided to use the code from assignment 1 and refactor it as necessay to fit the new features.
+We decided to do this mostly because the assignment 1 code was easily extendable to include many of the required new features.
+
+Design decision 2 (Refactoring): We added a class TAFormula from which all boolean classes inherit to simplify the e1?e2:e3 functionality.
+(This class seems to create an inconsistency with the original hierary; either we will need to do some more refactoring or remove this class and revert to the original hierarchy).
+
+Problems: At this point, there is a problem with nested operations. It is possible to fix it by declaring specific classes (TAAddInt instead of TAAnd for example).
+But, this would make the framework harder and less intuitive for the user. We will be trying to find a solution, and if nothing works, a compromise will have to be done.
+
+
+Design decision 3: To support the new features ForEvery and Exists, we needed a concept of domains and variables. To do so, we implemented a class TASet to represent domains.
+A quantifier would take in a domain (TASet), an expression (done by nesting several formula elements together) and a reference to the target variable.
+To evaluate the quantifier, we will replace the value of the target variable by the values of the domain elements (TASet elements) until we find the value.
+
+Note: Like most operators that can take in different types of values (for instance TAEquals), different versions of TAForEvery and TAExists will have to be implemented.
+(One version for each primitive type for now- maybe a version for pairs and arrays if we find it necessary later)
+
+
+Design decision 4: Different types of TASet were created; one for each primitive data type. This helped in implementing the different TAForEvery and TAExists classes
+(TAForEveryInt TAForEveryDouble TAForEveryBool and TAExistsInt, TAExistsDouble, TAExistsBool)
+
+Design decision 5: The class TAFormula seemed to be useless (TABoolValue takes care of its job), we removed it.
+
+Design decision 6: We found many duplicated code in alot of classes, among which the list function. We will try solving it using startegy pattern.
+For now, we will be using a static class TAListStrategy which includes all needed methods. If necessary, we will use singleton pattern and inheritance later on.
+
+Design decision 7: Some refactoring. All statements now have an evalaute method that takes in a TAStatement as argument. This is used when evaluating TAConcurrentList.
+
+Design decision 8: In components, each states has a list of transitions. This list consists of all transitions going from that state to another state.
+This simplifies finding a valid transition as we no longer need to look at the state it is going from; it will necessary be the current state.
+In addition, we no longer need to look at all possible transitions- only the ones going from our current state, which reduces calculations.
+
+Design decision 9: To keep track of variables used in the guard formula, we created a class TAFormula which is similar to TABoolValue, but has a list of TAVariables.
+In other words, TAFormula is a generalization of the design used with ForEvery and Exists for all boolean expressions.
+
+Design decision 10: Because checking if every guard is satisfied for a certain state could be very computationally expensive if we try all possible choices, we will try automating it using observer pattern.
+Plan: If a variable value gets updated, it notifies the formulae that contain it and updates their value.
+Then, if a certain formula happens to be a guard formula for a transition label, it will update the transition label state.
+Finally, the transition label will update the "from" state's list of ready transitions as well as the port it is associated to.
+Now, when we want to determine ready ports or available transitions, we just check the list of available transitions.
+
+Design decision 11: In order to implement design decision 10, some refactoring needs to be done in the TAObject classes. They need to keep track of the formulas that contain them.
+This can be done by adding a list of functions in TAObject as well as a methods to add or remove a function from it. (Obeserver pattern)
+
+Design decision 12 (Refactoring): In order to do the refactoring described in design decision 11, some functions from TAPlus, TAMinus, TAMultiply or TADivide were moved into TANumericFunction
+
+Design decision 13 (Refactoring): After doing the previously discussed refactoring and implementing observer pattern on classes, there was a problem with wrapper classes with same return type.
+Two solutions: 1- remove wrapper classes completely and only work with the children classes
+2- keep wrapper classes as abstract classes/ factory class
+3- if a class has only one return type, it shouldnt have subclasses- only one class
