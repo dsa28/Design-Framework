@@ -7,7 +7,7 @@ public class TANot extends TAObject implements TABoolValue {
 	
 	
 	public void evaluate() {
-		//op.evaluate();
+		
 		value = !(op.value());
 		updateAll();
 		

@@ -179,15 +179,7 @@ public class TATest2 {
 		
 		
 		
-		//Test 16
-		System.out.println();
-		TANot n = new TANot(a);
-		temp.set(-2);
-		a.evaluate();
-		a.printState();
-		System.out.println();
-		System.out.println(n.value());
-
+		
 	}
 
 }
