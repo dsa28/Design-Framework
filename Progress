@@ -58,6 +58,13 @@ Three solutions: 1- remove wrapper classes completely and only work with the chi
 2- keep wrapper classes as abstract classes/ factory class
 3- if a class has only one return type, it shouldnt have subclasses- only one class
 
+We decided to go with the 3rd option because:
+--Less unecessary classes
+--Affects the program syntax less than the first solution
+--That way, operators will be defined by their output, and not their input- which makes more sense for the program.
+At this point, we still haven't decided what to do with the parent classes. (Keep them or completely remove them and only keep the children)
+
+
 Note: We were worried that automatically updating formula values when changing variable values would affect the behavior of concurrent statements.
 It turned out that using temporary variables protected us from automatic updating.
 
