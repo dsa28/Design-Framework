@@ -140,8 +140,13 @@ public class TATest2 {
 		
 		//Test 13
 		System.out.println(o.value()); //should print false 
-
+       
 		System.out.println();
+		
+		
+		
+		
+		
 		
 		//Test 14: Finally, we need to test nested quantifiers
 		

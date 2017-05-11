@@ -38,11 +38,6 @@ public class TAExists extends TAObject implements TABoolValue  {
 		operation.printState();
 	}
 	
-	void setExpression()
-	{
-		
-	}
-	
 	
 	//Constructors to determine the operand types
 	 TAExists (TASetBool D, TABoolValue expression, TABool x)

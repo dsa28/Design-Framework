@@ -12,61 +12,111 @@ public class TAForEvery extends TAObject implements TABoolValue {
 	 * Evaluate()
 	 */
 	
-	TAForEvery operation; //To keep consistency with other classes
+	  TAInt ivariable; //The variable to be changed; the variable should be a primitive and not an expression
+	  TASetInt idomain; //The domain where the formula will be evaluated
+	  
+	  TADouble dvariable; 
+	  TASetDouble ddomain; 
+	  
+	  TABool bvariable;
+	  TASetBool bdomain;
+	  
+	  boolean integer;
+	  boolean bool;
+	  
+	  TABoolValue expression; //The formula itself
+	    
+	   
+	  boolean value; //Result of the operation
+	    
 	
 	public boolean value()
 	{
-		return operation.value();
+		return value;
 	}
 	
-	String type()
-	{
-		return "for every";
-	}
 	
 	public void list()
 	{
-		operation.list();
+		if (integer)
+		{
+			ListStrategy.list("for every ", ivariable, " in ", idomain, ": ", expression);
+		}
+		else if (bool)
+		{
+			ListStrategy.list("for every ", bvariable, " in ", bdomain, ": ", expression);
+		}
+		else
+		{
+			ListStrategy.list("for every ", dvariable, " in ", ddomain, ": ", expression);
+		}
 	}
 
 
 	public void evaluate() {
 		
-		operation.evaluate();
+		if (bool)
+		{
+			value = TAHelper.forEvery(bdomain, expression, bvariable);
+		}
+		else if (integer)
+		{
+			value = TAHelper.forEvery(idomain, expression, ivariable);
+		}
+		else
+		{
+			value = TAHelper.forEvery(ddomain, expression, dvariable);
+		}
+		
+		updateAll();
 	}
 	
 	void printState()
 	{
-		operation.printState();
+		System.out.print(value);
 	}
+
 	
-	void setExpression()
+	protected TAForEvery(TABoolValue expression)
 	{
+		bool = false;
+		integer = false;
 		
+		this.expression = expression;
 	}
 	
 	
 	//Constructors to determine the operand types
 	 TAForEvery (TASetBool D, TABoolValue expression, TABool x)
 	{
-		operation = new TAForEveryBool(D,expression,x);
+		 this(expression);
+		 bool = true;
+		 
+		 bdomain = D;
+		 bvariable = x;
+		 
+		
 	}
 
 	 TAForEvery (TASetInt D, TABoolValue expression, TAInt x)
 	 {
-			operation = new TAForEveryInt(D,expression,x);
+		 this(expression);
+		 integer = true;
+		 
+		 idomain = D;
+		 ivariable = x;
+		 
+		
 	 }
 
 	 TAForEvery (TASetDouble D, TABoolValue expression, TADouble x)
 	 {
-			operation = new TAForEveryDouble(D,expression,x);
+		 this(expression);
+		 
+		 ddomain = D;
+		 dvariable = x;
 	}
 
 	 
 	
-
-	protected TAForEvery()
-	{
-		
-	}
 }

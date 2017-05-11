@@ -1,7 +1,7 @@
 
 public class TAExistsBool extends TAExists{
 
-	   String name;
+	  
 	    
 	    TABool x; //The variable to be changed; the variable should be a primitive and not an expression
 	    TASetBool domain; //The domain where the formula will be evaluated
@@ -13,12 +13,6 @@ public class TAExistsBool extends TAExists{
 	  
 	    
 	  
-	    void setExpression(TABoolValue e,TABool x)
-	    {
-	       expression = e;
-	       this.x= x;
-	    }
-	    
 	    
 	    
 	    public void list()
