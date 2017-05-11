@@ -11,6 +11,7 @@ public interface TAIntValue extends TAValue{
 		return value()> op2.value();
 	}
 	
+	
 	int value();
 
 	
