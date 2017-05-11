@@ -12,7 +12,7 @@ public class TADivide extends TANumericFunction{
 	
 	protected TADivide()
 	{
-		opvalue = "/";
+	
 	}
 	
 	

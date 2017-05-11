@@ -10,11 +10,7 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 		
 		private int value;
 		
-		
-		String type()
-		{
-			return "int";
-		}
+	
 		
 		public int value()
 		{

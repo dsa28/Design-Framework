@@ -114,26 +114,36 @@ public class TATest2 {
 		
 		temp.set(2);
 		
+		System.out.println();
+		
 		//Test 9
 		a.evaluate();
 		a.printState();
 		System.out.println();//should print false
 
+		TAOr o = new TAOr(a,e);
+		
 		//Test 10
 		e.evaluate();
 		e.printState();
 		System.out.println(); //should print true
 		
+		//Test 11
+		System.out.println(o.value()); //should print true
 
 		temp.set(4);
 		
-		//Test 11
+		//Test 12
 		e.evaluate();
 		e.printState();
 		System.out.println(); //should print false
 		
+		//Test 13
+		System.out.println(o.value()); //should print false 
+
+		System.out.println();
 		
-		//Test 12: Finally, we need to test nested quantifiers
+		//Test 14: Finally, we need to test nested quantifiers
 		
 		a = new TAForEvery(D2,e,temp);
 		a.list(); //Should print(for every temp in D2: (exists y in D2: (> y temp))
@@ -146,7 +156,7 @@ public class TATest2 {
 		
 		TAOr or = new TAOr (exp, g2);
 		
-		//Test 13
+		//Test 15
 		a = new TAForEvery(D2,or,y);
 		e = new TAExists (D2,a,temp);
 		
@@ -155,6 +165,7 @@ public class TATest2 {
 		e.evaluate();
 		e.printState(); //should print true
 		System.out.println();
+		
 		
 		
 		

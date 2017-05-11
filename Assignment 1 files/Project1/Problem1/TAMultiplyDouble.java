@@ -5,8 +5,7 @@ public class TAMultiplyDouble extends TAMultiply implements TADoubleValue {
 	
 	public void evaluate()
 	 {
-		//op1.evaluate();
-		//op2.evaluate();
+		
 		value = op1.value()*op2.value();
 		updateAll();
 	}
@@ -30,12 +29,7 @@ public class TAMultiplyDouble extends TAMultiply implements TADoubleValue {
 		System.out.print(value);
 	}
 	
-	
-	String type()
-	{
-		return "double";
-	}
-	
+
 	
 	public double value()
 	{

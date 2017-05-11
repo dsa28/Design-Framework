@@ -7,9 +7,8 @@ public class TAMinus extends TANumericFunction {
 	
 	protected TAMinus()
 	{
-		opvalue = "-";
-	}
 	
+	}
 	
 	
 	

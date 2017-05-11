@@ -20,11 +20,7 @@ public class TAExists extends TAObject implements TABoolValue  {
 	{
 		return operation.value();
 	}
-	
-	String type()
-	{
-		return "exists";
-	}
+
 	
 	public void list()
 	{

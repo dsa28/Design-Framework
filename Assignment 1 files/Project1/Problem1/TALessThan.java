@@ -12,10 +12,7 @@ public class TALessThan extends TAObject implements TABoolValue{
 
 		private boolean value;
 		
-		String type()
-		{
-			return "bool";
-		}
+		
 		
 		public boolean value()
 		{

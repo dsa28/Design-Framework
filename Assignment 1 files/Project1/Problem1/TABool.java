@@ -10,12 +10,7 @@ public class TABool extends TAObject implements TABoolValue{
 		
 	
 	boolean value;
-	
-	
-	String type()
-	{
-		return "bool";
-	}
+
 	
 	public boolean value()
 	{

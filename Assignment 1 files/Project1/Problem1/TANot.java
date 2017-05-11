@@ -5,11 +5,6 @@ public class TANot extends TAObject implements TABoolValue {
 	boolean value;
 
 	
-	String type()
-	{
-		return "bool";
-	}
-	
 	
 	public void evaluate() {
 		//op.evaluate();

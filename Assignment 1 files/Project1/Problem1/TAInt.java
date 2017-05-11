@@ -28,13 +28,11 @@ public class TAInt extends TAObject implements TAIntValue {
 	}
 	
 	public void evaluate()
-	{}
-	
-	
-	
-	String type() {
-		return "int";
+	{
+		
 	}
+	
+	
 
 	
 	TAInt(String s,int a)

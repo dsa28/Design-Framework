@@ -5,8 +5,7 @@ public class TADivideInt extends TADivide implements TAIntValue {
 	
 	 public void evaluate()
 	 {
-		 //op1.evaluate();
-		 //op2.evaluate();
+		
 		 value = op1.value()/op2.value();
 		 updateAll();
 	}

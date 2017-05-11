@@ -4,7 +4,8 @@ public abstract class TAObject implements TAValue{
 	
 
 	
-	abstract String type();
+	//abstract String type(); not used
+	
 	public abstract void list();
 	public abstract void evaluate();
 	

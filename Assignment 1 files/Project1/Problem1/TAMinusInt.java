@@ -48,10 +48,6 @@ public class TAMinusInt extends TAMinus implements TAIntValue {
 		System.out.print(value);
 	}
 	
-	String type()
-	{
-		return "int";
-	}
 	
 	
 	 

@@ -10,11 +10,7 @@ public class TAImplies extends TAObject implements TABoolValue{
 	{
 		return value;
 	}
-	
-	String type()
-	{
-		return "bool";
-	}
+
 	
 	public void list()
 	{

@@ -4,15 +4,11 @@ public class TAXor extends TAObject implements TABoolValue {
 	TABoolValue op1, op2;
 	boolean value;
 
-	String type()
-	{
-		return "bool";
-	}
+	
 	
 	public void evaluate()
 	{
-		//op1.evaluate();
-		//op2.evaluate();
+		
 		value = (op1.value()||op2.value()) && !(op1.value()&&op2.value());
 		updateAll();
 		

@@ -16,7 +16,9 @@ public class TADouble extends TAObject implements TADoubleValue {
 	}
 	
 	public void evaluate()
-	{}
+	{
+		
+	}
 	
 	
 	void set(double d)
@@ -24,14 +26,6 @@ public class TADouble extends TAObject implements TADoubleValue {
 		value = d;
 		updateAll();
 	}
-	
-	
-
-	String type() {
-		
-		return "double";
-	}
-
 	
 	
 	

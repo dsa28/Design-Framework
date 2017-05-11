@@ -11,11 +11,6 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 	private int value;
 	
 	
-	String type()
-	{
-		return "int";
-	}
-	
 	public int value()
 	{
 		return value;

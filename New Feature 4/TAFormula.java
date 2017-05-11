@@ -41,10 +41,6 @@ public class TAFormula extends TAObject implements TABoolValue {
 		equation = bool;
 	}
 
-	@Override
-	String type() {
-		// TODO Auto-generated method stub
-		return "bool";
-	}
+	
 	
 }

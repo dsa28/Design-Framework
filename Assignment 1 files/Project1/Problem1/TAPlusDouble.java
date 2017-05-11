@@ -32,11 +32,7 @@ public class TAPlusDouble extends TAPlus implements TADoubleValue {
 		System.out.print(value);
 	}
 	
-	String type()
-	{
-		return "double";
-	}
-	
+
 	
 	public double value()
 	{

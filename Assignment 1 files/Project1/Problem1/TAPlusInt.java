@@ -30,13 +30,7 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	{
 		System.out.print(value);
 	}
-	
-	String type()
-	{
-		return "int";
-	}
-	
-	
+
 	 
 	public int value()
 	{

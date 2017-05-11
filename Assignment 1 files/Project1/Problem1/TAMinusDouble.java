@@ -6,11 +6,11 @@ public class TAMinusDouble extends TAMinus implements TADoubleValue {
 	
 	public void evaluate()
 	 {
-		//op1.evaluate();
+		
 		
 		if (!single)
 		 {
-			//op2.evaluate();
+			
 			value = op1.value()-op2.value();
 		 }
 		 else

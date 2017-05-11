@@ -6,7 +6,7 @@ public class TAMultiply extends TANumericFunction {
 	
 	protected TAMultiply()
 	{
-		opvalue = "*";
+		
 	}
 	
 	

@@ -26,10 +26,6 @@ public abstract class TANumericFunction extends TAObject {
 		operation.printState();
 	}
 	
-	 String type()
-	 {
-		 return operation.type();
-	 }
 	
 	
 	String opvalue;

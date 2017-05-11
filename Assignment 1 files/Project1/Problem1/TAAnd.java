@@ -12,10 +12,6 @@ public class TAAnd extends TAObject implements TABoolValue {
 	boolean value;
 
 	
-	public String type()
-	{
-		return "boolean";
-	}
 	
 	public void evaluate()
 	{
