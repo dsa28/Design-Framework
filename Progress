@@ -71,3 +71,12 @@ It turned out that using temporary variables protected us from automatic updatin
 
 Desgin decision 14: In order to support concurrent statements, we will not implement observer pattern in statements like we did with formulas.
 
+Design decision 15 (Refactoring): Like all other classes, TAExists and TAForEvery needed to implement observer pattern.
+For this reason, we had to remove the children classes(TAForEveryInt, TAForEveryDouble....), and implement all methods in the parent class.(see design decision 13).
+Now, because the methods were very big, we moved them to a helper class TAHelper.
+Also, to remove some duplicate code, we only implemented methods to do For every. There exists can be deduced from for every
+(there exists x so that y is true is equivalent to "not for every x, not y is true").
+
+Problems: At this point, we still have a lot of duplicate code in the bodies of the helper methods exists and for every. 
+In addition, there seems to be a problem with nested quantifiers.
+(
