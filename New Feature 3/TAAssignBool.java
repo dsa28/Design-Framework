@@ -39,16 +39,7 @@ public class TAAssignBool extends TAAssign{
 		
 	}
 	
-	public TAAssignBool copy()
-	{
-		//When copying an assignment statement, we need to create a new variable 
-		//in which we will store the result
-		//This will be useful in concurrent list statements
-		TABool clone = new TABool("temp");
-		return new TAAssignBool(clone,t);
-		
-	}
-	
+
 	
 	
 }

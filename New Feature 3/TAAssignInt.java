@@ -40,16 +40,6 @@ public class TAAssignInt extends TAAssign{
 		t.set(temp);
 		
 	}
-	
-	public TAAssignInt copy()
-	{
-		//When copying an assignment statement, we need to create a new variable 
-		//in which we will store the result
-		//This will be useful in concurrent list statements
-		TAInt clone = new TAInt("temp");
-		return new TAAssignInt(clone,t);
-		
-	}
-	
+
 	
 }

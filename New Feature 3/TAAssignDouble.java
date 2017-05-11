@@ -40,15 +40,6 @@ public class TAAssignDouble extends TAAssign{
 		
 	}
 	
-	public TAAssignDouble copy()
-	{
-		//When copying an assignment statement, we need to create a new variable 
-		//in which we will store the result
-		//This will be useful in concurrent list statements
-		TADouble clone = new TADouble("temp");
-		return new TAAssignDouble(clone,t);
-		
-	}
 	
 
 }
