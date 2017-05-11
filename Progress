@@ -79,4 +79,4 @@ Also, to remove some duplicate code, we only implemented methods to do For every
 
 Problems: At this point, we still have a lot of duplicate code in the bodies of the helper methods exists and for every. 
 In addition, there seems to be a problem with nested quantifiers.
-(
+
