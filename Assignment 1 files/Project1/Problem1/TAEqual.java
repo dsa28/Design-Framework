@@ -1,9 +1,15 @@
 
 public class TAEqual extends TAObject implements TABoolValue{
 	
+	private TAIntValue iop1,iop2;
+	private TADoubleValue dop1,dop2;
+	private TABoolValue bop1,bop2;
 	
-	TAEqual operation;
-	String name;
+	private boolean bool; //true if operands are booleans
+	private boolean integer; //true if operands are integers, false otherwise
+	
+	private boolean value;
+
 	
 	
 	String type()
@@ -13,18 +19,47 @@ public class TAEqual extends TAObject implements TABoolValue{
 	
 	public boolean value()
 	{
-		return operation.value();
+		return value;
 	}
 	
 	public void evaluate()
 	{
-		operation.evaluate();
+		if (bool)
+		{
+			value = bop1.value() == bop2.value();
+		}
+		else if (integer)
+		{
+			value = iop1.value() == iop2.value();
+		}
+		else 
+		{
+			value = dop1.value() == dop2.value();
+		}
+		//Compare the operands depending on their type and return the resulting value
+	
+		updateAll();
 		
 	}
 	
 	public void list()
 	{
-		operation.list();
+		if (name != null)
+		{
+			ListStrategy.list(name);
+		}
+		else if (bool)
+		{
+			ListStrategy.list("==",bop1, bop2);
+		}
+		else if (integer)
+		{
+			ListStrategy.list("==", iop1, iop2);
+		}
+		else
+		{
+			ListStrategy.list("==", dop1, dop2);
+		}
 	}
 	
 	
@@ -36,18 +71,36 @@ public class TAEqual extends TAObject implements TABoolValue{
 	
 	TAEqual (TAIntValue a, TAIntValue b) 
 	{
-		operation = new TAEqualInt(a,b);
+		integer = true;
+		bool = false;
 		
+		iop1 = a;
+		iop2 = b;
+		addOperands(a,b);
 	}
+	
+	
+	
+		
+	
 	
 	TAEqual (TADoubleValue a, TADoubleValue b)
 	{
-		operation = new TAEqualDouble(a,b);
+		integer = false;
+		bool = false;
+		dop1 = a;
+		dop2 = b;
+		addOperands(a,b);
+		
 	}
 	
 	TAEqual(TABoolValue a, TABoolValue b)
 	{
-		operation = new TAEqualBool(a,b);
+		integer = false;
+		bool = true;
+		bop1 = a;
+		bop2 = b;
+		addOperands(a,b);
 		
 	}
 	
@@ -55,20 +108,20 @@ public class TAEqual extends TAObject implements TABoolValue{
 	
 	TAEqual (TAIntValue a, TAIntValue b, String s)
 	{
-		operation = new TAEqualInt(a,b);
+		this(a,b);
 		name = s;
 		
 	}
 	
 	TAEqual (TADoubleValue a, TADoubleValue b, String s)
 	{
-		operation = new TAEqualDouble(a,b);
+		this(a,b);
 		name = s;
 	}
 	
 	TAEqual (TABoolValue a, TABoolValue b, String s)
 	{
-		operation = new TAEqualBool(a,b);
+		this(a,b);
 		name = s;
 	}
 	
