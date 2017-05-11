@@ -1,9 +1,14 @@
 
 public class TestClass {
 
+	
 	public static void main(String[] args) {
+		//This class is used to test assignments and basic functions evaluations
+		//It is used when refactoring to make sure the code keeps the same behavior 
+		
 		
 		//Testing for integers with numeric functions
+		
 		
 		TAInt x = new TAInt("x");
 		TAInt y = new TAInt("y");

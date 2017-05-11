@@ -1,63 +1,104 @@
 
 public class TACeiling extends TANumericFunction implements TAIntValue{
 	
-	/*
-	 * Class TACeiling acts as a wrapper class for either a TACeilingDouble or
-	 * a TACeilingInt, depending on the input value
-	 * Either way, it returns an integer
-	 * 
-	 */
-
-	TACeiling operation;
-	
-	
-	String type()
-	{
-		return "int";
-	}
-	
-
-	
-	public int value() {
-		return operation.value();
-	}
-	
-	
-	protected TACeiling()
-	{
+	//Ceiling is a unary operator
+	//It takes in an operand which can be either integer or double
 		
-	}
-	
-
-	 TACeiling (TAIntValue a) 
-	{
-		 operation = new TACeilingInt(a);
-	}
-	
-	 
-	TACeiling (TADoubleValue a)
-	{
-		operation = new TACeilingDouble(a);
+		private TAIntValue iop;
+		private TADoubleValue dop;
+		private boolean integer; //true if operands are integers, false otherwise
 		
-	}
-	
-	
-	
-	 TACeiling (TAIntValue a, String s)
-	{
-		 operation = new TACeilingInt(a);
-		 name = s;
-	}
-	 
-	
-	 TACeiling (TADoubleValue a, String s)
-	{
-		 operation = new TACeilingDouble(a);
-		 name = s;
-	}
+		private int value;
+		
+		
+		String type()
+		{
+			return "int";
+		}
+		
+		public int value()
+		{
+			return value;
+		}
+		
+		
+		public void list()
+		{
+			if (name != null)
+			{
+				ListStrategy.list(name);
+			}
+			else if (integer)
+			{
+				ListStrategy.list("ceiling", iop);
+			}
+			else
+			{
+				ListStrategy.list("ceiling", dop);
+			}
+		}
+		
+		
 
+		
+		public void evaluate()
+		{
+			
+				if (integer)
+				{
+					value = iop.value(); //if its an integer no problem we're done
+				}
+				else
+				{
 
-
+					//if its a double, we need to find its ceiling
+					value = (int)Math.ceil(dop.value());
+					
+				}
+				//Compare the operands depending on their type and return the reulting value
+				
+				updateAll();
+			
+			
+		}
+		
+		
+		
+		
+		
+		TACeiling (TAIntValue a) 
+		{
+			
+			integer = true;
+			iop = a;
+			
+			a.addFunction(this);
+		}
+		
+		TACeiling (TADoubleValue a)
+		{
+		
+			integer = false;
+			dop = a;
+		
+			a.addFunction(this);
+			
+		}
+			
+		
+		TACeiling (TAIntValue a, String s)
+		{
+			this(a);
+			name = s;
+		}
+		
+		TACeiling (TADoubleValue a, String s)
+		{
+			this(a);
+			name = s;
+		}
+		
+		
 
 	
 }

@@ -5,6 +5,7 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 	//The greater than operator returns a boolean
 	//regardless of its operands
 	//which can be either integer or double values
+	
 	private TAIntValue iop1,iop2;
 	private TADoubleValue dop1,dop2;
 	private boolean integer; //true if operands are integers, false otherwise
@@ -26,14 +27,14 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 	{
 		if (integer)
 		{
-			value = iop1.greaterThan(iop2);
+			value = iop1.value() > iop2.value();
 		}
 		else
 		{
-			value = dop1.greaterThan(dop2);
+			value = dop1.value() > dop2.value();
 		}
 		//Compare the operands depending on their type and return the reulting value
-		//operation.evaluate();
+	
 		updateAll();
 	}
 	
@@ -53,16 +54,11 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 		}
 	}
 	
-	
-	protected TAGreaterThan()
-	{
-		
-	}
-	
+
 	
 	TAGreaterThan (TAIntValue a,TAIntValue b) 
 	{
-		//operation = new TAGreaterThanInt(a,b);
+		
 		integer = true;
 		iop1 = a;
 		iop2 = b;
@@ -71,7 +67,7 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 	
 	TAGreaterThan (TADoubleValue a, TADoubleValue b)
 	{
-		//operation = new TAGreaterThanDouble(a,b);
+	
 		integer = false;
 		dop1 = a;
 		dop2 = b;
@@ -96,9 +92,5 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 	
 	
 	
-	
-
-	
-
 	
 }
