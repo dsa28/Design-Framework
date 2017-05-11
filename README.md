@@ -14,10 +14,11 @@ New feature 1 and 2:
 -Class TATest which contains 6 test cases for the e1?e2:e3 features.
 
 -Contains the classes for the ForEvery feature.
-(TAForEvery and inherited classes TAForEveryInt,TAForEveryDouble and TAForEveryBool)
+
 
 -Contains the classes for the Exists feature. 
-(TAExists and inherited classes TAExistsInt,TAExistsDouble and TAExistsBool)
+
+-Class TAHelper which contains helper functions
   
 -Class TATest2 which contains 13 test cases for ForEvery and Exists features.
 (Including testing for int and bool and nested quantifiers)
