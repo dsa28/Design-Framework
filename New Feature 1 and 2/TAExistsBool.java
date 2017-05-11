@@ -15,17 +15,7 @@ public class TAExistsBool extends TAExists{
 	  
 	    
 	    
-	    public void list()
-	    {
-	    	System.out.print("(exists ");
-	    	x.list();
-	    	System.out.print(" in ");
-	    	domain.list();
-	    	System.out.print(": ");
-	    	expression.list();
-	    	System.out.print(")");
-	    }
-	    
+	  	    
 	    
 	     public void evaluate()
 	    {

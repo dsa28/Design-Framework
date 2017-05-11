@@ -77,6 +77,7 @@ public class TAForEvery extends TAObject implements TABoolValue {
 	}
 
 	
+	
 	protected TAForEvery(TABoolValue expression)
 	{
 		bool = false;

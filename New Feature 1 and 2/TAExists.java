@@ -13,46 +13,109 @@ public class TAExists extends TAObject implements TABoolValue  {
 	 * Evaluate()
 	 */
 	
-	
-    TAExists operation; //To keep consistency with other classes
+
+	  TAInt ivariable; //The variable to be changed; the variable should be a primitive and not an expression
+	  TASetInt idomain; //The domain where the formula will be evaluated
+	  
+	  TADouble dvariable; 
+	  TASetDouble ddomain; 
+	  
+	  TABool bvariable;
+	  TASetBool bdomain;
+	  
+	  boolean integer;
+	  boolean bool;
+	  
+	  TABoolValue expression; //The formula itself
+	    
+	   
+	  boolean value; //Result of the operation
+	    
 	
 	public boolean value()
 	{
-		return operation.value();
+		return value;
 	}
-
+	
 	
 	public void list()
 	{
-		operation.list();
+		if (integer)
+		{
+			ListStrategy.list("exists ", ivariable, " in ", idomain, ": ", expression);
+		}
+		else if (bool)
+		{
+			ListStrategy.list("exists ", bvariable, " in ", bdomain, ": ", expression);
+		}
+		else
+		{
+			ListStrategy.list("exists ", dvariable, " in ", ddomain, ": ", expression);
+		}
 	}
-
+	
+	
 
 	public void evaluate() {
 		
-		operation.evaluate();
+		if (bool)
+		{
+			value = TAHelper.exists(bdomain, expression, bvariable);
+		}
+		else if (integer)
+		{
+			value = TAHelper.exists(idomain, expression, ivariable);
+		}
+		else
+		{
+			value = TAHelper.exists(ddomain, expression, dvariable);
+		}
+		
+		updateAll();
+		
 	}
 	
 	void printState()
 	{
-		operation.printState();
+		System.out.print(value);
 	}
 	
+	TAExists(TABoolValue expression)
+	{
+		this.expression = expression;
+		
+	}
 	
 	//Constructors to determine the operand types
 	 TAExists (TASetBool D, TABoolValue expression, TABool x)
 	{
-		operation = new TAExistsBool(D,expression,x);
+		 this(expression);
+		 bool = true;
+		 
+		 bdomain = D;
+		 bvariable = x;
+		 
+		
 	}
 
 	 TAExists (TASetInt D, TABoolValue expression, TAInt x)
 	 {
-			operation = new TAExistsInt(D,expression,x);
+		 this(expression);
+		 integer = true;
+		 
+		 idomain = D;
+		 ivariable = x;
+		 
+
 	 }
 
 	 TAExists (TASetDouble D, TABoolValue expression, TADouble x)
 	 {
-			operation = new TAExistsDouble(D,expression,x);
+		 this(expression);
+		 ddomain = D;
+		 dvariable = x;
+		 
+		
 	}
 
 	 

@@ -80,6 +80,10 @@ public class TATest2 {
 		e.printState();
 		System.out.println(); //should print false
 		
+		
+		System.out.println();
+		
+		
 		TAInt i1 = new TAInt("i1");
 		TAInt i2 = new TAInt("i2");
 		TAInt i3 = new TAInt("i3");
@@ -165,6 +169,8 @@ public class TATest2 {
 		a = new TAForEvery(D2,or,y);
 		e = new TAExists (D2,a,temp);
 		
+		
+		
 		e.list(); //Should print (exists temp in D2: (or (every y in D2: (> y temp) (= y 1))
 		System.out.println();
 		e.evaluate();
@@ -173,7 +179,14 @@ public class TATest2 {
 		
 		
 		
-		
+		//Test 16
+		System.out.println();
+		TANot n = new TANot(a);
+		temp.set(-2);
+		a.evaluate();
+		a.printState();
+		System.out.println();
+		System.out.println(n.value());
 
 	}
 
