@@ -4,9 +4,10 @@ As stated in the "Progress" document, the framework builds up on the assignement
 
 The design framework classes are separated into different folders:
 Assignment 1:
--Contains all the code from assignement 1, with some modifications from refactoring to be able to implement new features.
+-Contains all the code from assignement 1.
+These files were refactored to be able to implement new features, and to eliminate some bad smells.
 
-New feature 1:
+New feature 1 and 2:
 -Contains the classes for the e1?e2:e3 features.
 (TAIfElse from which inherit TAIfElseInt, TAIfElseDouble (for terms) and TAIfElseBool (for formulas))
 
