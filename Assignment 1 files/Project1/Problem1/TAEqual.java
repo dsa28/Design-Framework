@@ -11,8 +11,6 @@ public class TAEqual extends TAObject implements TABoolValue{
 	private boolean value;
 
 	
-
-	
 	public boolean value()
 	{
 		return value;
@@ -59,16 +57,17 @@ public class TAEqual extends TAObject implements TABoolValue{
 	}
 	
 	
-	protected TAEqual()
+	private TAEqual()
 	{
-		
+		integer = false;
+		bool = false;
 	}
 	
 	
 	TAEqual (TAIntValue a, TAIntValue b) 
 	{
+		this();
 		integer = true;
-		bool = false;
 		
 		iop1 = a;
 		iop2 = b;
@@ -76,14 +75,11 @@ public class TAEqual extends TAObject implements TABoolValue{
 	}
 	
 	
-	
-		
-	
-	
+
 	TAEqual (TADoubleValue a, TADoubleValue b)
 	{
-		integer = false;
-		bool = false;
+		this();
+		
 		dop1 = a;
 		dop2 = b;
 		addOperands(a,b);
@@ -92,7 +88,8 @@ public class TAEqual extends TAObject implements TABoolValue{
 	
 	TAEqual(TABoolValue a, TABoolValue b)
 	{
-		integer = false;
+		this();
+		
 		bool = true;
 		bop1 = a;
 		bop2 = b;
