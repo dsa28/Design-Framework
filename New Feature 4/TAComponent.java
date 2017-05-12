@@ -17,21 +17,25 @@ public class TAComponent {
 	TAState initial;
 	TAState current;
 	
-	
-	TAComponent(String s,TAState q0)
+
+	//Print the state of the component
+	void printState()
 	{
-		name = s;
-		
-		initial = q0; //designated initial state
-		current = initial; //at t0, the state is the initial state
-		
-		states = new ArrayList<TAState>();
-		ports = new ArrayList<TAPort>();
-		transitions = new ArrayList<TATransition>();
-		labels = new ArrayList<TATransitionLabel>();
+		current.list();
 	}
 	
 	
+	//Cloning
+	public TAComponent clone()
+	{
+		//TODO fix this
+		
+		TAComponent clone = new TAComponent(name,initial); //note, need to clone initial- not same one
+		//or is it?
+		
+		
+		return clone;
+	}
 	//Construction
 	
 	void addPort (TAPort port)
@@ -55,9 +59,21 @@ public class TAComponent {
 	}
 	
 	
-	//Print the state of the component
-	void printState()
+
+	TAComponent(String s,TAState q0)
 	{
-		current.list();
+		name = s;
+		
+		
+		states = new ArrayList<TAState>();
+		ports = new ArrayList<TAPort>();
+		transitions = new ArrayList<TATransition>();
+		labels = new ArrayList<TATransitionLabel>();
+		
+		addState(q0);
+		initial = q0; //designated initial state
+		current = initial; //at t0, the state is the initial state
+		
 	}
+	
 }
