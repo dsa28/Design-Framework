@@ -15,6 +15,9 @@ public class TATest4 {
 		
 		c1.addTransition(t1);
 		c1.printState(); //state is q0
+		
+
+		
 	}
 	
 	
