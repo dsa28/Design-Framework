@@ -7,6 +7,7 @@ public abstract class TANumericFunction extends TAObject {
 	 */
 	
 
+<<<<<<< HEAD
 	
 	
 	public void list()
@@ -26,8 +27,10 @@ public abstract class TANumericFunction extends TAObject {
 		operation.printState();
 	}
 	
+=======
+	
+>>>>>>> parent of f8f95b3... Refactoring
 	
 	
 	String opvalue;
-	protected TANumericFunction operation;
 }

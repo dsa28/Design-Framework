@@ -21,11 +21,6 @@ public abstract class TAStatement implements TAValue {
 	//To get a concurrent list
 	abstract public void evaluate(TAStatement s);
 	
-	 public void addFunction(TAObject a)
-	 {
-		 
-	 }
-	 
 	String type()
 	{
 		return "Statement";

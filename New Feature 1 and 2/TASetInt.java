@@ -75,12 +75,6 @@ public class TASetInt implements TAValue {
 			
 			
 		}
-
-		@Override
-		public void addFunction(TAObject function) {
-			// TODO Auto-generated method stub
-			
-		}
 	     
 	   
 	      

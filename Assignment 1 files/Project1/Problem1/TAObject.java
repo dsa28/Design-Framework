@@ -1,16 +1,22 @@
 import java.util.ArrayList;
 
-public abstract class TAObject implements TAValue{
+public abstract class TAObject {
 	
 
 	
+<<<<<<< HEAD
 	//abstract String type(); not used
 	
 	public abstract void list();
 	public abstract void evaluate();
+=======
+	abstract String type();
+	abstract void list();
+	abstract void evaluate();
+>>>>>>> parent of f8f95b3... Refactoring
 	
 	
-	protected ArrayList<TAObject> functions = new ArrayList<TAObject>();
+	//ArrayList<TAVariable> variables = new ArrayList<TAVariable>();
 	//list of variables linked to this object
 	//used for observer pattern in formulas
 	
@@ -25,6 +31,7 @@ public abstract class TAObject implements TAValue{
 		b.addFunction(this);
 	}
 	
+<<<<<<< HEAD
 	public void addFunction(TAObject function)
 	{
 		
@@ -60,4 +67,6 @@ public abstract class TAObject implements TAValue{
 			System.out.println();
 		}
 	}
+=======
+>>>>>>> parent of f8f95b3... Refactoring
 }

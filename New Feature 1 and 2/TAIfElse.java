@@ -27,7 +27,7 @@ class TAIfElse extends TAObject
 	
 	
 	//List function to recursively print the expression
-	public void list()
+	void list()
 	{
 		operation.list();
 		
@@ -35,7 +35,7 @@ class TAIfElse extends TAObject
 	
 	
 	//Recursively evaluate the expression 
-	public void evaluate()
+	void evaluate()
 	{
 		operation.evaluate();
 	}

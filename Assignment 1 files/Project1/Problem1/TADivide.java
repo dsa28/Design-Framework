@@ -6,9 +6,35 @@ public class TADivide extends TANumericFunction{
 	 * depending on the input values
 	 */
 	
+	private TADivide operation;
+	
+	public void list()
+	{
+		operation.list();
+	}
+	
+	
+	void printState()
+	{
+		operation.printState();
+	}
+	
+	String type()
+	{
+		return operation.type();
+		
+	}
+	
+	
+	public void evaluate()
+	{
+		operation.evaluate();
+	}
 	
 	
 	
+	
+
 	
 	protected TADivide()
 	{

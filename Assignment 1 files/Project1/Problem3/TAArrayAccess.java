@@ -14,13 +14,13 @@ class TAArrayAccess extends TAObject
 	}
 
 	
-	public void list() {
+	void list() {
 		elem.list();
 		
 	}
 
 	
-	public void evaluate() {
+	void evaluate() {
 		elem.evaluate();
 		
 	}
