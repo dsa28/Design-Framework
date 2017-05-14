@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 public class TAFloor extends TANumericFunction implements TAIntValue{
 	
 	//Floor is a unary operator
@@ -10,9 +9,7 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 	private boolean integer; //true if operands are integers, false otherwise
 	
 	private int value;
-=======
-public class TAFloor implements TAIntValue{
->>>>>>> parent of f8f95b3... Refactoring
+
 	
 	
 	public int value()
@@ -71,7 +68,7 @@ public class TAFloor implements TAIntValue{
 		integer = true;
 		iop = a;
 		
-		a.addFunction(this);
+	
 	}
 	
 	TAFloor (TADoubleValue a)
@@ -80,8 +77,6 @@ public class TAFloor implements TAIntValue{
 		integer = false;
 		dop = a;
 	
-		a.addFunction(this);
-		
 	}
 		
 	

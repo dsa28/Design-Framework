@@ -40,10 +40,5 @@ public class TAFormula implements TABoolValue {
 	{
 		equation = bool;
 	}
-<<<<<<< HEAD
 
-	
-=======
->>>>>>> parent of f8f95b3... Refactoring
-	
 }

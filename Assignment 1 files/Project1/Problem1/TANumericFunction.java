@@ -6,13 +6,9 @@ public abstract class TANumericFunction extends TAObject {
 	 * and make modifying classes easier and faster
 	 */
 	
-
-	public void addOperands(TAValue a, TAValue b)
-	{
-		a.addFunction(operation);
-		b.addFunction(operation);
-	}
-
+	String opvalue;
+	TANumericFunction operation;
+	
 	
 	public void list()
 	{
@@ -32,5 +28,5 @@ public abstract class TANumericFunction extends TAObject {
 
 	
 	
-	String opvalue;
+	
 }

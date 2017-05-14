@@ -52,8 +52,6 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 					
 				}
 				//Compare the operands depending on their type and return the reulting value
-				
-				updateAll();
 			
 			
 		}
@@ -68,7 +66,7 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 			integer = true;
 			iop = a;
 			
-			a.addFunction(this);
+			
 		}
 		
 		TACeiling (TADoubleValue a)
@@ -77,8 +75,7 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 			integer = false;
 			dop = a;
 		
-			a.addFunction(this);
-			
+		
 		}
 			
 		

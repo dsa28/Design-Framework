@@ -3,13 +3,12 @@ public class TestClass {
 
 	public static void main(String[] args) {
 		
-<<<<<<< HEAD
+
 		TAInt i = new TAInt("i");
 		
 		TAMinusInt minus = new TAMinusInt (i,i);
 		TAPlus plus = new TAPlus(i,minus);
 
-=======
 		TAInt x = new TAInt("x");
 		TAInt y = new TAInt("y");
 		TAInt z = new TAInt("z");
@@ -26,11 +25,6 @@ public class TestClass {
 		
 		p.evaluate();
 		p.printState();
-		x.listFunctions();
-<<<<<<< HEAD
->>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
-=======
->>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 	}
 
 }

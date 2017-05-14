@@ -27,13 +27,6 @@ public class TADouble extends TAObject implements TADoubleValue {
 	}
 	
 	
-	
-	TADouble(String s,double a)
-	{
-		name = s;
-		value = a;
-	}
-	
 	TADouble(String s)
 	{
 		value = 0.0;
@@ -41,9 +34,13 @@ public class TADouble extends TAObject implements TADoubleValue {
 	}
 	
 	
-
-
-
+	TADouble(String s,double a)
+	{
+		this(s);
+		value = a;
+	}
 	
 	
+	
+
 }

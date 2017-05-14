@@ -58,7 +58,7 @@ public class TALessThan extends TAObject implements TABoolValue{
 			integer = true;
 			iop1 = a;
 			iop2 = b;
-			addOperands(a,b);
+		
 		}
 		
 		TALessThan (TADoubleValue a, TADoubleValue b)
@@ -67,7 +67,7 @@ public class TALessThan extends TAObject implements TABoolValue{
 			integer = false;
 			dop1 = a;
 			dop2 = b;
-			addOperands(a,b);
+		
 			
 		}
 			

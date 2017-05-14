@@ -12,9 +12,7 @@ public class TASetBool<T extends TABoolValue> implements TAValue {
      int fence; //Iterator
      
      
-     public
-  
-     void list()
+     public void list()
      {
     	 System.out.print(domainSetName);
      }
@@ -75,7 +73,8 @@ public class TASetBool<T extends TABoolValue> implements TAValue {
 	public void evaluate() {
 		
 	}
-     
+
+	
    
       
 }

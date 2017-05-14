@@ -1,5 +1,5 @@
 
-public class TAExists implements TABoolValue {
+//public class TAExists implements TABoolValue {
 	
 	/*
 	 * Class TAExists which represents the existential quantifier
@@ -14,7 +14,7 @@ public class TAExists implements TABoolValue {
 	 */
 	
 	
-    TAExists operation; //To keep consistency with other classes
+ /*   TAExists operation; //To keep consistency with other classes
 	
 	public boolean value()
 	{
@@ -76,4 +76,4 @@ public class TAExists implements TABoolValue {
 	    
 	    
 	
-}
+}*/

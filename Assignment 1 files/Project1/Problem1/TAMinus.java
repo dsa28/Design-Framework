@@ -2,41 +2,8 @@
 public class TAMinus extends TANumericFunction {
 
 	boolean single; //Indicates whether we are using minus as a binary or unary operator
-	private TAMinus operation;
+
 	
-	
-	public void list()
-	{
-		operation.list();
-	}
-	
-	
-	void printState()
-	{
-		operation.printState();
-	}
-	
-<<<<<<< HEAD
-=======
-	
-	String type()
-	{
-		return operation.type();
-		
-	}
-	
-	
-	public void evaluate()
-	 {operation.evaluate();}
-		 
-	void operands()
-	{
-		operation.operands();
-	}
-	
-	
-	
->>>>>>> parent of f8f95b3... Refactoring
 	protected TAMinus()
 	{
 	

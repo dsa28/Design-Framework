@@ -1,5 +1,5 @@
 
-public class TestClass {
+public class TestClass1 {
 
 	
 	public static void main(String[] args) {
@@ -50,26 +50,16 @@ public class TestClass {
 		System.out.println();
 		
 		z.set(3);
+		
+		m4.evaluate();
 		m4.printState(); //6
 		
 		System.out.println();
 		
 		z.set(23);
+		min.evaluate();
 		min.printState(); //-23
 		
-		System.out.println();
-		System.out.println();
-		
-		p3.listFunctions();
-		System.out.println();
-		
-		x.listFunctions();
-		System.out.println();
-		y.listFunctions();
-		System.out.println();
-		z.listFunctions();
-		
-		System.out.println();
 		System.out.println();
 		
 		//Tests with booleans
@@ -80,8 +70,7 @@ public class TestClass {
 		TAAnd and = new TAAnd(b1,b2);
 		TAOr or = new TAOr(and,b3);
 		
-		b3.listFunctions(); //should print (or (& b1 b2) b3)
-		System.out.println();
+		
 		
 		b1.set(false);
 		b2.set(true);
@@ -91,6 +80,7 @@ public class TestClass {
 		
 		b3.set(true);
 		
+		or.evaluate();
 		System.out.println(or.value()); //true
 		
 		TAAnd and2 = new TAAnd(or,b2);
@@ -109,23 +99,32 @@ public class TestClass {
 		
 		System.out.println();
 		
+		or2.evaluate();
 		System.out.println(or2.value()); //true
 		System.out.println(and5.value()); //false
 		
 		TAGreaterThan gt = new TAGreaterThan(x,y); 
 		TAAnd and6 = new TAAnd(gt,or2);
+		
+		and6.evaluate();
 		System.out.println(and6.value()); //true
 		
 		y.set(7);
 
+		p2.evaluate();
 		p2.printState(); //10
 		System.out.println();
 		
+		
+		p4.evaluate();
 		p4.printState(); //should be 17
 		System.out.println();
 		
 		
 		System.out.println();
+		
+		gt.evaluate();
+		and6.evaluate();
 		
 		System.out.println(gt.value()); //false
 		System.out.println(and6.value()); //false

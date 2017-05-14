@@ -33,20 +33,21 @@ public class TAInt extends TAObject implements TAIntValue {
 	
 	
 
-	
+	//Default constructor
+	TAInt(String s)
+	{
+			value = 0;
+			name = s;
+	}
+		
+		
 	TAInt(String s,int a)
 	{
-		name = s;
+		this(s);
 		value = a;
 	}
 	
 	
-	//Default constructor
-	TAInt(String s)
-	{
-		value = 0;
-		name = s;
-	}
 	
 
 

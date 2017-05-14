@@ -58,7 +58,7 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 		integer = true;
 		iop1 = a;
 		iop2 = b;
-		addOperands(a,b);
+	
 	}
 	
 	TAGreaterThan (TADoubleValue a, TADoubleValue b)
@@ -67,7 +67,6 @@ public class TAGreaterThan extends TAObject implements TABoolValue{
 		integer = false;
 		dop1 = a;
 		dop2 = b;
-		addOperands(a,b);
 		
 	}
 		

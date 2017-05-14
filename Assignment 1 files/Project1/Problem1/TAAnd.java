@@ -15,9 +15,16 @@ public class TAAnd extends TAObject implements TABoolValue {
 	
 	public void evaluate()
 	{
-	
-		value= op1.value() && op2.value();
-		updateAll();
+		op1.evaluate();
+		
+		if (!op1.value()) //optimization: if the value of op1 is false- no need to evaluate op2
+		{
+			value =  false;
+			return;
+		}
+		
+		op2.evaluate();
+		value = op2.value(); 
 	}
 	
 	public boolean value()
@@ -30,7 +37,7 @@ public class TAAnd extends TAObject implements TABoolValue {
 			op1 = a;
 			op2 = b;
 			
-			addOperands(a,b);
+		
 	}
 	
 	
@@ -47,6 +54,8 @@ public class TAAnd extends TAObject implements TABoolValue {
 		}
 				
 	}
+
+
 	
 	
 

@@ -7,17 +7,18 @@ public class TAMinusDouble extends TAMinus implements TADoubleValue {
 	public void evaluate()
 	 {
 		
+		op1.evaluate();
 		
 		if (!single)
 		 {
-			
+			op2.evaluate();
 			value = op1.value()-op2.value();
 		 }
 		 else
 		 {
 			 value = -op1.value();
 		 }
-		updateAll();
+		
 	 }
 	 
 	 
@@ -50,10 +51,6 @@ public class TAMinusDouble extends TAMinus implements TADoubleValue {
 		System.out.print(value);
 	}
 	
-	String type()
-	{
-		return "double";
-	}
 
 
 	public double value()

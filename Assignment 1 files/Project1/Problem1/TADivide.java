@@ -6,42 +6,12 @@ public class TADivide extends TANumericFunction{
 	 * depending on the input values
 	 */
 	
-	private TADivide operation;
 	
-	public void list()
-	{
-		operation.list();
-	}
-	
-	
-	void printState()
-	{
-		operation.printState();
-	}
-	
-	String type()
-	{
-		return operation.type();
-		
-	}
-	
-	
-	public void evaluate()
-	{
-		operation.evaluate();
-	}
-	
-	
-	
-	
-
 	
 	protected TADivide()
 	{
 	
 	}
-	
-	
 	
 	
 	
@@ -62,13 +32,13 @@ public class TADivide extends TANumericFunction{
 	 //two arguments and a name
 	 TADivide(TAIntValue a,TAIntValue b, String s)
 	 {
-		 operation = new TADivideInt(a,b);
+		 this(a,b);
 		 name = s;
 	}
 	
 	 TADivide (TADoubleValue a,TADoubleValue b, String s)
 	 {
-		 operation = new TADivideDouble(a,b);
+		 this(a,b);
 		 name = s;
 	}
 	 

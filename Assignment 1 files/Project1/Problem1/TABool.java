@@ -30,7 +30,9 @@ public class TABool extends TAObject implements TABoolValue{
 	
 	
 	public void evaluate()
-	{}
+	{
+		
+	}
 	
 	void printState()
 	{

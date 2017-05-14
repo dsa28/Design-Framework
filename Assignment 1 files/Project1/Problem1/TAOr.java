@@ -8,8 +8,17 @@ public class TAOr extends TAObject implements TABoolValue {
 	
 	public void evaluate() {
 	
-		value = op1.value()||op2.value();
-		updateAll();
+		op1.evaluate();
+		
+		if (op1.value()) //optimization: if the first value is true, no need to evaluate the second
+		{
+			value = true;
+			return;
+		}
+		
+		op2.evaluate();
+		value = op2.value();
+		
 		
 	}
 	
@@ -18,17 +27,7 @@ public class TAOr extends TAObject implements TABoolValue {
 	{
 		return value;
 	}
-	
-	TAOr(TABoolValue a, TABoolValue b) 
-	{
-		
-			
-		op1 = a;
-		op2 = b;
-		
-		addOperands(a,b);
-		
-	}
+
 	
 	
 	public void list()
@@ -44,5 +43,12 @@ public class TAOr extends TAObject implements TABoolValue {
 				
 	}
 	
+	
+	TAOr(TABoolValue a, TABoolValue b) 
+	{	
+		op1 = a;
+		op2 = b;
+		
+	}
 
 }

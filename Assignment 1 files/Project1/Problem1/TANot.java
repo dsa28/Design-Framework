@@ -8,8 +8,9 @@ public class TANot extends TAObject implements TABoolValue {
 	
 	public void evaluate() {
 		
+		op.evaluate();
 		value = !(op.value());
-		updateAll();
+	
 		
 	}
 	
@@ -21,7 +22,7 @@ public class TANot extends TAObject implements TABoolValue {
 	TANot(TABoolValue a)
 	{
 		op = a;
-		a.addFunction(this);
+	
 	}
 	
 	public void list()

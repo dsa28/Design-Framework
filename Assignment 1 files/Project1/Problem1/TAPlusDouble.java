@@ -7,9 +7,11 @@ public class TAPlusDouble extends TAPlus implements TADoubleValue {
 	
 	public void evaluate()
 	 {
+		op1.evaluate();
+		op2.evaluate();
 		
 		value = op1.value()+op2.value();
-		updateAll();
+		
 	 }
 	
 	

@@ -20,15 +20,19 @@ public class TAImplies extends TAObject implements TABoolValue{
 	
 	public void evaluate()
 	{
-		if (op1.value() && !op2.value())
-		{
-			value = false;
-		}
-		else
+		op2.evaluate();
+		
+		if (op2.value()) //if the second operand is true, the result is necessarily true
 		{
 			value = true;
+			return;
 		}
-		updateAll();
+		
+		op1.evaluate();
+		value = !op1.value(); //if the second is false but the first is true- the result is false
+		//otherwise, the result is true
+		
+		
 	}
 	
 	
@@ -36,9 +40,7 @@ public class TAImplies extends TAObject implements TABoolValue{
 	{
 			op1 = a;
 			op2 = b;
-	
-			addOperands(a,b);
-		
+
 	}
 	
 	

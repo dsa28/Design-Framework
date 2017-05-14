@@ -32,7 +32,7 @@ public class TAEqual extends TAObject implements TABoolValue{
 		}
 		//Compare the operands depending on their type and return the resulting value
 	
-		updateAll();
+		
 		
 	}
 	
@@ -71,7 +71,7 @@ public class TAEqual extends TAObject implements TABoolValue{
 		
 		iop1 = a;
 		iop2 = b;
-		addOperands(a,b);
+	
 	}
 	
 	
@@ -82,7 +82,6 @@ public class TAEqual extends TAObject implements TABoolValue{
 		
 		dop1 = a;
 		dop2 = b;
-		addOperands(a,b);
 		
 	}
 	
@@ -93,7 +92,7 @@ public class TAEqual extends TAObject implements TABoolValue{
 		bool = true;
 		bop1 = a;
 		bop2 = b;
-		addOperands(a,b);
+	
 		
 	}
 	
