@@ -52,6 +52,8 @@ public class TATest2 {
 		System.out.println(); //should print true
 		
 		
+		System.out.println();
+		
 		//Test 5
 		TAForEvery q1 = new TAForEvery(D,a1,x); //Want to evaluate (x and b1) for x in D
 		
@@ -133,6 +135,7 @@ public class TATest2 {
 		System.out.println(); //should print true
 		
 		//Test 11
+		o.evaluate();
 		System.out.println(o.value()); //should print true
 
 		temp.set(4);
@@ -143,6 +146,7 @@ public class TATest2 {
 		System.out.println(); //should print false
 		
 		//Test 13
+		o.evaluate();
 		System.out.println(o.value()); //should print false 
        
 		System.out.println();
@@ -153,7 +157,7 @@ public class TATest2 {
 		
 		
 		//Test 14: Finally, we need to test nested quantifiers
-		
+	
 		a = new TAForEvery(D2,e,temp);
 		a.list(); //Should print(for every temp in D2: (exists y in D2: (> y temp))
 		a.evaluate();
