@@ -38,10 +38,24 @@ public class TAInteraction {
 		this.action = action;
 	}
 	
+	public void list()
+	{
+		for (int i=0; i < ports.size(); i++)
+		{
+			ports.get(i).list();
+			System.out.print(",");
+		}
+		System.out.println();
+		guard.list();
+		System.out.println();
+		action.list();
+	}
+	
 	
 	TAInteraction()
 	{
-		
+		guard = new TABool("b1");
+		action = new TAEmptyStatement();
 	}
 	
 	
