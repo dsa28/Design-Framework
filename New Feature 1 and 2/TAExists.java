@@ -71,8 +71,7 @@ public class TAExists extends TAObject implements TABoolValue  {
 			value = TAHelper.exists(ddomain, expression, dvariable);
 		}
 		
-		updateAll();
-		
+
 	}
 	
 	void printState()

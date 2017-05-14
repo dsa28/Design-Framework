@@ -23,15 +23,21 @@ public class TALessThan extends TAObject implements TABoolValue{
 		{
 			if (integer)
 			{
+				iop1.evaluate();
+				iop2.evaluate();
+				
 				value = iop1.value() < iop2.value();
 			}
 			else
 			{
+				dop1.evaluate();
+				dop2.evaluate();
+				
 				value = dop1.value() < dop2.value();
 			}
 			//Compare the operands depending on their type and return the resulting value
 		
-			updateAll();
+			
 		}
 		
 		public void list()

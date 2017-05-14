@@ -68,7 +68,7 @@ public class TAForEvery extends TAObject implements TABoolValue {
 			value = TAHelper.forEvery(ddomain, expression, dvariable);
 		}
 		
-		updateAll();
+	
 	}
 	
 	void printState()
