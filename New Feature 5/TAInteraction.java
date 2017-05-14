@@ -26,6 +26,11 @@ public class TAInteraction {
 	{
 		action.evaluate(); //execute action
 		
+		for (int i=0;i<ports.size();i++)
+		{
+			ports.get(i).evaluate();
+		}
+		
 	}
 	
 	public void addGuard(TABoolValue guard)

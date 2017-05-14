@@ -8,15 +8,20 @@ public class TAPort {
 	private TAComponent component; //component to which the port belongs to
 	
 	
+	public void evaluate()
+	{
+		component.evaluate(transition);
+	}
+	
 	//get the transition associated to a port
-	TATransition getTransition()
+	public TATransition getTransition()
 	{
 		return transition;
 	}
 	
 	
 	//associate a transition to a port
-	void setTransition(TATransition transition)
+	public void setTransition(TATransition transition)
 	{
 		ready = true;
 		this.transition = transition;

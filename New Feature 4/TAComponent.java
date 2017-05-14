@@ -104,6 +104,12 @@ public class TAComponent {
 		}
 	}
 	
+	public void evaluate(TATransition t)
+	{
+		t.evaluate();
+		current = t.getStateTo();
+	}
+	
 	//Cloning
 	public TAComponent clone()
 	{
