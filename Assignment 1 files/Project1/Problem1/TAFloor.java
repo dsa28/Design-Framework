@@ -43,13 +43,14 @@ public class TAFloor extends TANumericFunction implements TAIntValue{
 			if (integer)
 			{
 				iop.evaluate();
+				
 				value = iop.value(); //if its an integer no problem we're done
 			}
 			else
 			{
 				dop.evaluate();
 				
-				//if its a double, we need to find its floot
+				//if its a double, we need to find its floor
 				value = (int)Math.floor(dop.value());
 				
 			}

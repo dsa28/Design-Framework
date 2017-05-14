@@ -42,11 +42,13 @@ public class TACeiling extends TANumericFunction implements TAIntValue{
 			
 				if (integer)
 				{
+					iop.evaluate();
 					value = iop.value(); //if its an integer no problem we're done
 				}
 				else
 				{
-
+					
+					dop.evaluate();
 					//if its a double, we need to find its ceiling
 					value = (int)Math.ceil(dop.value());
 					
