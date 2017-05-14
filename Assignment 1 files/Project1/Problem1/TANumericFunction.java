@@ -7,16 +7,12 @@ public abstract class TANumericFunction extends TAObject {
 	 */
 	
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
 	public void addOperands(TAValue a, TAValue b)
 	{
 		a.addFunction(operation);
 		b.addFunction(operation);
 	}
->>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
+
 	
 	public void list()
 	{
@@ -33,9 +29,7 @@ public abstract class TANumericFunction extends TAObject {
 		operation.printState();
 	}
 	
-=======
-	
->>>>>>> parent of f8f95b3... Refactoring
+
 	
 	
 	String opvalue;

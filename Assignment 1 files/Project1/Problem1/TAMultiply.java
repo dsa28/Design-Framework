@@ -52,9 +52,13 @@ public class TAMultiply extends TANumericFunction {
 		operation = new TAMultiplyInt(a,b);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 >>>>>>> parent of f8f95b3... Refactoring
+=======
+		addOperands(a,b);
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 =======
 		addOperands(a,b);
 >>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
@@ -65,9 +69,13 @@ public class TAMultiply extends TANumericFunction {
 		 operation = new TAMultiplyDouble(a,b);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 >>>>>>> parent of f8f95b3... Refactoring
+=======
+		 addOperands(a,b);
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 =======
 		 addOperands(a,b);
 >>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern

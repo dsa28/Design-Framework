@@ -27,6 +27,9 @@ public class TestClass {
 		p.evaluate();
 		p.printState();
 		x.listFunctions();
+<<<<<<< HEAD
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
+=======
 >>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 	}
 

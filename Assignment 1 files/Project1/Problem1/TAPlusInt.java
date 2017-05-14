@@ -7,11 +7,9 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	
 	public void evaluate()
 	 {
-<<<<<<< HEAD
-=======
+
 		op1.evaluate();
 		op2.evaluate();
->>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 		value = op1.value()+op2.value();
 	 }
 	
