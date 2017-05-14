@@ -7,6 +7,8 @@ public class TATest4 {
 		TAState q1 = new TAState("q1");
 	
 		TAPort p1 = new TAPort("p1");
+		TAPort p2 = new TAPort("p2");
+		
 		
 		TABool b1 = new TABool("b1");
 		b1.set(true);
@@ -15,7 +17,7 @@ public class TATest4 {
 		b2.set(true);
 		
 		TATransitionLabel label = new TATransitionLabel(p1,b1,new TAEmptyStatement());
-		TATransitionLabel l2 = new TATransitionLabel (p1,b2,new TAEmptyStatement());
+		TATransitionLabel l2 = new TATransitionLabel (p2,b2,new TAEmptyStatement());
 		
 		TAComponent c1 = new TAComponent("component", q0); //Create a compoenent
 		//It has an initial state and a name
@@ -35,6 +37,10 @@ public class TATest4 {
 		c1.addTransition(t2);
 		c1.addTransition(t3);
 		
+		c1.addPort(p1);
+		c1.addPort(p2);
+		
+		
 		c1.printState(); //state is q0
 		
 		System.out.println();
@@ -52,6 +58,14 @@ public class TATest4 {
 		
 		c1.printEligible();
 		
+		System.out.println();
+		
+		c1.printReadyPorts();
+		System.out.println();
+		
+		c1.evaluate();
+		
+		c1.printState();
 	}
 	
 	

@@ -9,7 +9,10 @@ public class TATransitionLabel {
 	TABoolValue guard;
 	private TAStatement action;
 	
-	
+	public TAPort getPort()
+	{
+		return port;
+	}
 	
 	public void list()
 	{

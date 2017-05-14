@@ -21,11 +21,16 @@ public class TAPort {
 		
 	}*/
 	
+	public void setReady(boolean ready)
+	{
+		this.ready = ready;
+	}
+	
 	boolean isReady()
 	{
 		return ready; //check if a port is ready
 	}
-
+	
 	public void list()
 	{
 		ListStrategy.list(name);

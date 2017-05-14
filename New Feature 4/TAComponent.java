@@ -18,9 +18,33 @@ public class TAComponent {
 	TAState current;
 	
 	
-	ArrayList <TAPort> readyPorts; //ready ports
 	ArrayList<TATransition> eligible; //eligible transitions
 
+	
+
+	//Set all ports to not ready
+	private void resetPorts()
+	{
+		
+		for (int i=0; i < ports.size(); i++ )
+		{
+			ports.get(i).setReady(false);
+		}
+	}
+	
+	//fill in ready ports
+	public void printReadyPorts()
+	{
+		for (int i=0; i < ports.size(); i++ )
+		{
+			if(ports.get(i).isReady())
+			{
+				ports.get(i).list();
+				System.out.println();
+			}
+		}
+	}
+	
 	//Print the state of the component
 	public void printState()
 	{
@@ -29,6 +53,7 @@ public class TAComponent {
 	
 	public void printEligible()
 	{
+		
 		for (int i=0; i < eligible.size(); i++)
 		{
 			eligible.get(i).list();
@@ -38,10 +63,12 @@ public class TAComponent {
 	}
 	
 	
+	
 	//Select transition
 	public void findEligible()
 	{
 		eligible = new ArrayList<TATransition>();
+		resetPorts();
 		
 		for (int i=0; i<transitions.size(); i++)
 		{
@@ -55,9 +82,24 @@ public class TAComponent {
 					if(t.getLabel().guard.value()) //and guard evaluates to true
 					{
 						eligible.add(t);
+						t.getLabel().getPort().setReady(true);
 					}
 				}
 			}
+		}
+		
+		
+	}
+	
+	//Evaluate
+	public void evaluate()
+	{
+		findEligible();
+		
+		if (eligible.size() > 0 )
+		{
+			current = eligible.get(0).getStateTo(); //changed state
+			
 		}
 	}
 	
