@@ -43,6 +43,12 @@ public class TAInteraction {
 		this.action = action;
 	}
 	
+	public void addPort(TAPort port)
+	{
+		ports.add(port);
+	}
+	
+	
 	public void list()
 	{
 		for (int i=0; i < ports.size(); i++)
