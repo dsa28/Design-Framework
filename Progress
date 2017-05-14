@@ -84,3 +84,4 @@ In addition, there seems to be a problem with nested quantifiers.
 Managed to fix the problem with nested quantifiers by writing out the body of exists. This doesnt help with the duplicate code...
 
 Refactoring: To remove complexity, we went back to our original evaluation method (references and recursion instead of observer pattern)
+We decided to keep only one class for operations with a fixed return type.
