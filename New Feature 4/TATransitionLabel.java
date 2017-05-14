@@ -5,24 +5,25 @@ public class TATransitionLabel {
 	//A transition label has 3 elements 
 	//port, guard and action
 	
-	TAPort port;
-	TAFormula guard;
-	TAStatement action;
+	private TAPort port;
+	TABoolValue guard;
+	private TAStatement action;
 	
 	
-	void listVariables()
+	
+	public void list()
 	{
-		//List variables used in guard formula
-		for (int i=0; i<guard.variables.size()-1; i++)
-		{
-			guard.variables.get(i).list();
-			System.out.print(",");
-		}
 		
-		guard.variables.get(guard.variables.size()-1).list();
+		port.list();
+		System.out.print(",");
+		guard.list();
+		System.out.print(",");
+		action.list();
+		
 	}
 	
-	TATransitionLabel(TAPort port, TAFormula guard, TAStatement action)
+	
+	TATransitionLabel(TAPort port, TABoolValue guard, TAStatement action)
 	{
 		this.port = port;
 		this.guard = guard;

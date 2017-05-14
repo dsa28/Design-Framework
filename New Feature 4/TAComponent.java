@@ -17,13 +17,49 @@ public class TAComponent {
 	TAState initial;
 	TAState current;
 	
+	
+	ArrayList <TAPort> readyPorts; //ready ports
+	ArrayList<TATransition> eligible; //eligible transitions
 
 	//Print the state of the component
-	void printState()
+	public void printState()
 	{
 		current.list();
 	}
 	
+	public void printEligible()
+	{
+		for (int i=0; i < eligible.size(); i++)
+		{
+			eligible.get(i).list();
+			System.out.println();
+		}
+		
+	}
+	
+	
+	//Select transition
+	public void findEligible()
+	{
+		eligible = new ArrayList<TATransition>();
+		
+		for (int i=0; i<transitions.size(); i++)
+		{
+			TATransition t = transitions.get(i);
+			if (t.getStateFrom().equals(current)) //transitions from the current state
+			{
+				if (t.getLabel() != null) //has a label
+				{
+					t.getLabel().guard.evaluate();
+					
+					if(t.getLabel().guard.value()) //and guard evaluates to true
+					{
+						eligible.add(t);
+					}
+				}
+			}
+		}
+	}
 	
 	//Cloning
 	public TAComponent clone()
@@ -36,6 +72,10 @@ public class TAComponent {
 		
 		return clone;
 	}
+	
+	
+	
+	
 	//Construction
 	
 	void addPort (TAPort port)

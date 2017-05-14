@@ -8,6 +8,10 @@ public class TAState {
 	
 	String name;
 
+	boolean equals(TAState s)
+	{
+		return this.name == s.name;
+	}
 	
 	
 	void list()

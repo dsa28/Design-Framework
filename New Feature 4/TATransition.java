@@ -16,6 +16,19 @@ public class TATransition {
 	private TATransitionLabel label; //we are assuming transitions has only one label
 	
 
+	public void list()
+	{
+		stateFrom.list();
+		System.out.print(",");
+		stateTo.list();
+		
+		if (label != null)
+		{
+			System.out.println();
+			label.list();
+		}
+	}
+	
 	
 	TAState getStateTo()
 	{
@@ -27,7 +40,10 @@ public class TATransition {
 		return stateFrom;
 	}
 	
-	
+	TATransitionLabel getLabel()
+	{
+		return this.label;
+	}
 	
 	void setLabel(TATransitionLabel label)
 	{
