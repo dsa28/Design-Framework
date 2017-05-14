@@ -29,6 +29,10 @@ public class TATransition {
 		}
 	}
 	
+	public void evaluate()
+	{
+		label.evaluate();
+	}
 	
 	TAState getStateTo()
 	{

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class TATransitionLabel {
 	
@@ -12,6 +11,11 @@ public class TATransitionLabel {
 	public TAPort getPort()
 	{
 		return port;
+	}
+	
+	public void evaluate()
+	{
+		action.evaluate();
 	}
 	
 	public void list()

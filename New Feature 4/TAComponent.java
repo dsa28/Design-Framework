@@ -98,6 +98,7 @@ public class TAComponent {
 		
 		if (eligible.size() > 0 )
 		{
+			eligible.get(0).evaluate();
 			current = eligible.get(0).getStateTo(); //changed state
 			
 		}
