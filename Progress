@@ -85,3 +85,9 @@ Managed to fix the problem with nested quantifiers by writing out the body of ex
 
 Refactoring: To remove complexity, we went back to our original evaluation method (references and recursion instead of observer pattern)
 We decided to keep only one class for operations with a fixed return type.
+
+Design decision 16: To remove complexity, we decided not to implement a list of transitions inside each state.
+In addition, we decided not to use observer pattern for ports-transitions-transition labels
+
+
+s
