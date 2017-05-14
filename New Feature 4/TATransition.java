@@ -15,18 +15,19 @@ public class TATransition {
 	
 	private TATransitionLabel label; //we are assuming transitions has only one label
 	
-	private ArrayList<TAPort> ports; //To check if a port is ready we need to check if
-	//at least one of its transitions are ready
-	//can do so by using observer pattern
+
 	
 	TAState getStateTo()
 	{
 		return stateTo;
 	}
-	void update(boolean g)
+	
+	TAState getStateFrom()
 	{
-		
+		return stateFrom;
 	}
+	
+	
 	
 	void setLabel(TATransitionLabel label)
 	{
@@ -35,7 +36,7 @@ public class TATransition {
 	
 	private TATransition()
 	{
-		ports = new ArrayList<TAPort>();
+		
 	}
 	
 	TATransition (TAState from, TAState to)
@@ -44,7 +45,6 @@ public class TATransition {
 		stateFrom = from;
 		stateTo = to;
 		
-		from.addTransition(this);
 	
 	}
 	
