@@ -61,15 +61,12 @@ public class TAMinusInt extends TAMinus implements TAIntValue {
 	{
 		op1 = a;
 		single = true;
-		
-		a.addFunction(this);
 	}
 	
 	TAMinusInt (TAIntValue a, String s)
 	{
 		this(a);
 		name = s;
-		
 		
 	}
 	
@@ -79,16 +76,12 @@ public class TAMinusInt extends TAMinus implements TAIntValue {
 		op2 = b;
 		single = false;
 		
-		addOperands(a,b);
-		
 	}
 	 
 	 TAMinusInt (TAIntValue a, TAIntValue b, String s)
 	 {
 		 this(a,b);
 		 name = s;
-		 
-		 
 	 }
 	
 	

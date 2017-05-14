@@ -7,14 +7,17 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	
 	public void evaluate()
 	 {
+<<<<<<< HEAD
+=======
+		op1.evaluate();
+		op2.evaluate();
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 		value = op1.value()+op2.value();
-		updateAll();
 	 }
 	
 	
 	public void list()
 	{
-		
 		if (name!= null)
 		{
 			ListStrategy.list(name);
@@ -38,20 +41,14 @@ public class TAPlusInt extends TAPlus implements TAIntValue {
 	}
 	
 	
-	private TAPlusInt()
-	{
-		
-	}
+	
 	
 
 	 TAPlusInt(TAIntValue a, TAIntValue b)
 	{
-		
-		
 		op1 = a;
 		op2 = b;
 		
-		addOperands(a,b);
 	}
 	 
 	 TAPlusInt (TAIntValue a, TAIntValue b, String s)

@@ -45,7 +45,7 @@ public class TAPlusDouble extends TAPlus implements TADoubleValue {
 	{
 		op1 = a;
 		op2 = b;
-		addOperands(a,b);
+		
 	}
 	 
 	 TAPlusDouble (TADoubleValue a, TADoubleValue b, String s)

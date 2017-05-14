@@ -26,14 +26,11 @@ public class TABool extends TAObject implements TABoolValue{
 	void set(boolean bool)
 	{
 		value=bool;
-		updateAll();
 	}
 	
 	
 	public void evaluate()
-	{
-		
-	}
+	{}
 	
 	void printState()
 	{

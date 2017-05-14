@@ -43,7 +43,6 @@ public class TAMultiplyDouble extends TAMultiply implements TADoubleValue {
 		op1 = a;
 		op2 = b;
 		
-		addOperands(a,b);
 	}
 	 
 	 TAMultiplyDouble (TADoubleValue a, TADoubleValue b, String s)

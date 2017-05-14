@@ -41,30 +41,47 @@ public class TAPlus extends TANumericFunction {
 	protected TAPlus()
 	{
 		opvalue = "+";
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
+=======
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 	}
 	
 =======
 >>>>>>> parent of f8f95b3... Refactoring
+	
+	public void addOperands(TAValue a, TAValue b)
+	{
+		a.addFunction(operation);
+		b.addFunction(operation);
+	}
 	
 	
 	 TAPlus(TAIntValue a, TAIntValue b)
 	{
 		operation = new TAPlusInt(a,b);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 >>>>>>> parent of f8f95b3... Refactoring
+=======
+		addOperands(a,b);
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 	}
 	 
 	 TAPlus (TADoubleValue a, TADoubleValue b)
 	 {
 		 operation = new TAPlusDouble(a,b);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 >>>>>>> parent of f8f95b3... Refactoring
+=======
+		 addOperands(a,b);
+>>>>>>> parent of af8e566... Refactoring old classes so they support observer pattern
 	 }
 	 
 	 

@@ -65,8 +65,6 @@ public class TAMinusDouble extends TAMinus implements TADoubleValue {
 	{
 		op1 = a;
 		single = true;
-		
-		a.addFunction(this);
 	}
 
 	TAMinusDouble (TADoubleValue a, String s)
@@ -81,8 +79,6 @@ public class TAMinusDouble extends TAMinus implements TADoubleValue {
 		op1 = a;
 		op2 = b;
 		single = false;
-		
-		addOperands(a,b);
 
 	}
 

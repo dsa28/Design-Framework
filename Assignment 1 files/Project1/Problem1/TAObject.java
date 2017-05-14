@@ -50,10 +50,8 @@ public abstract class TAObject {
 	
 	public void updateAll()
 	{
-	
 		for (int i=0;i<functions.size();i++)
 		{
-			
 			functions.get(i).evaluate();
 		}
 	}

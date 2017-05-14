@@ -48,13 +48,11 @@ public class TAMinus extends TANumericFunction {
 	TAMinus(TAIntValue a)
 	{
 		operation = new TAMinusInt(a);
-		
 	}
 	
 	TAMinus(TADoubleValue a)
 	{
 		operation = new TAMinusDouble(a);
-		
 	}
 	
 	
@@ -64,13 +62,11 @@ public class TAMinus extends TANumericFunction {
 	 TAMinus(TAIntValue a, String s)
 	{
 		operation = new TAMinusInt(a,s);
-		
 	}
 	
 	 TAMinus(TADoubleValue a, String s)
 	{
 		operation = new TAMinusDouble(a,s);
-		
 	}
 	
 	
@@ -80,13 +76,11 @@ public class TAMinus extends TANumericFunction {
 	 TAMinus(TAIntValue a,TAIntValue b)
 	{
 		operation = new TAMinusInt(a,b);
-		
 	}
 	 
 	 TAMinus (TADoubleValue a, TADoubleValue b)
 	 {
 		 operation = new TAMinusDouble(a,b);
-	
 	 }
 	 
 	 
@@ -96,13 +90,11 @@ public class TAMinus extends TANumericFunction {
 	TAMinus (TAIntValue a, TAIntValue b, String s)
 	 {
 		 operation = new TAMinusInt(a,b,s);
-	
 	}
 	
 	TAMinus (TADoubleValue a,TADoubleValue b, String s)
 	{
 		 operation = new TAMinusDouble(a,b,s);
-		 
 	}
 	 
 	 
