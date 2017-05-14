@@ -28,7 +28,7 @@ public class TAComponent {
 		
 		for (int i=0; i < ports.size(); i++ )
 		{
-			ports.get(i).setReady(false);
+			ports.get(i).reset();
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class TAComponent {
 					if(t.getLabel().guard.value()) //and guard evaluates to true
 					{
 						eligible.add(t);
-						t.getLabel().getPort().setReady(true);
+						t.getLabel().getPort().setTransition(t);
 					}
 				}
 			}
@@ -124,6 +124,7 @@ public class TAComponent {
 	void addPort (TAPort port)
 	{
 		ports.add(port);
+		port.setComponent(this);
 	}
 	
 	void addState (TAState state)

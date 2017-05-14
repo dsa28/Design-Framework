@@ -6,8 +6,11 @@ public class TATest4 {
 		TAState q0 = new TAState("q0");
 		TAState q1 = new TAState("q1");
 	
-		TAPort p1 = new TAPort("p1");
-		TAPort p2 = new TAPort("p2");
+		TAComponent c1 = new TAComponent("component", q0); //Create a compoenent
+		//It has an initial state and a name
+		
+		TAPort p1 = new TAPort("p1",c1);
+		TAPort p2 = new TAPort("p2",c1);
 		
 		
 		TABool b1 = new TABool("b1");
@@ -19,8 +22,7 @@ public class TATest4 {
 		TATransitionLabel label = new TATransitionLabel(p1,b1,new TAEmptyStatement());
 		TATransitionLabel l2 = new TATransitionLabel (p2,b2,new TAEmptyStatement());
 		
-		TAComponent c1 = new TAComponent("component", q0); //Create a compoenent
-		//It has an initial state and a name
+		
 		
 		c1.addState(q1); //add state
 		
@@ -37,8 +39,6 @@ public class TATest4 {
 		c1.addTransition(t2);
 		c1.addTransition(t3);
 		
-		c1.addPort(p1);
-		c1.addPort(p2);
 		
 		
 		c1.printState(); //state is q0
@@ -49,23 +49,44 @@ public class TATest4 {
 		
 		c1.findEligible();
 		
-		c1.printEligible();
+		c1.printEligible(); //t1 and t3
+		System.out.println();
+		
+		p2.printTransition(); //t3
+		System.out.println();
+		System.out.println();
+		
 		
 		b2.set(false);
 		
-		c1.findEligible();
-		System.out.println();
+		c1.findEligible(); 
+		System.out.println(); //t1
 		
 		c1.printEligible();
 		
 		System.out.println();
 		
-		c1.printReadyPorts();
+		c1.printReadyPorts(); //p1
 		System.out.println();
 		
-		c1.evaluate();
+		p1.printTransition(); //t1
+		System.out.println();
+		System.out.println();
 		
-		c1.printState();
+		p2.printTransition(); //port not ready
+		System.out.println();
+		System.out.println();
+		
+		c1.evaluate(); 
+		
+		c1.printState(); //q1
+		
+		c1.findEligible(); 
+		System.out.println(); 
+		System.out.println();
+		
+		c1.printEligible(); //t2
+		
 	}
 	
 	

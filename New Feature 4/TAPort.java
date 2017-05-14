@@ -3,11 +3,13 @@ public class TAPort {
 
 	private String name;
 	private boolean ready; //check if the port is ready
-	//private TATransition transition; //ready transition
+	private TATransition transition; //ready transition
+	
+	private TAComponent component; //component to which the port belongs to
 	
 	
 	//get the transition associated to a port
-	/*TATransition getTransition()
+	TATransition getTransition()
 	{
 		return transition;
 	}
@@ -19,11 +21,34 @@ public class TAPort {
 		ready = true;
 		this.transition = transition;
 		
-	}*/
+	}
 	
-	public void setReady(boolean ready)
+	public void printTransition()
 	{
-		this.ready = ready;
+		if (transition != null)
+		{
+			transition.list();
+		}
+		else
+		{
+			System.out.print("port not ready");
+		}
+	}
+	
+	public void setComponent(TAComponent component)
+	{
+		this.component = component;
+	}
+	
+	public TAComponent getComponent()
+	{
+		return component;
+	}
+	
+	public void reset()
+	{
+		ready = false;
+		transition = null;
 	}
 	
 	boolean isReady()
@@ -36,9 +61,14 @@ public class TAPort {
 		ListStrategy.list(name);
 	}
 	
-	TAPort (String name)
+	TAPort (String name, TAComponent component)
 	{
+		//A port cannot exist without a component
+		//Which is why we construct a port specifically for a component
+		
 		this.name = name;
 		ready = false; //new port- there are no ready transitions
+		
+		component.addPort(this);
 	}
 }

@@ -7,6 +7,7 @@ public class TATransitionLabel {
 	private TAPort port;
 	TABoolValue guard;
 	private TAStatement action;
+	private TAComponent component;
 	
 	public TAPort getPort()
 	{
@@ -35,5 +36,7 @@ public class TATransitionLabel {
 		this.port = port;
 		this.guard = guard;
 		this.action = action;
+		
+		this.component = port.getComponent();
 	}
 }
