@@ -15,12 +15,11 @@ New feature 1 and 2:
 
 -Contains the classes for the ForEvery feature.
 
-
 -Contains the classes for the Exists feature. 
 
 -Class TAHelper which contains helper functions
   
--Class TATest2 which contains 13 test cases for ForEvery and Exists features.
+-Class TATest2 which contains test cases for ForEvery and Exists features.
 (Including testing for int and bool and nested quantifiers)
 
 -Classes TASet, TASetBool, TASetInt and TASetDouble used to represent domains.
@@ -32,10 +31,18 @@ New feature 1 and 2:
 New Feature 3:
 -Classes TAStatement, TAAssign, TACondition, TAWhile, TAEmptyStatement, TASeqList, TAConcurrentList
 
--Class TATest3 which contains 13 test cases to test statements
+-Class TATest3 which contains test cases to test statements
 (assignments, conditions, empty statements, sequential list, loops, concurrent lists and combinations)
 
 ---Limitation: Does not support nested concurrent lists
 
 New Feature 4:
--Class TAComponent, TAPort, TAState, TATransition, TATransitionLabel, TAFormula
+-Class TAComponent, TAPort, TAState, TATransition, TATransitionLabel
+
+-Class TATest4 which contains tests for components-such as adding ports, adding transitions, placing labels to transitions, and evaluating the component.
+
+New Feature 5:
+-Class TAInteraction
+
+New Feature 6:
+-Class TASystem
