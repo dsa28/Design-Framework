@@ -110,6 +110,12 @@ public class TAComponent {
 		current = t.getStateTo();
 	}
 	
+	@Override
+	public int hashCode() //Hashcode- used in interactions
+	{
+		return name.hashCode();
+	}
+	
 	//Cloning
 	public TAComponent clone()
 	{
